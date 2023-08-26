@@ -43,29 +43,36 @@ function PerformanceTrack() {
   ];
 
   return (
+<div>
 
-    <div className="flex h-screen max-w-screen-lg main-body ">
-      <div className="flex flex-row w-full h-screen main-body-container">
+
+    <div className="flex h-screen w-screen main-body">
+      <div className="flex flex-row w-auto h-screen main-body-container">
         <Sidepanel2 />
 
       </div>
-      <div>
+      <div className="w-full">
+        
         <div className="flex items-center justify-center pt-10 pb-5 text-xl uppercase">
-          <h1 className="pb-5 text-xl uppercase">
+          <h1 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4 mt-4">
             Orders
           </h1>
 
         </div>
 
-        <DataTable data={data} />
-        {showPopup && <Modal />} {/* Render the Modal component when showPopup state is true */}
+        <div className="max-w-[90%] ml-[5%]">
+          <DataTable data={data} className="w-[90%]"/> 
+        {showPopup && <Modal />} 
+        {/* Render the Modal component when showPopup state is true */}
+        </div>
+        
 
       </div>
 
 
 
     </div>
-
+</div>
 
   );
 }
