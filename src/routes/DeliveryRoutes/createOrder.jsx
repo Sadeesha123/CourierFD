@@ -28,7 +28,7 @@ function CreateOrder() {
     return (
 
         <div className="w-full h-screen main-body bg-slate-100">
-            <div className="flex flex-row w-full h-screen main-body-container">
+            <div className="flex flex-row w-full main-body-container">
                 <Sidepanel2 />
                 <div className="w-5/6 side-panel bg-slate-100">
                     
