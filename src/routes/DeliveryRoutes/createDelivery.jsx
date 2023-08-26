@@ -47,7 +47,7 @@ function CreateDelivery()
     return(
 
             <div className="main-body h-screen w-full bg-slate-100">
-                <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%]" />
+                <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
                     <div className="main-body-container h-screen w-full flex flex-row absolute top-0 bg-black bg-opacity-50">
                         <Sidepanel/>
                         <div className="w-5/6 side-panel  p-5 md:ml-[300px] ml-16">
