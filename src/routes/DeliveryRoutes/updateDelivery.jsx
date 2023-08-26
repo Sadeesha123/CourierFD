@@ -7,7 +7,7 @@ import { post } from "../../Api";
 import bg from '../../images/mainbg1.jpg';
 
 
-function CreateDelivery()
+function UpdateDelivery()
 {
 
 
@@ -54,7 +54,7 @@ function CreateDelivery()
                           <div className="common-body p-5 flex flex-col h-full items-center ">
 
                             <div className="form-body md:w-[80%] w-full flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg ">
-                                Create Delivery   
+                                Update Delivery
                             <form onSubmit={handleSubmit} className="flex flex-col w-full">
                                 <label htmlFor="customerId" className="mb-2 font-semibold text-gray-600">
                                     Customer ID
@@ -105,7 +105,7 @@ function CreateDelivery()
                                     </select>
 
                                     <button type="submit" className="py-2 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white rounded-lg w-52 ml-auto mt-8">
-                                    Create Delivery
+                                    Update Delivery
                                     </button>
                                 </form>
 
@@ -126,4 +126,4 @@ function CreateDelivery()
 }
 
 
-export default CreateDelivery;
+export default UpdateDelivery;
