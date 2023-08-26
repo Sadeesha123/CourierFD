@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTicket, faList } from '@fortawesome/free-solid-svg-icons'
+import { faTicket, faHome, faList } from '@fortawesome/free-solid-svg-icons'
 
 export default function Sidepanel() {
   return(
@@ -15,10 +15,13 @@ export default function Sidepanel() {
 
           <div className="nav-body w-full flex-col justify-center space-y-5 mt-10">
             <ul className="space-y-5">
+              <Link to="/Dashboard"><li className="p-2 w-full bg-white rounded-md mb-5">
+                <FontAwesomeIcon icon={faHome} className="mr-5"/>Dashboard</li>
+              </Link>
               <Link to="/tickets"><li className="p-2 w-full bg-white rounded-md mb-5">
                 <FontAwesomeIcon icon={faList} className="mr-5"/>All Tickets</li>
               </Link>
-              <Link to="/manualTickets"><li className="p-2 w-full rounded-md mb-5">
+              <Link to="/manualTickets"><li className="p-2 w-full bg-white rounded-md mb-5">
                 <FontAwesomeIcon icon={faList} className="mr-5"/>Manual Tickets</li>
               </Link>
             </ul>

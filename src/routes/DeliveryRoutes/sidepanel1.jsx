@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBox, faUser, faBoxesPacking, faStreetView, faHeadset, faChainBroken } from '@fortawesome/free-solid-svg-icons'
+import { faBox, faUser, faHome, faBoxesPacking, faStreetView, faHeadset, faChainBroken } from '@fortawesome/free-solid-svg-icons'
 
 function Sidepanel1() {
 
@@ -22,6 +22,8 @@ function Sidepanel1() {
 
                 <div className="flex-col justify-center w-full mt-10 space-y-5 nav-body">
                     <ul className="space-y-5">
+                        <Link to="/Dashboard"><li className="w-full p-2 mb-5 rounded-md bg-slate-400">
+                            <FontAwesomeIcon icon={faHome} className="mr-5" />Dashboard</li></Link>
                         <Link to="/CreateDelivery"><li className="w-full p-2 mb-5 rounded-md bg-slate-400">
                             <FontAwesomeIcon icon={faBox} className="mr-5" />Create Delivery</li></Link>
 
