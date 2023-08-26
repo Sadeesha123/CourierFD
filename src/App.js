@@ -18,12 +18,13 @@ import UpdateOrder from "./routes/DeliveryRoutes/updateOrder";
 import MoreInfo from "./routes/DeliveryRoutes/moreInfo";
 import Modal from "./routes/DeliveryRoutes/removePopup";
 import DeliveryRank from "./routes/DeliveryRoutes/deliveryRank";
-
-
-// PAGES
-import Tickets from "./pages/Tickets"
 import SingleOrder from "./routes/DeliveryRoutes/singleOrder";
 import SingleOrderUpdate from "./routes/DeliveryRoutes/singleOrderUpdate";
+
+// Routes: Dilakshi
+import Tickets from "./pages/Tickets/Tickets";
+import SingleTicket from "./pages/Tickets/SingleTicket";
+import ManualTickets from "./pages/Tickets/ManualTickets";
 
 function App() {
   return (
@@ -52,6 +53,11 @@ function App() {
           <Route path="MoreInfo/:slug" element={<MoreInfo/>}/>
           <Route path="Modal" element={<Modal/>}/>
           <Route path="DeliveryRank" element={<DeliveryRank/>}/>
+
+          {/* Routes: Dilakshi */}
+          <Route path="/tickets" element={<Tickets />} />
+          <Route path="/manualTickets" element={<ManualTickets />} />
+          <Route path="/ticket/:id" element={<SingleTicket />} />
         </Routes>
       </BrowserRouter>
 
