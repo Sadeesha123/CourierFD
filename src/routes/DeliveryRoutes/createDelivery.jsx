@@ -48,9 +48,9 @@ function CreateDelivery()
 
             <div className="main-body h-screen w-full bg-slate-100">
                 <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
-                    <div className="main-body-container h-screen w-full flex flex-row absolute top-0 bg-black bg-opacity-50">
+                    <div className="main-body-container w-full h-full absolute">
                         <Sidepanel/>
-                        <div className="w-5/6 side-panel  p-5 md:ml-[300px] ml-16">
+                        <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
                           <div className="common-body p-5 flex flex-col h-full items-center ">
 
                             <div className="form-body md:w-[80%] w-full flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg ">
