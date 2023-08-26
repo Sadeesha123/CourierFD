@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./routes/login";
 import Dashboard from "./routes/Admindash";
 import CreateDelivery from "./routes/DeliveryRoutes/createDelivery";
+import UpdateDelivery from "./routes/DeliveryRoutes/updateDelivery";
+import ViewDelivery from "./routes/DeliveryRoutes/viewDelivery";
 import Orders from "./routes/DeliveryRoutes/orders";
 import RoutePlanning from "./routes/DeliveryRoutes/RoutePlanning";
 import CustomerHome from "./routes/DamageDetect/CustomerHome";
@@ -34,6 +36,8 @@ function App() {
           <Route index path="/" element={<Login/>}/>
           <Route path="/Dashboard" element={<Dashboard/>}/>
           <Route path="/CreateDelivery" element={<CreateDelivery/>}/>
+          <Route path="/UpdateDelivery" element={<UpdateDelivery/>}/>
+          <Route path="/ViewDelivery" element={<ViewDelivery/>}/>
           <Route path="/Orders" element={<Orders/>}/>
           <Route path="/RoutePlanning" element={<RoutePlanning/>}/>
           <Route path="/CustomerHome" element={<CustomerHome/>}/>

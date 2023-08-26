@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import Sidepanel2 from "./sidepanel2";
-import bg from '../../images/mainbg.jpg';
+import bg from '../../images/mainbg1.jpg';
 
 
 function CreateOrder() {
@@ -28,9 +28,10 @@ function CreateOrder() {
     return (
 
         <div className="w-full h-screen main-body bg-slate-100">
-            <div className="flex flex-row w-full h-screen main-body-container">
+             <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
+             <div className="main-body-container w-full flex flex-row absolute">
                 <Sidepanel2 />
-                <div className="w-5/6 side-panel bg-slate-100">
+                <div className="w-5/6 side-panel">
                     
                     <div className="flex flex-col items-center justify-center gap-5 p-5 common-body">
 
@@ -162,7 +163,7 @@ function CreateOrder() {
                             </form>
                         
 
-                        <button type="submit" className="px-4 py-2 text-white bg-blue-500 rounded-lg w-52 ml-auto mt-8" onClick={handleSubmit}>
+                        <button type="submit" className="py-2 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white rounded-lg w-52 ml-auto mt-8" onClick={handleSubmit}>
                             Create
                         </button>
 
