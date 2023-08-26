@@ -97,7 +97,7 @@ const DataTable = ({ data }) => {
                                             <>
                                                 <td
                                                     {...cell.getCellProps()}
-                                                    className="p-3 border-[1px] border-black/50 bg-gray-100 hover:bg-slate-300"
+                                                    className="p-3 border-[1px] border-black/50 hover:bg-slate-300"
                                                     key={cell.column.id}
                                                 >
                                                     {cell.render("Cell")}
@@ -112,7 +112,7 @@ const DataTable = ({ data }) => {
                                             </button>
                                         </a>
                                         <button
-                                            class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded mt-3"
+                                            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded mt-3"
                                             onClick={() => setShowPopup(row.id + 1)}
                                         >
                                             Remove
