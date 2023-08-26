@@ -51,7 +51,7 @@ function CreateDelivery()
                     <div className="main-body-container h-screen w-full flex flex-row absolute top-0 bg-black bg-opacity-50">
                         <Sidepanel/>
                         <div className="w-5/6 side-panel  p-5 md:ml-[300px] ml-16">
-                          <div className="common-body p-5 flex flex-col h-full items-center justify-center">
+                          <div className="common-body p-5 flex flex-col h-full items-center ">
 
                             <div className="form-body md:w-[80%] w-full flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg ">
                                 
@@ -98,12 +98,13 @@ function CreateDelivery()
                                     Vehicle
                                     </label>
                                     <select id="vehicle" name="vehicle" className="mb-4 p-2 rounded-lg border border-gray-300">
+                                    <option value="Please Select">Please Select</option>
                                       <option value="car">Car</option>
                                       <option value="bike">Bike</option>
                                       <option value="truck">Truck</option>
                                     </select>
 
-                                    <button type="submit" className="py-2 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white rounded-lg">
+                                    <button type="submit" className="py-2 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white rounded-lg w-52 ml-auto">
                                     Create Delivery
                                     </button>
                                 </form>
