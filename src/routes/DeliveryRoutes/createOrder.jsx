@@ -34,7 +34,7 @@ function CreateOrder() {
                     
                     <div className="flex flex-col items-center justify-center gap-5 p-5 common-body">
 
-                        <div className="form-body w-[50%] flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg shadow-md shadow-slate-300">
+                        <div className="form-body w-[60%] flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg shadow-md shadow-slate-300">
 
                             <form onSubmit={handleSubmit} className="flex flex-col w-full">
 
@@ -107,7 +107,7 @@ function CreateOrder() {
                         </div>
 
 
-                        <div className="form-body w-[50%] flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg shadow-md shadow-slate-300">
+                        <div className="form-body w-[60%] flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg shadow-md shadow-slate-300">
                             <form onSubmit={handleSubmit} className="flex flex-col w-full">
                                 <h1 className="flex items-center justify-center p-5 uppercase text-md font-semibold">Reciever Details</h1>
 

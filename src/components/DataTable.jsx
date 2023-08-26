@@ -69,15 +69,15 @@ const DataTable = ({ data }) => {
                     placeholder="Search..."
                 /><br/><br/>
             </div>
-            <div className="text-center max-w-[100%] overflow-x-auto 5xl:overflow-x-visible">
-                <table className="w-full" {...getTableProps()}>
-                    <thead className=" align-center text-sm border-[1px] border-black/50  uppercase bg-black/20 text-gray-900">
+            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400" {...getTableProps()}>
+                    <thead className=" text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         {headerGroups.map((headerGroup) => (
-                            <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id}>
+                            <tr {...headerGroup.getHeaderGroupProps()} className="" key={headerGroup.id}>
                                 {headerGroup.headers.map((column) => (
                                     <th
                                         {...column.getHeaderProps()}
-                                        className="p-2 border-[1px] border-black/50"
+                                        className="p-3 border-[1px] border-black/50"
                                         key={column.id}
                                     >
                                         {column.render("Header")}
