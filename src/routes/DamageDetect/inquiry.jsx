@@ -85,7 +85,7 @@ function Inquiry() {
 
                 <button
                   type="submit"
-                  className="py-2 px-4 bg-blue-500 text-white rounded-lg"
+                  className="py-2 px-4 bg-blue-500 text-white rounded-lg w-52 ml-auto mt-8"
                 >
                   Send for Inquiry
                 </button>

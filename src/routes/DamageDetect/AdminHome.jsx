@@ -85,14 +85,13 @@ function AdminHome() {
                     }}
                     className="w-full"
                   >
-                    <button
-                      type="submit"
-                      className="py-2 px-4 bg-blue-500 text-white rounded-lg w-full"
-                    >
-                      Generate QR
-                    </button>
+
                   </Link>
                 </div>
+                    <button type="submit" className="py-2 px-4 bg-blue-500 text-white rounded-lg w-52 ml-auto mt-8">
+                      Generate QR
+                    </button>
+                  
               </form>
             </div>
           </div>
