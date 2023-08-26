@@ -41,10 +41,31 @@ function RoutePlanning()
                              </div>
 
                              <div className="order-details flex flex-col space-y-[20px]">
-                                <span>Order Id : #TJH097</span>
+                             <form onSubmit={handleSubmit} className="flex flex-col w-full">
+                                <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600">
+                                Order ID
+                                </label>
+                                <input type="text" id="orderId" name="orderId" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                <label htmlFor="pickUp" className="mb-2 font-semibold text-gray-600">
+                                Pick Up
+                                </label>
+                                <input type="text" id="pickUp" name="pickUp" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                <label htmlFor="twoMoreSteps" className="mb-2 font-semibold text-gray-600">
+                                Two more Steps
+                                </label>
+                                <input type="text" id="twoMoreSteps" name="twoMoreSteps" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                <label htmlFor="delivery" className="mb-2 font-semibold text-gray-600">
+                                Delivery
+                                </label>
+                                <input type="text" id="delivery" name="delivery" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                <button type="submit" className="py-2 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white rounded-lg w-52 ml-auto mt-8">
+                                    Generate QR
+                                  </button>
+                                {/* <span>Order Id : #TJH097</span>
                                 <span>Pick Up</span>
                                 <span>Two more Steps</span>
-                                <span>Delivery</span>
+                                <span>Delivery</span> */}
+                              </form>
                              </div>
 
 
