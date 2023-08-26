@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import Sidepanel2 from "./sidepanel2";
-
+import bg from '../../images/mainbg.jpg';
 
 
 function CreateOrder() {
@@ -31,16 +31,18 @@ function CreateOrder() {
             <div className="flex flex-row w-full h-screen main-body-container">
                 <Sidepanel2 />
                 <div className="w-5/6 side-panel bg-slate-100">
-                    <h1 className="flex items-center justify-center pt-10 text-xl uppercase">
-                        Create order
-                    </h1>
+                    
                     <div className="flex flex-col items-center justify-center gap-5 p-5 common-body">
 
                         <div className="form-body w-[50%] flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg shadow-md shadow-slate-300">
 
                             <form onSubmit={handleSubmit} className="flex flex-col w-full">
 
-                                <h1 className="flex items-center justify-center p-5 uppercase text-md">Sender Details</h1>
+                            <h1 className="flex items-center justify-center font-bold pt-4 text-xl uppercase">
+                                Create order
+                            </h1>
+
+                                <h1 className="flex items-center justify-center p-5 font-semibold uppercase text-md">Sender Details</h1>
 
 
                                 <div className="flex justify-between">
@@ -107,7 +109,7 @@ function CreateOrder() {
 
                         <div className="form-body w-[50%] flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg shadow-md shadow-slate-300">
                             <form onSubmit={handleSubmit} className="flex flex-col w-full">
-                                <h1 className="flex items-center justify-center p-5 uppercase text-md">Reciever Details</h1>
+                                <h1 className="flex items-center justify-center p-5 uppercase text-md font-semibold">Reciever Details</h1>
 
 
 
@@ -158,15 +160,15 @@ function CreateOrder() {
                                 </div>
 
                             </form>
-                        </div>
+                        
 
-                        <button type="submit" className="px-4 py-2 text-white bg-blue-500 rounded-lg w-[780px]" onClick={handleSubmit}>
+                        <button type="submit" className="px-4 py-2 text-white bg-blue-500 rounded-lg w-52 ml-auto mt-8" onClick={handleSubmit}>
                             Create
                         </button>
 
-                    </div>
-                </div>
-            </div>
+                        </div>
+
+                    
             {showAlert && (
                 <div className="gap-4 fixed top-0 bottom-0 right-0 flex flex-col items-center justify-center bg-opacity-50 left-[270px] bg-black/10">
                     <div className="p-4 rounded-lg shadow-md bg-blue-500/60">
@@ -175,7 +177,10 @@ function CreateOrder() {
                     <img className="w-24 h-24 opacity-50" src="/images/success_alert.png" alt=""></img>
                 </div>
             )}
-
+                    
+                    </div>
+                </div>
+            </div>
                     
 
         </div>
