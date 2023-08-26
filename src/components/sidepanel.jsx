@@ -22,19 +22,13 @@ function Sidepanel()
 
 
                     <div className="nav-body w-full flex-col justify-center space-y-3 mt-10">
-                            <ul className="space-y-5">
-                                <Link to="/Orders" className="mb-5"><li className="p-2 w-full bg-white rounded-md mb-5">
-                                    <FontAwesomeIcon icon={faMapLocation} className="mr-5"/><span className="sm:inline-flex hidden">Delivery Routing</span></li></Link>
-                                <Link to="" className="mb-5"><li className="p-2 w-full bg-white  rounded-md mb-5">
-                                    <FontAwesomeIcon icon={faChartLine} className="mr-5"/><span className="sm:inline-flex hidden">Performance Track</span></li></Link>
-                                <Link to="" className="mb-5"><li className="p-2 w-full bg-white  rounded-md mb-5">
-                                    <FontAwesomeIcon icon={faHeadset} className="mr-5"/><span className="sm:inline-flex hidden">Customer Support</span></li></Link>
-                                <Link to="/CustomerHome"><li className="p-2 w-full bg-white  rounded-md mb-5">
-                                    <FontAwesomeIcon icon={faChainBroken} className="mr-5"/><span className="sm:inline-flex hidden">Damage Ditection USER</span></li></Link>
-                                <Link to="/AdminHome"><li className="p-2 w-full bg-white  rounded-md mb-5">
-                                    <FontAwesomeIcon icon={faChainBroken} className="mr-5"/><span className="sm:inline-flex hidden">Damage Ditection ADMIN</span></li></Link>
-                                    
-                            </ul>
+                        <ul className="space-y-5">
+                            <Link to="/Orders" className="mb-5"><li className="p-2 w-full bg-white rounded-md mb-5"><FontAwesomeIcon icon={faMapLocation} className="mr-5"/><span className="sm:inline-flex hidden">Delivery Routing</span></li></Link>
+                            <Link to="/performancetrack" className="mb-5"><li className="p-2 w-full bg-white  rounded-md mb-5"><FontAwesomeIcon icon={faChartLine} className="mr-5"/><span className="sm:inline-flex hidden">Performance Track</span></li></Link>
+                            <Link to="/tickets" className="mb-5"><li className="p-2 w-full bg-white  rounded-md mb-5"><FontAwesomeIcon icon={faHeadset} className="mr-5"/><span className="sm:inline-flex hidden">Customer Support</span></li></Link>
+                            <Link to="/CustomerHome"><li className="p-2 w-full bg-white  rounded-md mb-5"><FontAwesomeIcon icon={faChainBroken} className="mr-5"/><span className="sm:inline-flex hidden">Damage Ditection USER</span></li></Link>
+                            <Link to="/AdminHome"><li className="p-2 w-full bg-white  rounded-md mb-5"><FontAwesomeIcon icon={faChainBroken} className="mr-5"/><span className="sm:inline-flex hidden">Damage Ditection ADMIN</span></li></Link>   
+                        </ul>
                     </div>
 
 
