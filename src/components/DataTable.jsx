@@ -65,7 +65,7 @@ const DataTable = ({ data }) => {
                     type="text"
                     value={globalFilter || ""}
                     onChange={(e) => setGlobalFilter(e.target.value)}
-                    className="h-8 pl-2 text-lg bg-black/10 top-28"
+                    className="h-8 pl-2 text-lg bg-black/10 top-28 mb-4"
                     placeholder="Search..."
                 /><br/><br/>
             </div>
@@ -97,7 +97,7 @@ const DataTable = ({ data }) => {
                                             <>
                                                 <td
                                                     {...cell.getCellProps()}
-                                                    className="p-7 border-[1px] border-black/50 bg-gray-100 hover:bg-slate-300"
+                                                    className="p-3 border-[1px] border-black/50 bg-gray-100 hover:bg-slate-300"
                                                     key={cell.column.id}
                                                 >
                                                     {cell.render("Cell")}
@@ -107,19 +107,19 @@ const DataTable = ({ data }) => {
                                     })}
                                     <td className="flex gap-2 p-1 ">
                                         <a href={`/UpdateOrder/${row.id + 1}`}>
-                                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded">
+                                            <button class="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-2 rounded mt-3">
                                                 Update
                                             </button>
                                         </a>
                                         <button
-                                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
+                                            class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded mt-3"
                                             onClick={() => setShowPopup(row.id + 1)}
                                         >
                                             Remove
                                         </button>
                                         <a href={`/MoreInfo/${row.id + 1}`}>
-                                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded">
-                                                More_Info
+                                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded mt-3">
+                                                View
                                             </button>
                                         </a>
                                     </td>
