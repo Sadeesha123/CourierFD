@@ -104,7 +104,7 @@ function CreateDelivery()
                                       <option value="truck">Truck</option>
                                     </select>
 
-                                    <button type="submit" className="py-2 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white rounded-lg w-52 ml-auto">
+                                    <button type="submit" className="py-2 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white rounded-lg w-52 ml-auto mt-8">
                                     Create Delivery
                                     </button>
                                 </form>

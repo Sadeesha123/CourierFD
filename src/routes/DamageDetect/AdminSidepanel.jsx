@@ -1,7 +1,7 @@
 import {useState} from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBox, faUser, faBoxesPacking, faStreetView, faHeadset, faChainBroken } from '@fortawesome/free-solid-svg-icons'
+import { faBox, faUser, faBoxesPacking, faStreetView, faHeadset, faChainBroken, faHome } from '@fortawesome/free-solid-svg-icons'
 
 function AdminSidepanel()
 {
@@ -10,7 +10,7 @@ function AdminSidepanel()
 
     return(
 
-            <div className="w-[300px] side-panel p-5 flex flex-col justify-center items-center bg-gray-900 ">
+            <div className="w-[300px] side-panel p-5 flex flex-col justify-center items-center bg-[#d7002a] ">
 
                 <div className="sidepalen-body h-2/3 p-3 w-full justify-center">
                     <div className="user-profile flex flex-row items-center space-x-5">
@@ -23,7 +23,9 @@ function AdminSidepanel()
 
                     <div className="nav-body w-full flex-col justify-center space-y-5 mt-10">
                             <ul className="space-y-5">
-                                <Link to="/AdminHome"><li className="p-2 w-full bg-slate-400 rounded-md mb-5">
+                                <Link to="/Dashboard"><li className="p-2 w-full bg-white rounded-md mb-5">
+                                    <FontAwesomeIcon icon={faHome} className="mr-5"/>Dashboard</li></Link>
+                                <Link to="/AdminHome"><li className="p-2 w-full bg-white rounded-md mb-5">
                                     <FontAwesomeIcon icon={faBox} className="mr-5"/>Home</li></Link>
 
                                 {/* <Link to="/PackageDispatch"><li className="p-2 w-full bg-slate-400 rounded-md mb-5">

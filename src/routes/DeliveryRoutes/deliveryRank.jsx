@@ -27,14 +27,16 @@ function DeliveryRank() {
             <div className="flex flex-row w-full main-body-container">
                 <Sidepanel2 />
                 <div className="w-5/6 p-5 pt-10 side-panel bg-slate-100">
-                    <h1 className="flex items-center justify-center pb-5 text-xl uppercase">
-                        Delivery Rank
-                    </h1>
+                    
                     <div className="flex flex-col items-center justify-center h-full p-5 common-body">
 
-                        <div className="form-body w-[50%] flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg shadow-md shadow-slate-300">
+                        <div className="form-body w-[1000px] flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg shadow-md shadow-slate-300">
 
                             <form onSubmit={handleSubmit} className="flex flex-col w-full">
+
+                            <h1 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4">
+                                Delivery Rank
+                            </h1>
 
 
                                 <label htmlFor="province" className="mb-2 font-semibold text-gray-600">
@@ -86,7 +88,7 @@ function DeliveryRank() {
                                 </select>
 
                                 <div className="flex items-end justify-end ">
-                                    <button type="submit" className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-400">
+                                    <button type="submit" className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-400 mt-8">
                                         Search
                                     </button>
                                 </div>
@@ -94,8 +96,10 @@ function DeliveryRank() {
                         </div>
 
                         <div className="pt-10">
-                            <h1 className="pb-10"> Graph</h1>
+                        <div className="form-body w-[1000px] flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg shadow-md shadow-slate-300">
+                            <h1 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4"> Graph</h1>
                             <BarChart key={1000} />
+                        </div>
                         </div>
 
 
