@@ -59,23 +59,25 @@ const DataTable = ({ data }) => {
     const { globalFilter } = state;
 
     return (
-        <div className="p-20">
-            <input
-                type="text"
-                value={globalFilter || ""}
-                onChange={(e) => setGlobalFilter(e.target.value)}
-                className="absolute h-8 pl-2 text-lg bg-black/10 top-28 right-16"
-                placeholder="Search..."
-            />
-            <div className="text-center ">
-                <table {...getTableProps()} className="">
+        <div className="w-[100%]">
+            <div className="flex justify-end">
+                <input
+                    type="text"
+                    value={globalFilter || ""}
+                    onChange={(e) => setGlobalFilter(e.target.value)}
+                    className="h-8 pl-2 text-lg bg-black/10 top-28"
+                    placeholder="Search..."
+                /><br/><br/>
+            </div>
+            <div className="text-center max-w-[100%] overflow-x-auto 5xl:overflow-x-visible">
+                <table className="w-full" {...getTableProps()}>
                     <thead className=" align-center text-sm border-[1px] border-black/50  uppercase bg-black/20 text-gray-900">
                         {headerGroups.map((headerGroup) => (
                             <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id}>
                                 {headerGroup.headers.map((column) => (
                                     <th
                                         {...column.getHeaderProps()}
-                                        className="p-11 border-[1px] border-black/50"
+                                        className="p-2 border-[1px] border-black/50"
                                         key={column.id}
                                     >
                                         {column.render("Header")}
