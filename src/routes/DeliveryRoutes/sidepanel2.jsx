@@ -9,7 +9,7 @@ function Sidepanel2() {
 
     return (
 
-        <div className="w-[300px] side-panel p-5 flex flex-col justify-center items-center bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] bg-[#d7002a]">
+        <div className="w-[300px] side-panel p-5 flex flex-col  items-center bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] bg-[#d7002a]">
 
             <div className="justify-center w-full p-5 sidepalen-body h-2/3">
                 <div className="flex flex-row items-center space-x-5 user-profile">
