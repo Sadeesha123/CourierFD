@@ -4,7 +4,7 @@ import { faTicket, faHome, faList } from '@fortawesome/free-solid-svg-icons'
 
 export default function Sidepanel() {
   return(
-    <div className="w-[300px] side-panel p-5 flex flex-col justify-center items-center bg-[#d7002a] ">
+    <div className="w-[300px] side-panel p-5 flex flex-col items-center bg-[#d7002a] ">
       <div className="sidepalen-body h-2/3 p-3 w-full justify-center">
           <div className="user-profile flex flex-row items-center space-x-5">
               <label className="text-[28px]">

@@ -19,7 +19,7 @@ function CustomerHome() {
           <div className="common-body p-5 flex flex-col h-full items-center justify-center">
             <div className="form-body w-[80%] flex flex-row p-5 mx-auto items-center justify-center space-x-5">
               
-              <Link to="/ScanQR"><div className="option-card p-5 w-[220px] border-[1px] border-gray-200 text-center rounded-md bg-white shadow-md shadow-slate-300">
+              <Link to="/ScanQR"><div className="option-card p-5 w-[420px] border-[1px] border-gray-200 text-center rounded-md bg-white shadow-md shadow-slate-300">
                   <div className="card-body ">
                       <div className="img-box">
                         <img src={qr} alt="" srcset="" className="object-cover w-full h-full"/>
@@ -31,7 +31,7 @@ function CustomerHome() {
               </div></Link>
 
 
-              <Link to="/Inquiry"><div className="option-card p-5 w-[220px] border-[1px] border-gray-200 text-center rounded-md bg-white shadow-md shadow-slate-300">
+              <Link to="/Inquiry"><div className="option-card p-5 w-[420px] border-[1px] border-gray-200 text-center rounded-md bg-white shadow-md shadow-slate-300">
                   <div className="card-body ">
                       <div className="img-box">
                         <img src={inq} alt="" srcset="" className="object-cover w-full h-full"/>
