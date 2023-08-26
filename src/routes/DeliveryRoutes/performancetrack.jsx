@@ -62,7 +62,8 @@ function PerformanceTrack() {
 
         <div className="max-w-[90%] ml-[5%]">
           <DataTable data={data} className="w-[90%]"/> 
-        {showPopup && <Modal />} Render the Modal component when showPopup state is true
+        {showPopup && <Modal />} 
+        {/* Render the Modal component when showPopup state is true */}
         </div>
         
 
