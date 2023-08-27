@@ -55,7 +55,7 @@ function CustomerCharn() {
       <div className="w-full">
         
         <div className="flex items-center justify-center pt-10 pb-5 text-xl uppercase">
-          <h1 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4 mt-4">
+          <h1 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4 mt-4 ml-64">
             Customer Charn
           </h1>
 
