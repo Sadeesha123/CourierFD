@@ -23,10 +23,10 @@ function ChurnRank() {
 
     return (
 
-        <div className="w-full main-body bg-slate-100">
-            <div className="flex flex-row w-full main-body-container">
+        <div className="main-body h-screen w-full bg-slate-100">
+            <div className="main-body-container w-full flex flex-row absolute">
                 <Sidepanel />
-                <div className="w-5/6 p-5 pt-10 side-panel bg-slate-100">
+                <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
                     
                     <div className="flex flex-col items-center justify-center h-full p-5 common-body">
 
