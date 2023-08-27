@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Sidepanel from "../../components/sidepanel";
 import bg from '../../images/mainbg1.jpg';
 
+
 export default function Tickets() {
     return (
       <div className="main-body h-screen w-full bg-slate-100">
