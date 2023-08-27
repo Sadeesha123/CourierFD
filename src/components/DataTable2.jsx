@@ -1,7 +1,11 @@
 import React, { useMemo } from "react";
 import { useTable, useGlobalFilter } from "react-table";
+import { MessageDialog } from "./MessageDialog";
+import { useState, useEffect } from 'react';
+
 
 const DataTable2 = ({ data }) => {
+    const [popUpStatus, setpopUpStatus] = useState(false);
     // Define the table columns
     const columns = useMemo(
         () => [
@@ -58,6 +62,12 @@ const DataTable2 = ({ data }) => {
 
     const { globalFilter } = state;
 
+
+    const popUp = () => {
+        setpopUpStatus(!popUpStatus)
+        console.log(popUpStatus)
+    }
+    
     return (
         <div className="w-5/6 side-panel p-5 md:ml-[250px] ml-16">
         {/* // <div className="w-[100%]"> */}
@@ -125,11 +135,14 @@ const DataTable2 = ({ data }) => {
                                     <td className="flex gap-2 p-1 ">
                                         
                                         
-                                        <a href={`/MoreInfo/${row.id + 1}`}>
-                                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded mt-3">
+                                        {/* <a href={`/MoreInfo/${row.id + 1}`}> */}
+                                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded mt-3" onClick={popUp}>
                                                 View
                                             </button>
-                                        </a>
+                                            {popUpStatus &&
+                                                <MessageDialog click={true} link={`/MoreInfo/${row.id + 1}`}/>
+                                            }
+                                        {/* </a> */}
                                     </td>
                                 </tr>
                             );

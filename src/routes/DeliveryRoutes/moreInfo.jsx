@@ -29,7 +29,7 @@ function MoreInfo() {
             <div className="main-body-container w-full flex flex-row absolute">
                 <Sidepanel />
             </div>
-            <MessageDialog click={true}/>
+            {/* <MessageDialog click={true}/> */}
                 {/* Card UI */}
                 <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
                 <div class=" w-full h-full grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2">
