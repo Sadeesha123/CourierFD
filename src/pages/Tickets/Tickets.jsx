@@ -7,7 +7,8 @@ export default function Tickets() {
         <div className="main-body-container w-full flex flex-row absolute">
           <Sidepanel />
           <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
-            <h2 className="mb-5">All Tickets</h2>
+            <h2 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4 mt-4">All Tickets</h2>
+
 
             <div class="flex flex-col">
               <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
