@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import Sidepanel from "../../components/sidepanel";
+import bg from '../../images/mainbg1.jpg';
 
 function AdminHome() {
   const [formData, setFormData] = useState({
@@ -26,6 +27,7 @@ function AdminHome() {
 
   return (
     <div className="main-body h-screen w-full bg-slate-100">
+      <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
       <div className="main-body-container w-full flex flex-row absolute">
         <Sidepanel />
         <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">

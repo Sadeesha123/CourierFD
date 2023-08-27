@@ -59,7 +59,8 @@ const DataTable = ({ data }) => {
     const { globalFilter } = state;
 
     return (
-        <div className="w-[100%]">
+        <div className="w-5/6 side-panel p-5 md:ml-[250px] ml-16">
+        {/* <div className="w-[100%]"> */}
             {/* <div className="flex justify-end">
                 <input
                     type="text"
@@ -148,6 +149,7 @@ const DataTable = ({ data }) => {
                     </tbody>
                 </table>
             </div>
+        {/* </div> */}
         </div>
     );
 };

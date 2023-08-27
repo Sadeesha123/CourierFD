@@ -17,7 +17,7 @@ function CustomerHome() {
       
       <div className="main-body-container h-screen w-full flex flex-row">
         <Sidepanel />
-        <div className="w-5/6 side-panel bg-slate-100 p-5">
+        <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
           <div className="common-body p-5 flex flex-col h-full items-center justify-center">
             <div className="form-body w-[80%] flex flex-row p-5 mx-auto items-center justify-center space-x-5">
               

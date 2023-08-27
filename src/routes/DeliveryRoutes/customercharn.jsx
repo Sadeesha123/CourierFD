@@ -4,6 +4,7 @@ import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import DataTable2 from "../../components/DataTable2";
 import Sidepanel from "../../components/sidepanel";
 import Modal from "./removePopup";
+import bg from '../../images/mainbg1.jpg';
 
 
 

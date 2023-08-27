@@ -4,9 +4,9 @@ import Sidepanel from "../../components/sidepanel";
 export default function Tickets() {
     return (
       <div className="main-body h-screen w-full bg-slate-100">
-        <div className="main-body-container h-screen w-full flex flex-row">
+        <div className="main-body-container w-full flex flex-row absolute">
           <Sidepanel />
-          <div className="w-5/6 side-panel bg-slate-100 p-5">
+          <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
             <h2 className="mb-5">All Tickets</h2>
 
             <div class="flex flex-col">
