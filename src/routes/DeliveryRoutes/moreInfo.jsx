@@ -30,104 +30,106 @@ function MoreInfo() {
                 {/* Card UI */}
                  
                 <div class=" w-full h-full grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2">
-                    <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-tl-lg md:border-r dark:bg-gray-800 dark:border-gray-700">
-                        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-                            <h1 class="text-lg font-semibold text-gray-900 dark:text-white">Reciever Information</h1> <br/>
+                  
+                  <div className="border ">
+                    <div class="flex flex-col items-center justify-center px-8 py-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-tl-lg md:border-r   w-full h-full">
                         
+                        <div className="max-w-sm p-6 w-full h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
-                            <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600">
+                            <br/>
+
+                            <h1 class="text-lg font-semibold text-gray-900 dark:text-white">Reciever Information</h1> <br/>
+                            <br/><br/>
+
+                            <label htmlFor="recieverId" className="mb-2 font-semibold text-gray-600">
                             Reciever ID 
                             </label>
-                            &nbsp; <input type="text" placeholder=" text"/> 
-                        <br/>  <br/>
-                            <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600">
-                            Reciever ID 
+                            &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; <input type="text" placeholder=" Backend DATA" readonly="readonly"/> 
+                            <br/>  <br/> <br/>
+                            <label htmlFor="email" className="mb-2 font-semibold text-gray-600">
+                            Email
                             </label>
-                            &nbsp; <input type="text" placeholder=" text"/> 
-                            <br/>  <br/>
-                            <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600">
-                            Reciever ID 
+                            &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" placeholder="Backend DATA" readonly="readonly"/> 
+                            <br/>  <br/> <br/>
+                            <label htmlFor="mobileNumber" className="mb-2 font-semibold text-gray-600">
+                            Mobile Number
                             </label>
-                            &nbsp; <input type="text" placeholder=" text"/> 
-                            <br/>  <br/>
-                    
-
-
-                        </blockquote>
-                        <figcaption class="flex items-center justify-center space-x-3">
+                            &nbsp;  &nbsp;<input type="text" placeholder="Backend DATA" readonly="readonly"/> 
+                            </div>
+                            
                             
                         
-                        </figcaption>    
-                    </figure>
-                    <figure class="flex flex-col items-center h-full justify-center p-8 text-center bg-white border-b border-gray-200 rounded-tr-lg dark:bg-gray-800 dark:border-gray-700">
+                        
+                        </div> 
+
+                    </div>
+
+                    <div className="border ">
+                    <div class="flex flex-col items-center h-full justify-center p-8 text-center bg-white border-b border-gray-200 rounded-tr-lg">
                     
-                        <figcaption class="flex items-center justify-center space-x-3">
-                        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                    <div className="max-w-sm p-6 w-full h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <br/><br/>
                             <h1 class="text-lg font-semibold text-gray-900 dark:text-white">Traffic Details</h1> <br/>
-                        
+                            <br/><br/>
 
-                            <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600">
-                            Reciever ID 
+                            <label htmlFor="trafficCondition" className="mb-2 font-semibold text-gray-600">
+                            Traffic Condition 
                             </label>
-                            &nbsp; <input type="text" placeholder=" text"/> 
-                        <br/>  <br/>
-                            <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600">
-                            Reciever ID 
+                            &nbsp; <input type="text" placeholder=" Backend DATA" readonly="readonly"/> 
+                        <br/>  <br/> <br/>
+                            <label htmlFor="skill" className="mb-2 font-semibold text-gray-600">
+                            Driver Skill
                             </label>
-                            &nbsp; <input type="text" placeholder=" text"/> 
+                            &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" placeholder=" Backend DATA" readonly="readonly"/> 
                             <br/>  <br/>
                         
+    
+                          </div> 
+                    </div>
+
+                    </div>
+                    <div className="border ">
+                    <div class="flex flex-col items-center h-full justify-center p-8 text-center bg-white border-b border-gray-200 rounded-tr-lg ">
                     
-
-
-                        </blockquote>
-                        </figcaption>    
-                    </figure>
-                    <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-bl-lg md:border-b-0 md:border-r dark:bg-gray-800 dark:border-gray-700">
-                    <figcaption class="flex items-center justify-center space-x-3">
-                        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                    <div className="max-w-sm p-6 w-full h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <br/><br/>
                             <h1 class="text-lg font-semibold text-gray-900 dark:text-white">Prediction Details</h1> <br/>
-                        
-                            <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600">
-                            Reciever ID 
+                            <br/><br/>
+
+                            <label htmlFor="deliverystat" className="mb-2 font-semibold text-gray-600">
+                           Delivery Success
                             </label>
-                            &nbsp; <input type="text" placeholder=" text"/> 
-                        <br/>  <br/>
-                            <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600">
-                            Reciever ID 
-                            </label>
-                            &nbsp; <input type="text" placeholder=" text"/> 
-                            <br/>  <br/>
-                        
+                            &nbsp;  &nbsp; &nbsp;<input type="text" placeholder=" Backend DATA" readonly="readonly"/> 
+                        <br/>  <br/> <br/>
+                             
+                          </div> 
+                    </div>
+
+                    </div>
+
+                    <div className="border  ">
+                    <div class="flex flex-col items-center h-full justify-center p-8 text-center bg-white border-b border-gray-200 rounded-tr-lg ">
                     
-
-
-                        </blockquote>
-                        </figcaption>       
-                    </figure>
-
-                    <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-bl-lg md:border-b-0 md:border-r dark:bg-gray-800 dark:border-gray-700">
-                    <figcaption class="flex items-center justify-center space-x-3">
-                        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                    <div className="max-w-sm p-6 w-full h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <br/><br/>
                             <h1 class="text-lg font-semibold text-gray-900 dark:text-white">Sender Details</h1> <br/>
-                        
-                            <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600">
-                            Reciever ID 
+                            <br/><br/>
+
+                            <label htmlFor="senderMobile" className="mb-2 font-semibold text-gray-600">
+                            Sender Mobile
                             </label>
-                            &nbsp; <input type="text" placeholder=" text"/> 
-                        <br/>  <br/>
+                            &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" placeholder=" Backend DATA" readonly="readonly"/> 
+                        <br/>  <br/> <br/>
                             <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600">
-                            Reciever ID 
-                            </label>
-                            &nbsp; <input type="text" placeholder=" text"/> 
+                            Number of Pieces                            </label>
+                            &nbsp; <input type="text" placeholder=" Backend DATA" readonly="readonly"/> 
                             <br/>  <br/>
                         
-                    
+    
+                          </div> 
+                    </div>
 
-
-                        </blockquote>
-                        </figcaption>       
-                    </figure>
+                    </div>
 
                 </div>
                 
