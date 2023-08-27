@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
-import Sidepanel2 from "./sidepanel2";
+import Sidepanel from "../../components/sidepanel";
 
 
 
@@ -23,12 +23,12 @@ function MoreInfo() {
 
     return (
 
-        <div className="flex w-full h-screen main-body bg-slate-100">
-            <div className="flex h-screen main-body-container">
-                <Sidepanel2 />
+        <div className="main-body h-screen w-full bg-slate-100">
+            <div className="main-body-container w-full flex flex-row absolute">
+                <Sidepanel />
             </div>
                 {/* Card UI */}
-                 
+                <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
                 <div class=" w-full h-full grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2">
                   
                   <div className="border ">
@@ -133,6 +133,7 @@ function MoreInfo() {
 
                 </div>
                 
+        </div>
         </div>
 
 
