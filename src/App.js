@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./routes/login";
+import 'flowbite';
 import Dashboard from "./routes/Admindash";
 import CreateDelivery from "./routes/DeliveryRoutes/createDelivery";
 import UpdateDelivery from "./routes/DeliveryRoutes/updateDelivery";
@@ -14,6 +15,7 @@ import InquiryStatus from "./routes/DamageDetect/InquiryStatus";
 import AdminHome from "./routes/DamageDetect/AdminHome";
 import PackageDispatch from "./routes/DamageDetect/PackageDispatch";
 import PerformanceTrack from "./routes/DeliveryRoutes/performancetrack";
+import CustomerCharn from "./routes/DeliveryRoutes/customercharn";
 import CreateOrder from "./routes/DeliveryRoutes/createOrder";
 import ChurnRank from "./routes/DeliveryRoutes/churnRank";
 import UpdateOrder from "./routes/DeliveryRoutes/updateOrder";
@@ -50,6 +52,7 @@ function App() {
           <Route path="/tickets" element={<Tickets />} />
           <Route path="/SingleOrder/:id" element={<SingleOrder/>}/>
            <Route path="PerformanceTrack" element={<PerformanceTrack/>}/>
+           <Route path="CustomerCharn" element={<CustomerCharn/>}/>
           <Route path="/SingleOrderUpdate/:id" element={<SingleOrderUpdate/>}/>
           <Route path="CreateOrder" element={<CreateOrder/>}/>
           <Route path="ChurnRank" element={<ChurnRank/>}/>
