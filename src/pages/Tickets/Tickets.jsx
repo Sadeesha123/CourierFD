@@ -48,6 +48,7 @@ export default function Tickets() {
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
                             </Link>
+                            
                           </td>
                         </tr>
 

@@ -71,13 +71,13 @@ function Sidepanel()
             </button>
             <ul id="dropdown-example2" class="hidden py-2 space-y-2">
                   <li>
-                     <a href="/performancetrack" class="flex items-center w-full p-2 text-white hover:text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Tracker</a>
+                     <a href="/performancetracker" class="flex items-center w-full p-2 text-white hover:text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Tracker</a>
                   </li>
                   <li>
                      <a href="/CreateOrder" class="flex items-center w-full p-2 text-white hover:text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Create Order</a>
                   </li>
                   <li>
-                     <a href="/CustomerCharn" class="flex items-center w-full p-2 text-white hover:text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Customer Churn</a>
+                     <a href="/CustomerCharnTable" class="flex items-center w-full p-2 text-white hover:text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Customer Churn</a>
                   </li>
                   <li>
                      <a href="/ChurnRank" class="flex items-center w-full p-2 text-white hover:text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Churn Rank</a>
