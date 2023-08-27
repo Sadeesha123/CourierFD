@@ -45,110 +45,103 @@ function UpdateOrder() {
 
     return (
 
-        <div className="w-full h-screen main-body bg-slate-100">
+        <div className="main-body h-screen w-full bg-slate-100">
 
-            <div className="flex flex-row w-full main-body-container">
+            <div className="main-body-container w-full flex flex-row absolute">
 
                 <Sidepanel2 />
                 <div className="w-5/6 p-5 side-panel bg-slate-100">
                     {isAlertVisible ? (
                         <div className="fixed inset-0 flex items-center pl-[1000px] bg-opacity-50 bg-black/10">
                             {/* Show the alert */}
-                            <div className="p-4 rounded-lg shadow-md bg-blue-500/60">
+                            <div className="p-4 rounded-lg shadow-md bg-red-500/60">
                                 Successfully Updated
                             </div>
                         </div>
                     ) : ""}
                     <div className="flex flex-col items-center justify-center h-full p-5 common-body">
-                        <h1 className="flex items-center justify-center pb-5 text-xl uppercase">
-                            Update Order
-                        </h1>
+                        <div className="form-body md:w-[80%] w-full flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg ">
 
-                        <div className="form-body w-[50%] flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg shadow-md shadow-slate-300">
-
-                            <h1>{slug}</h1>
+                            <h1 className="flex items-center justify-center pb-5 text-xl uppercase">Customer ID :  {slug}</h1> <br/>
                             <form onSubmit={handleSubmit} className="flex flex-col w-full">
+                                <label htmlFor="customerName" className="mb-2 font-semibold text-gray-600">
+                                    Customer Name
+                                    </label>
+                                    <input type="text" id="customerName" name="customerName" className="mb-4 p-2 rounded-lg border border-gray-300" placeholder="Backend_Data" />
 
 
+                                    <label htmlFor="customerType" className="mb-2 font-semibold text-gray-600">
+                                    Customer Type
+                                    </label>
+                                    <select id="customerType" name="customerType" className="mb-4 p-2 rounded-lg border border-gray-300">
+                                    <option value="Backend Data">Backend_Data</option>
+                                      <option value="Normal">Normal</option>
+                                      <option value="Business">Business</option>
+                                     
+                                    </select>
+                                    <label htmlFor="address" className="mb-2 font-semibold text-gray-600">
+                                    Address
+                                    </label>
+                                    <input type="text" id="address" name="address" className="mb-4 p-2 rounded-lg border border-gray-300" placeholder="Backend_Data" />
 
-                                <label htmlFor="customername" className="mb-2 font-semibold text-gray-600">
-                                    Customer name
-                                </label>
-                                <input type="text" id="customername" name="customername" className="p-2 mb-4 border border-gray-300 rounded-lg" />
-
-                                <label htmlFor="customertype" className="mb-2 font-semibold text-gray-600">
-                                    Customer type
-                                </label>
-                                <select id="customertype" name="customertype" className="p-2 mb-4 border border-gray-300 rounded-lg">
-                                    <option value="car">Normal</option>
-                                    <option value="bike">Business</option>
-                                </select>
-
-                                <label htmlFor="adress" className="mb-2 font-semibold text-gray-600">
-                                    Adress
-                                </label>
-                                <input type="text" id="adress" name="adress" className="p-2 mb-4 border border-gray-300 rounded-lg" />
-
-                                <label htmlFor="email" className="mb-2 font-semibold text-gray-600">
+                                    <label htmlFor="email" className="mb-2 font-semibold text-gray-600">
                                     Email
-                                </label>
-                                <input type="text" id="email" name="email" className="p-2 mb-4 border border-gray-300 rounded-lg" />
+                                    </label>
+                                    <input type="email" id="email" name="email" className="mb-4 p-2 rounded-lg border border-gray-300" placeholder="Backend_Data" />
 
-                                <label htmlFor="province" className="mb-2 font-semibold text-gray-600">
+                                    <label htmlFor="province" className="mb-2 font-semibold text-gray-600">
                                     Province
-                                </label>
-                                <select id="province" name="province" className="p-2 mb-4 border border-gray-300 rounded-lg">
-                                    <option value="">Central</option>
-                                    <option value="">Eastern</option>
-                                    <option value="">North Central</option>
-                                    <option value="">Northern</option>
-                                    <option value="">North Western</option>
-                                    <option value="">Sabaragamuwa</option>
-                                    <option value="">Southern</option>
-                                    <option value="">Uva</option>
-                                    <option value="">Western</option>
-                                </select>
+                                    </label>
+                                    <select id="province" name="province" className="mb-4 p-2 rounded-lg border border-gray-300">
+                                    <option value="Backend Data">Backend_Data</option>
+                                      <option value="Central">Central</option>
+                                      <option value="North Central">North Central</option>
+                                      <option value="Northern">Northern</option>
+                                      <option value="Eatern">Eastern</option>
+                                      <option value="North Western">North Western</option>
+                                      <option value="Southern">Southern</option>
+                                      <option value="Uva">Uva</option>
+                                      <option value="Sabaragamuwa">Sabaragamuwa</option>
+                                      <option value="Western">Western</option>
+                                      
+                                    </select>
 
-                                <label htmlFor="itemtype" className="mb-2 font-semibold text-gray-600">
-                                    Item type
-                                </label>
-                                <select id="itemtype" name="itemtype" className="p-2 mb-4 border border-gray-300 rounded-lg">
-                                    <option value="">Food</option>
-                                    <option value="">Electronic Item</option>
-                                    <option value="">Apparel</option>
-                                    <option value="">Document</option>
-                                </select>
+                                    <label htmlFor="itemType" className="mb-2 font-semibold text-gray-600">
+                                    Item Type
+                                    </label>
+                                    <select id="itemType" name="itemType" className="mb-4 p-2 rounded-lg border border-gray-300">
+                                    <option value="Backend Data">Backend_Data</option>
+                                      <option value="Food">Food</option>
+                                      <option value="Electronic Item">Electronic Item</option>
+                                      <option value="Apparel">Apparel</option>
+                                      <option value="Document">Document</option>
+                                    </select>
 
-                                <label htmlFor="pices" className="mb-2 font-semibold text-gray-600">
-                                    No of Pices
-                                </label>
-                                <input type="text" id="pices" name="pices" className="p-2 mb-4 border border-gray-300 rounded-lg" />
-
-                                <label htmlFor="date" className="mb-2 font-semibold text-gray-600">
+                                    <label htmlFor="quantity" className="mb-2 font-semibold text-gray-600">
+                                    Quantity 
+                                    </label>
+                                    <input type="text" id="quantity" name="quantity" className="mb-4 p-2 rounded-lg border border-gray-300" placeholder="Backend_Data"/>
+                                    <label htmlFor="Date" className="mb-2 font-semibold text-gray-600">
                                     Date
-                                </label>
-                                <input type="date" id="date" name="date" className="p-2 mb-4 border border-gray-300 rounded-lg" />
+                                    </label>
+                                    <input type="date" id="date" name="date" className="mb-4 p-2 rounded-lg border border-gray-300" placeholder="Backend_Data"/>
 
-                                <label htmlFor="predays" className="mb-2 font-semibold text-gray-600">
-                                    Predetermines Days
-                                </label>
-                                <input type="text" id="predays" name="predays" className="p-2 mb-4 border border-gray-300 rounded-lg" />
 
-                                <label htmlFor="phonenumber" className="mb-2 font-semibold text-gray-600">
-                                    Phonenumber
-                                </label>
-                                <input type="text" id="phonenumber" name="phonenumber" className="p-2 mb-4 border border-gray-300 rounded-lg" />
-                                <button
-                                    onClick={openPopup}
-                                    className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                    data-modal-target="popup-modal"
-                                    data-modal-toggle="popup-modal"
-                                    type="button"
-                                >
-                                    Update
-                                </button>
+                                    <label htmlFor="preDays" className="mb-2 font-semibold text-gray-600">
+                                    Predetermined Days
+                                    </label>
+                                    <input type="text" id="preDays" name="email" className="mb-4 p-2 rounded-lg border border-gray-300" placeholder="Backend_Data" />
 
-                            </form>
+
+                                    <label htmlFor="tp" className="mb-2 font-semibold text-gray-600">
+                                    Telephone number
+                                    </label>
+                                    <input type="tel" id="tp" name="tp" className="mb-4 p-2 rounded-lg border border-gray-300"  placeholder="backend_data" />
+
+                                    <button type="submit" className="py-2 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white rounded-lg w-52 ml-auto mt-8">
+                                    Create Delivery
+                                    </button>
+                                </form>
                             {isPopupOpen &&
 
                                 <div>
