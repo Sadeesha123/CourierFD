@@ -14,8 +14,8 @@ function CustomerHome() {
 
   return (
     <div className="main-body h-screen w-full bg-slate-100">
-      
-      <div className="main-body-container h-screen w-full flex flex-row">
+      <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
+      <div className="main-body-container h-screen w-full flex flex-row absolute">
         <Sidepanel />
         <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
           <div className="common-body p-5 flex flex-col h-full items-center justify-center">
