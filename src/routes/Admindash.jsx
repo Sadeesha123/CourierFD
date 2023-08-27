@@ -131,16 +131,101 @@ function Dashboard()
                                   </div>
                               </div>
 
+                              
+
 
                             </div>
 
 
-                            
+                    <div className="bg-white mt-5 w-[80%] flex justify-center items-center">
+                    <table class="w-full text-left text-sm font-light">
+                      <thead class="border-b font-medium dark:border-neutral-500">
+                        <tr>
+                          <th scope="col" class="px-6 py-4">Order ID</th>
+                          <th scope="col" class="px-6 py-4">Destination</th>
+                          <th scope="col" class="px-6 py-4">Vehicle</th>
+                          <th scope="col" class="px-6 py-4">Status</th>
+                          <th scope="col" class="px-6 py-4">Departure Date</th>
+                          <th scope="col" class="px-6 py-4">Estimate Date</th>
+                          <th scope="col" class="px-6 py-4">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        
+                      <tr
+                          class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
+                          <td class="whitespace-nowrap px-6 py-4 font-medium">1</td>
+                          <td class="whitespace-nowrap px-6 py-4">John Doe</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                        <td class="whitespace-nowrap px-6 py-4">
+                            <Link to={"/UpdateDelivery/01"}>
+                              <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-purple-900 text-sm font-bold text-white mr-4">
+                                Update
+                                <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
+                              </button>
+                            </Link>
+                            <Link to={""}>
+                              <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-red-500 text-sm font-bold text-white mr-4">
+                                Remove
+                                <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
+                              </button>
+                            </Link>
+                            <Link to={"/ViewDelivery/01"}>
+                              <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-blue-500 text-sm font-bold text-white mr-4">
+                                View
+                                <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
+                              </button>
+                            </Link>
+                          </td>
+                        </tr>
+
+                        <tr
+                          class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
+                          <td class="whitespace-nowrap px-6 py-4 font-medium">2</td>
+                          <td class="whitespace-nowrap px-6 py-4"> Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">
+                          <Link to={"/UpdateDelivery/11"}>
+                              <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-purple-900 text-sm font-bold text-white mr-4">
+                                Update
+                                <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
+                              </button>
+                            </Link>
+                            <Link to={""}>
+                              <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-red-500 text-sm font-bold text-white mr-4">
+                                Remove
+                                <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
+                              </button>
+                            </Link>
+                            <Link to={"/ViewDelivery/11"}>
+                              <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-blue-500 text-sm font-bold text-white mr-4">
+                                View
+                                <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
+                              </button>
+                            </Link>
+                          </td>
+                        </tr>
+
+                        
+
+
+                      </tbody>
+                    </table>
+                              </div>
 
 
 
                           </div>
                         </div>
+
+                        
                         
                     </div>
             </div>
