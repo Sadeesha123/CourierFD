@@ -137,8 +137,8 @@ function Dashboard()
                             </div>
 
 
-                    <div className="bg-white mt-5 w-[80%] flex justify-center items-center">
-                    <table class="w-full text-left text-sm font-light">
+                    <div className="bg-white mt-5 w-[80%] ml-[10%] overflow-x-auto rounded-lg rounded-r-lg">
+                    <table className="w-[100%] text-left text-sm font-light rounded-lg rounded-r-lg">
                       <thead class="border-b font-medium dark:border-neutral-500">
                         <tr>
                           <th scope="col" class="px-6 py-4">Order ID</th>
