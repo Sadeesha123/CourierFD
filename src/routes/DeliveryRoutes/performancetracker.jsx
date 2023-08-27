@@ -11,7 +11,7 @@ export default function Tickets() {
           <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
 
           <div className="common-body p-5 flex flex-col h-full bg-white rounded-lg">
-            <h2 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4 mt-4 mb-4">Orders</h2>
+            <h2 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4 mt-4 mb-4">Performance Tracking Orders</h2>
 
 
             <form>   

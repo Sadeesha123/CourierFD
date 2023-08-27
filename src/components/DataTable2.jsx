@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { useTable, useGlobalFilter } from "react-table";
 
-const DataTable = ({ data }) => {
+const DataTable2 = ({ data }) => {
     // Define the table columns
     const columns = useMemo(
         () => [
@@ -14,24 +14,24 @@ const DataTable = ({ data }) => {
                 accessor: "sendname",
             },
             {
-                Header: "Receiver Name",
-                accessor: "receivename",
-            },
-            {
-                Header: "Receiver Address",
-                accessor: "receiveaddress",
+                Header: "Sender Address",
+                accessor: "senderaddress",
             },
             {
                 Header: "Province",
                 accessor: "province",
             },
             {
-                Header: "Item Type",
-                accessor: "item",
+                Header: "Last Item",
+                accessor: "lastitem",
             },
             {
-                Header: "Predetermines Days",
-                accessor: "days",
+                Header: "Feedback",
+                accessor: "feedback",
+            },
+            {
+                Header: "Charn Status",
+                accessor: "charnstatus",
             },
 
             // Add more columns as needed
@@ -60,7 +60,7 @@ const DataTable = ({ data }) => {
 
     return (
         <div className="w-5/6 side-panel p-5 md:ml-[250px] ml-16">
-        {/* <div className="w-[100%]"> */}
+        {/* // <div className="w-[100%]"> */}
             {/* <div className="flex justify-end">
                 <input
                     type="text"
@@ -85,12 +85,9 @@ const DataTable = ({ data }) => {
 </form>
 
 <br/>
-            
-
-
 
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <table className="w-full text-sm text-left  text-black" {...getTableProps()}>
+                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400" {...getTableProps()}>
                     <thead className=" text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         {headerGroups.map((headerGroup) => (
                             <tr {...headerGroup.getHeaderGroupProps()} className="" key={headerGroup.id}>
@@ -103,7 +100,7 @@ const DataTable = ({ data }) => {
                                         {column.render("Header")}
                                     </th>
                                 ))}
-                                <th>Other Informations</th>
+                                <th classname="p-3 border-[1px] border-black/50">Actions</th>
                             </tr>
                         ))}
                     </thead>
@@ -126,17 +123,8 @@ const DataTable = ({ data }) => {
                                         );
                                     })}
                                     <td className="flex gap-2 p-1 ">
-                                        <a href={`/UpdateOrder/${row.id + 1}`}>
-                                            <button class="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-2 rounded mt-3">
-                                                Update
-                                            </button>
-                                        </a>
-                                        <button
-                                            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded mt-3"
-                                            onClick={() => setShowPopup(row.id + 1)}
-                                        >
-                                            Remove
-                                        </button>
+                                        
+                                        
                                         <a href={`/MoreInfo/${row.id + 1}`}>
                                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded mt-3">
                                                 View
@@ -149,9 +137,8 @@ const DataTable = ({ data }) => {
                     </tbody>
                 </table>
             </div>
-        {/* </div> */}
         </div>
     );
 };
 
-export default DataTable;
+export default DataTable2;

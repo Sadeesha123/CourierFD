@@ -7,6 +7,7 @@ import MonthlyProgress from "../components/chart";
 import bg from '../images/bg2.jpg';
 import Calendar from 'moedim';
 
+
 function Dashboard()
 {
     const [value, setValue] = useState(new Date())

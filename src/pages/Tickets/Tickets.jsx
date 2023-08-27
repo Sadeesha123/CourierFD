@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
-import Sidepanel from "./sidepanel";
+import Sidepanel from "../../components/sidepanel";
+import bg from '../../images/mainbg1.jpg';
 
 export default function Tickets() {
     return (
       <div className="main-body h-screen w-full bg-slate-100">
-        <div className="main-body-container h-screen w-full flex flex-row">
+        <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
+        <div className="main-body-container w-full flex flex-row absolute">
           <Sidepanel />
-          <div className="w-5/6 side-panel bg-slate-100 p-5">
-            <h2 className="mb-5">All Tickets</h2>
+          <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
+
+          <div className="common-body p-5 flex flex-col h-full bg-white rounded-lg">
+            <h2 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4 mt-4">All Tickets</h2>
+
 
             <div class="flex flex-col">
               <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -43,6 +48,7 @@ export default function Tickets() {
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
                             </Link>
+                            
                           </td>
                         </tr>
 
@@ -91,6 +97,7 @@ export default function Tickets() {
             </div>
             
           </div>
+        </div>
         </div>
       </div>
     );

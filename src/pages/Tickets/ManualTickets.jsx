@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
-import Sidepanel from "./sidepanel";
+import Sidepanel from "../../components/sidepanel";
+import bg from '../../images/mainbg1.jpg';
 
 export default function ManualTickets() {
     return (
       <div className="main-body h-screen w-full bg-slate-100">
-        <div className="main-body-container h-screen w-full flex flex-row">
+            <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
+        <div className="main-body-container w-full flex flex-row absolute">
           <Sidepanel />
-          <div className="w-5/6 side-panel bg-slate-100 p-5">
-            <h2 className="mb-5">Manual Tickets</h2>
+          <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
+          <div className="common-body p-5 flex flex-col h-full bg-white rounded-lg">
+            <h2 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4 mt-4">Manual Tickets</h2>
 
             <div class="flex flex-col">
               <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -89,7 +92,7 @@ export default function ManualTickets() {
                 </div>
               </div>
             </div>
-            
+            </div>
           </div>
         </div>
       </div>

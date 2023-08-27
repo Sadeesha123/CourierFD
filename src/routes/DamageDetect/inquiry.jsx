@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
-import Sidepanel from "./sidepanel";
+import Sidepanel from "../../components/sidepanel";
+import bg from '../../images/mainbg1.jpg';
 
 function Inquiry() {
   const handleSubmit = (event) => {
@@ -22,11 +23,12 @@ function Inquiry() {
 
   return (
     <div className="main-body h-screen w-full bg-slate-100">
-      <div className="main-body-container h-screen w-full flex flex-row">
+      <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
+      <div className="main-body-container w-full flex flex-row absolute">
         <Sidepanel />
-        <div className="w-5/6 side-panel bg-slate-100 p-5">
-          <div className="common-body p-5 flex flex-col h-full items-center justify-center">
-            <div className="form-body w-[80%] flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg shadow-md shadow-slate-300">
+        <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
+          <div className="common-body p-5 flex flex-col h-full items-center">
+            <div className="form-body md:w-[80%] w-full flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg">
               <form onSubmit={handleSubmit} className="flex flex-col w-full">
                 <label
                   htmlFor="orderId"

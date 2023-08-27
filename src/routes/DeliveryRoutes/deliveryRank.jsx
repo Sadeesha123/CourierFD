@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
-import Sidepanel2 from "./sidepanel2";
+import Sidepanel from "../../components/sidepanel";
 import BarChart from "../../components/Chart2";
+import bg from '../../images/mainbg1.jpg';
 
 
 
@@ -23,10 +24,11 @@ function DeliveryRank() {
 
     return (
 
-        <div className="w-full main-body bg-slate-100">
-            <div className="flex flex-row w-full main-body-container">
-                <Sidepanel2 />
-                <div className="w-5/6 p-5 pt-10 side-panel bg-slate-100">
+        <div className="main-body h-screen w-full bg-slate-100">
+            <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
+            <div className="main-body-container w-full flex flex-row absolute">
+                <Sidepanel />
+                <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
                     
                     <div className="flex flex-col items-center justify-center h-full p-5 common-body">
 
