@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Sidepanel from "./sidepanel";
+import Sidepanel from "../../components/sidepanel";
 
 export default function Tickets() {
     return (

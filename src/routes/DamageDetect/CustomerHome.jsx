@@ -2,9 +2,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
-import Sidepanel from "./sidepanel";
+import Sidepanel from "../../components/sidepanel";
 import qr from './images/qr.jpg';
 import inq from './images/inq.jpg';
+import bg from '../../images/mainbg1.jpg';
 
 function CustomerHome() {
   const handleSubmit = (event) => {
@@ -13,6 +14,7 @@ function CustomerHome() {
 
   return (
     <div className="main-body h-screen w-full bg-slate-100">
+      
       <div className="main-body-container h-screen w-full flex flex-row">
         <Sidepanel />
         <div className="w-5/6 side-panel bg-slate-100 p-5">

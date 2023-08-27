@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import DataTable from "../../components/DataTable";
-import Sidepanel2 from "./sidepanel2";
+import Sidepanel from "../../components/sidepanel";
 import Modal from "./removePopup";
 
 
@@ -48,7 +48,9 @@ function PerformanceTrack() {
 
     <div className="flex h-screen w-screen main-body">
       <div className="flex flex-row w-auto h-screen main-body-container">
-        <Sidepanel2 />
+        <Sidepanel />
+
+        
 
       </div>
       <div className="w-full">
@@ -68,7 +70,7 @@ function PerformanceTrack() {
         
 
       </div>
-
+   
 
 
     </div>
