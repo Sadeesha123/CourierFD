@@ -13,7 +13,10 @@ export function MessageDialog(args) {
   const [open, setOpen] = React.useState(args.click);
   
   const handleOpen = () => setOpen(!open);
-  console.log(args)
+
+  const handleExit = () => {
+    window.location.href = args.link
+  }
  
   return (
     <>
@@ -43,11 +46,8 @@ export function MessageDialog(args) {
           </div>
         </DialogBody>
         <DialogFooter className="space-x-2">
-          <Button variant="outlined" color="red" onClick={handleOpen}>
-            close
-          </Button>
-          <Button variant="outlined" color="green" onClick={handleOpen}>
-          send message
+          <Button variant="outlined" color="red" onClick={handleExit}>
+            Exit
           </Button>
         </DialogFooter>
       </Dialog>
