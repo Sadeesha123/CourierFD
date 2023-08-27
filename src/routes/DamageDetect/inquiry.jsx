@@ -79,7 +79,7 @@ function Inquiry() {
                   type="file"
                   id="images"
                   name="images"
-                  className="mb-4 p-2 rounded-lg border border-gray-300"
+                  className="mb-4 py-2 pl-5 file:rounded-lg rounded-lg border border-gray-300"
                   accept="image/*"
                   multiple
                   onChange={handleImageUpload}
