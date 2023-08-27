@@ -10,11 +10,11 @@ function SingleTicket() {
    
 return(
 
-  <div className="flex h-screen w-screen main-body">
-    <div className="flex flex-row w-auto h-screen main-body-container">
+  <div className="main-body h-screen w-full ">
+    <div className="main-body-container w-full flex flex-row absolute">
       <Sidepanel />
-
-    </div>
+      <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
+   
 
     <div className="flex flex-row w-full overflow-y-auto"> 
 
@@ -279,9 +279,13 @@ return(
         {/* div 5 end */}
       
       </div>
-        
+      </div>
     </div>
   </div>
+  </div>
+
+  
+
 
   );
 }
