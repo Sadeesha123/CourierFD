@@ -102,7 +102,7 @@ export default function Tickets() {
 
                         {popUpStatus &&
                           <div>
-                            <MessageDialog click={true} link={`/MoreInfo/1`}/>
+                            <MessageDialog click={true} link={`/CustomerCharnTable`}/>
                           </div>
                         }
 

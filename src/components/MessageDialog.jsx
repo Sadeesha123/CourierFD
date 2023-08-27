@@ -15,7 +15,7 @@ export function MessageDialog(args) {
   const handleOpen = () => setOpen(!open);
 
   const handleExit = () => {
-    window.location.href = args.link
+    setOpen(false)
   }
  
   return (
