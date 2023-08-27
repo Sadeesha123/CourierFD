@@ -153,7 +153,7 @@ function Sidepanel()
         
       </ul>
 
-      <div class=" flex justify-between items-center w-full mt-64">
+      <div class=" flex justify-between items-center w-full mt-72">
       <div class="flex justify-center items-center  space-x-2 ml-2 ">
         <div>
           <img class="rounded-full" src="https://i.ibb.co/L1LQtBm/Ellipse-1.png" alt="avatar" />
