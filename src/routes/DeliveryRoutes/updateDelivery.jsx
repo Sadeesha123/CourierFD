@@ -54,7 +54,9 @@ function UpdateDelivery()
                           <div className="common-body p-5 flex flex-col h-full items-center ">
 
                             <div className="form-body md:w-[80%] w-full flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg ">
+                            <h1 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4">
                                 Update Delivery
+                            </h1>
                             <form onSubmit={handleSubmit} className="flex flex-col w-full">
                                 <label htmlFor="customerId" className="mb-2 font-semibold text-gray-600">
                                     Customer ID

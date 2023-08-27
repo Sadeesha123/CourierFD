@@ -40,8 +40,8 @@ function App() {
           <Route index path="/" element={<Login/>}/>
           <Route path="/Dashboard" element={<Dashboard/>}/>
           <Route path="/CreateDelivery" element={<CreateDelivery/>}/>
-          <Route path="/UpdateDelivery" element={<UpdateDelivery/>}/>
-          <Route path="/ViewDelivery" element={<ViewDelivery/>}/>
+          <Route path="/UpdateDelivery/:id" element={<UpdateDelivery/>}/>
+          <Route path="/ViewDelivery/:id" element={<ViewDelivery/>}/>
           <Route path="/Orders" element={<Orders/>}/>
           <Route path="/RoutePlanning" element={<RoutePlanning/>}/>
           <Route path="/CustomerHome" element={<CustomerHome/>}/>
