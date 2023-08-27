@@ -1,140 +1,129 @@
-import {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import Sidepanel from "../../components/sidepanel";
-import { post } from "../../Api";
-import bg from '../../images/mainbg.jpg';
+import bg from '../../images/mainbg1.jpg';
+
+export default function Tickets() {
+    return (
+      <div className="main-body h-screen w-full bg-slate-100">
+        <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
+        <div className="main-body-container w-full flex flex-row absolute">
+          <Sidepanel />
+          <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
+
+          <div className="common-body p-5 flex flex-col h-full bg-white rounded-lg">
+            <h2 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4 mt-4 mb-4">Orders</h2>
 
 
-function Orders()
-{
-    const [stopL, setStopL] = useState(true);
-    const [selectedImage, setSelectedImage] = useState(null);
-    const [rows, setRows] = useState([]);
+            <form>   
+    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+    <div class="relative">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+        </div>
+        <input type="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Orders....." required/>
+        <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+    </div>
+</form>
 
-    const handleImageChange = (event) => {
-      const file = event.target.files[0];
-      setSelectedImage(file);
-    };
-   
-    const getData = async () =>{
-        try {
-            const response = await post('/api/order/table', {}, {});
-                if(response){
-                    console.log(response)
-                    setRows(response.table)
-                }
-            
-        } catch (error) {
-            console.error(error);
-        }
-    }
+<br/>
 
-    useEffect(() => {
-        if(stopL){
-            getData();
-            setStopL(false)
-        }
-        
-      }, []);
+            <div class="flex flex-col">
+              <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+                  <div class="overflow-hidden">
+                    <table class="min-w-full text-left text-sm font-light">
+                      <thead class="border-b font-medium dark:border-neutral-500">
+                        <tr>
+                          <th scope="col" class="px-6 py-4">#ID</th>
+                          <th scope="col" class="px-6 py-4">Sender Name</th>
+                          <th scope="col" class="px-6 py-4">Receiver Name</th>
+                          <th scope="col" class="px-6 py-4">Receiver Address</th>
+                          <th scope="col" class="px-6 py-4">Province</th>
+                          <th scope="col" class="px-6 py-4">Item Type</th>
+                          <th scope="col" class="px-6 py-4">Predetermine's Day</th>
+                          <th scope="col" class="px-6 py-4">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
 
-    const deleteData = async (id) =>{
-        try {
-            const response = await post('/api/order/delete', {id:id}, {});
-                if(response){
-                    console.log(response)
-                    getData();
-                    //setRows(response.table)
-                }
-            
-        } catch (error) {
-             console.error(id);
-        }
-    }
-
-    return(
-
-            <div className="main-body h-screen w-full bg-slate-100">
-              <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%]" />
-                    <div className="main-body-container h-screen w-full flex flex-row absolute top-0 bg-black bg-opacity-50">
-                        <Sidepanel/>
-                        <div className="w-5/6 side-panel  p-5 sm:ml-[300px] ml-12 lg:ml-[300px]">
-                          <div className="common-body p-5 flex flex-col h-full">
-
-                            <div className="table-container sm:w-[90%] flex flex-row h-full  mx-auto justify-between">
-                                
-                               
-                                <div className="table-body w-full backdrop-blur-md ">
-                                        <table className="w-full text-center">
-                                            <th className="font-medium p-2 text-white bg-[#d7002a] text-[10px] md:text-[1rem]">Destination</th>
-                                            <th className="font-medium p-2 text-white bg-[#d7002a] text-[10px] md:text-[1rem]">Order ID</th>
-                                            <th className="font-medium p-2 text-white bg-[#d7002a] text-[10px] md:text-[1rem]">Vehicle</th>
-                                            <th className="font-medium p-2 text-white bg-[#d7002a] text-[10px] md:text-[1rem]">Status</th>
-                                            <th className="font-medium p-2 text-white bg-[#d7002a] text-[10px] md:text-[1rem]">Departure Date</th>
-                                            <th className="font-medium p-2 text-white  bg-[#d7002a] text-[10px] md:text-[1rem]">Estimated Date</th>
-                                            <th className="font-medium p-2 text-white  bg-[#d7002a] text-[10px] md:text-[1rem]">Action</th>
-                                        
-
-                                            <tbody className="">
-
-                                                { rows.map( (row) => { return(
-                                                    <tr className="leading-[25px] mt-[20px] border-b " key={row.order_id}>
-                                                        <td className="Destination p-2" >
-                                                            {row.destination}
-                                                        </td>
-                                                        <td className="Order-ID p-2" >
-                                                            #{row.order_id}
-                                                        </td>
-                                                        <td className="Vehicle p-2" >
-                                                            {row.vehicle}
-                                                        </td>
-                                                        <td className="Status p-2 text-red-600" >
-                                                            {row.status}
-                                                        </td>
-                                                        <td className="Departure-Date p-2" >
-                                                            {row.departure_date}
-                                                        </td>
-                                                        <td className="Estimated-Date p-2" >
-                                                            {row.date}
-                                                        </td>
-
-                                                        <td className="Estimated-Date p-2" >
-                                                            <div className="flex flex-row justify-center space-x-5">
-                                                                    <Link to={"/SingleOrderUpdate/"+row.id}><button className="px-3 py-2 bg-sky-500 rounded-md">UPDATE</button></Link>
-                                                                    <button onClick={()=>deleteData(row.id)} className="px-3 py-2 bg-red-500 rounded-md">REMOVE</button>
-                                                                    <Link to={"/SingleOrder/"+row.id}><button className="px-3 py-2 bg-green-500 rounded-md">INFO</button></Link>
-                                                            </div>
-                                                        </td>
-
-
-                                                    </tr>
-                                                )}
-                                            )}
-
-                                               
-                                                
-                                            </tbody>
-
-
-
-                                        </table>
-                                </div>
-
-                                
-
-
-                            </div>
-
-
-                          </div>
-                        </div>
                         
-                    </div>
-            </div>
+                      <tr
+                          class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
+                          <td class="whitespace-nowrap px-6 py-4 font-medium">1</td>
+                          <td class="whitespace-nowrap px-6 py-4">John Doe</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                        <td class="whitespace-nowrap px-6 py-4">
+                            <Link to={"/UpdateOrder/01"}>
+                              <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-purple-900 text-sm font-bold text-white mr-4">
+                                Update
+                                <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
+                              </button>
+                            </Link>
+                            <Link to={""}>
+                              <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-red-500 text-sm font-bold text-white mr-4">
+                                Remove
+                                <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
+                              </button>
+                            </Link>
+                            <Link to={"/MoreInfo/01"}>
+                              <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-blue-500 text-sm font-bold text-white mr-4">
+                                View
+                                <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
+                              </button>
+                            </Link>
+                          </td>
+                        </tr>
 
+                        <tr
+                          class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
+                          <td class="whitespace-nowrap px-6 py-4 font-medium">2</td>
+                          <td class="whitespace-nowrap px-6 py-4"> Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">
+                          <Link to={"/UpdateOrder/11"}>
+                              <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-purple-900 text-sm font-bold text-white mr-4">
+                                Update
+                                <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
+                              </button>
+                            </Link>
+                            <Link to={""}>
+                              <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-red-500 text-sm font-bold text-white mr-4">
+                                Remove
+                                <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
+                              </button>
+                            </Link>
+                            <Link to={"/MoreInfo/11"}>
+                              <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-blue-500 text-sm font-bold text-white mr-4">
+                                View
+                                <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
+                              </button>
+                            </Link>
+                          </td>
+                        </tr>
+
+                        
+
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        </div>
+      </div>
     );
 }
-
-
-export default Orders;
