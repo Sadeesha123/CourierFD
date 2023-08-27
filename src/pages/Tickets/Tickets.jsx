@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import Sidepanel from "../../components/sidepanel";
+import bg from '../../images/mainbg1.jpg';
 
 export default function Tickets() {
     return (
       <div className="main-body h-screen w-full bg-slate-100">
+        <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
         <div className="main-body-container w-full flex flex-row absolute">
           <Sidepanel />
           <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
+
+          <div className="common-body p-5 flex flex-col h-full bg-white rounded-lg">
             <h2 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4 mt-4">All Tickets</h2>
 
 
@@ -92,6 +96,7 @@ export default function Tickets() {
             </div>
             
           </div>
+        </div>
         </div>
       </div>
     );
