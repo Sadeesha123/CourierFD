@@ -11,7 +11,7 @@ export default function Tickets() {
           <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
 
           <div className="common-body p-5 flex flex-col h-full bg-white rounded-lg">
-            <h2 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4 mt-4 mb-4">Orders</h2>
+            <h2 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4 mt-4 mb-4">Performance Tracking Orders</h2>
 
 
             <form>   
@@ -36,12 +36,13 @@ export default function Tickets() {
                     <table class="min-w-full text-left text-sm font-light">
                       <thead class="border-b font-medium dark:border-neutral-500">
                         <tr>
-                          <th scope="col" class="px-6 py-4">Order ID</th>
-                          <th scope="col" class="px-6 py-4">Destination</th>
-                          <th scope="col" class="px-6 py-4">Vehicle</th>
-                          <th scope="col" class="px-6 py-4">Status</th>
-                          <th scope="col" class="px-6 py-4">Departure Date</th>
-                          <th scope="col" class="px-6 py-4">Estimate Date</th>
+                          <th scope="col" class="px-6 py-4">#ID</th>
+                          <th scope="col" class="px-6 py-4">Sender Name</th>
+                          <th scope="col" class="px-6 py-4">Receiver Name</th>
+                          <th scope="col" class="px-6 py-4">Receiver Address</th>
+                          <th scope="col" class="px-6 py-4">Province</th>
+                          <th scope="col" class="px-6 py-4">Item Type</th>
+                          <th scope="col" class="px-6 py-4">Predetermine's Day</th>
                           <th scope="col" class="px-6 py-4">Action</th>
                         </tr>
                       </thead>
@@ -56,8 +57,9 @@ export default function Tickets() {
                           <td class="whitespace-nowrap px-6 py-4">Test</td>
                           <td class="whitespace-nowrap px-6 py-4">Test</td>
                           <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
                         <td class="whitespace-nowrap px-6 py-4">
-                            <Link to={"/UpdateDelivery/01"}>
+                            <Link to={"/UpdateOrder/01"}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-purple-900 text-sm font-bold text-white mr-4">
                                 Update
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
@@ -69,7 +71,7 @@ export default function Tickets() {
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
                             </Link>
-                            <Link to={"/ViewDelivery/01"}>
+                            <Link to={"/MoreInfo/01"}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-blue-500 text-sm font-bold text-white mr-4">
                                 View
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
@@ -86,8 +88,9 @@ export default function Tickets() {
                           <td class="whitespace-nowrap px-6 py-4">Test</td>
                           <td class="whitespace-nowrap px-6 py-4">Test</td>
                           <td class="whitespace-nowrap px-6 py-4">Test</td>
+                          <td class="whitespace-nowrap px-6 py-4">Test</td>
                           <td class="whitespace-nowrap px-6 py-4">
-                          <Link to={"/UpdateDelivery/11"}>
+                          <Link to={"/UpdateOrder/11"}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-purple-900 text-sm font-bold text-white mr-4">
                                 Update
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
@@ -99,7 +102,7 @@ export default function Tickets() {
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
                             </Link>
-                            <Link to={"/ViewDelivery/11"}>
+                            <Link to={"/MoreInfo/11"}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-blue-500 text-sm font-bold text-white mr-4">
                                 View
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>

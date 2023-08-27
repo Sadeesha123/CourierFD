@@ -2,9 +2,10 @@ import {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
-import Sidepanel from "./sidepanel";
+import Sidepanel from "../../components/sidepanel";
 import { post } from "../../Api";
 import bg from '../../images/mainbg1.jpg';
+
 
 
 function CreateDelivery()
@@ -54,7 +55,9 @@ function CreateDelivery()
                           <div className="common-body p-5 flex flex-col h-full items-center ">
 
                             <div className="form-body md:w-[80%] w-full flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg ">
-                                Create Delivery   
+                            <h1 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4">
+                                Create Delivery
+                            </h1>
                             <form onSubmit={handleSubmit} className="flex flex-col w-full">
                                 <label htmlFor="customerId" className="mb-2 font-semibold text-gray-600">
                                     Customer ID
@@ -104,7 +107,7 @@ function CreateDelivery()
                                       <option value="truck">Truck</option>
                                     </select>
 
-                                    <button type="submit" className="py-2 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white rounded-lg w-52 ml-auto mt-8">
+                                    <button type="submit" className="py-2 px-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg w-52 ml-auto mt-8">
                                     Create Delivery
                                     </button>
                                 </form>

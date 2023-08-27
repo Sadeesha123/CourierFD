@@ -1,8 +1,8 @@
-import Sidepanel from "./sidepanel";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import bg from '../../images/mainbg.jpg';
 import ai from '../../images/ai.gif';
+import Sidepanel from "../../components/sidepanel";
 
 
 function SingleTicket() {

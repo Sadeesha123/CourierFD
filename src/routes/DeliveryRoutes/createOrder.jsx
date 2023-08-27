@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
-import Sidepanel2 from "./sidepanel2";
+import Sidepanel from "../../components/sidepanel";
 import bg from '../../images/mainbg1.jpg';
 
 
@@ -27,11 +27,11 @@ function CreateOrder() {
 
     return (
 
-        <div className="w-full h-screen main-body bg-slate-100">
+        <div className="main-body h-screen w-full bg-slate-100">
              <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
              <div className="main-body-container w-full flex flex-row absolute">
-                <Sidepanel2 />
-                <div className="w-5/6 side-panel">
+                <Sidepanel />
+                <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
                     
                     <div className="flex flex-col items-center justify-center gap-5 p-5 common-body">
 
@@ -39,9 +39,7 @@ function CreateOrder() {
 
                             <form onSubmit={handleSubmit} className="flex flex-col w-full">
 
-                            <h1 className="flex items-center justify-center font-bold pt-4 text-xl uppercase">
-                                Create order
-                            </h1>
+               
 
                                 <h1 className="flex items-center justify-center p-5 font-semibold uppercase text-md">Sender Details</h1>
 
@@ -163,7 +161,7 @@ function CreateOrder() {
                             </form>
                         
 
-                        <button type="submit" className="py-2 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white rounded-lg w-52 ml-auto mt-8" onClick={handleSubmit}>
+                        <button type="submit" className="py-2 px-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg w-52 ml-auto mt-8" onClick={handleSubmit}>
                             Create
                         </button>
 

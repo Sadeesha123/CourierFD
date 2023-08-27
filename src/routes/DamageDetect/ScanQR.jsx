@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
-import Sidepanel from "./sidepanel";
+import Sidepanel from "../../components/sidepanel";
 import qr from './images/qr.jpg';
 import inq from './images/inq.jpg';
 

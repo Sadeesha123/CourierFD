@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
-import Sidepanel from "./sidepanel";
+import Sidepanel from "../../components/sidepanel";
 import { post } from "../../Api";
 import bg from '../../images/mainbg1.jpg';
 
@@ -52,7 +52,9 @@ function ViewDelivery()
                           <div className="common-body p-5 flex flex-col h-full items-center ">
 
                             <div className="form-body md:w-[80%] w-full flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg ">
+                            <h1 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4">
                                 View Delivery
+                            </h1>
                             <form className="flex flex-col w-full">
                                 <label htmlFor="customerId" className="mb-2 font-semibold text-gray-600">
                                     Customer ID

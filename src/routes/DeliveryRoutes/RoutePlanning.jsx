@@ -2,7 +2,7 @@ import {useState} from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
-import Sidepanel from "./sidepanel";
+import Sidepanel from "../../components/sidepanel";
 import Gmap from "../../components/Gmap";
 import bg2 from '../../images/bg2.jpg';
 
@@ -34,15 +34,18 @@ function RoutePlanning()
                                 
                              <div className="map sm:w-[60%] w-full text-center p-2 h-full">
                               
-                                <span>G-MAP will appear here</span>
-                                <div className="p-2 h-[200px] sm:h-[400px] bg-slate-400">
-
+                             <h1 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4">
+                                Google Map
+                            </h1>
+                                {/* <span>G-MAP will appear here</span> */}
+                                <div className="p-2 h-[200px] sm:h-[400px] bg-slate-400 mr-8">
+                                <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no" src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed" ></iframe>
                                 </div>
                              </div>
 
-                             <div className="order-details flex flex-col space-y-[20px]">
-                             <form onSubmit={handleSubmit} className="flex flex-col w-full">
-                                <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600">
+                             <div className="order-details flex flex-col space-y-[20px] ">
+                             <form onSubmit={handleSubmit} className="flex flex-col w-full ">
+                                <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600 ">
                                 Order ID
                                 </label>
                                 <input type="text" id="orderId" name="orderId" className="mb-4 p-2 rounded-lg border border-gray-300" />
@@ -58,8 +61,8 @@ function RoutePlanning()
                                 Delivery
                                 </label>
                                 <input type="text" id="delivery" name="delivery" className="mb-4 p-2 rounded-lg border border-gray-300" />
-                                <button type="submit" className="py-2 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white rounded-lg w-52 ml-auto mt-8">
-                                    Generate QR
+                                <button type="submit" className="py-2 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white rounded-lg w-52 ml-auto mt-8 ml-4">
+                                    Route
                                   </button>
                                 {/* <span>Order Id : #TJH097</span>
                                 <span>Pick Up</span>

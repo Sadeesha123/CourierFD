@@ -2,7 +2,8 @@ import {useState,useEffect} from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
-import Sidepanel from "./sidepanel";
+import Sidepanel from "../../components/sidepanel";
+import bg from '../../images/mainbg1.jpg';
 
 import {
     BrowserRouter as Router,
@@ -90,10 +91,11 @@ function SingleOrderUpdate()
     return(
 
             <div className="main-body h-screen w-full bg-slate-100">
-                    <div className="main-body-container w-full flex flex-row">
+                    <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
+                    <div className="main-body-container w-full flex flex-row absolute">
                         <Sidepanel/>
-                        <div className="w-5/6 side-panel bg-slate-100 p-5">
-                          <div className="common-body p-5 flex flex-col h-full items-center justify-center">
+                        <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
+                          <div className="common-body p-5 flex flex-col h-full items-center ">
 
                             <div className="form-body w-[60%] flex flex-col p-5 mx-auto  justify-left bg-white rounded-lg shadow-md shadow-slate-300">
                                 
@@ -143,7 +145,7 @@ function SingleOrderUpdate()
                                     <option value="Delivered">Delivered</option>
                                     </select>
 
-                                   <button onClick={handleUpdate} className="py-2 px-4 bg-blue-500 text-white rounded-lg w-full" >
+                                   <button onClick={handleUpdate} className="py-2 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white rounded-lg w-52 ml-auto mt-8">
                                     Update
                                     </button>
                                 </form>

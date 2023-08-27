@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./routes/login";
+import 'flowbite';
 import Dashboard from "./routes/Admindash";
 import CreateDelivery from "./routes/DeliveryRoutes/createDelivery";
 import UpdateDelivery from "./routes/DeliveryRoutes/updateDelivery";
@@ -14,6 +15,9 @@ import InquiryStatus from "./routes/DamageDetect/InquiryStatus";
 import AdminHome from "./routes/DamageDetect/AdminHome";
 import PackageDispatch from "./routes/DamageDetect/PackageDispatch";
 import PerformanceTrack from "./routes/DeliveryRoutes/performancetrack";
+import PerformanceTracker from "./routes/DeliveryRoutes/performancetracker";
+import CustomerCharn from "./routes/DeliveryRoutes/customercharn";
+import CustomerCharnTable from "./routes/DeliveryRoutes/customercharntable";
 import CreateOrder from "./routes/DeliveryRoutes/createOrder";
 import ChurnRank from "./routes/DeliveryRoutes/churnRank";
 import UpdateOrder from "./routes/DeliveryRoutes/updateOrder";
@@ -36,8 +40,8 @@ function App() {
           <Route index path="/" element={<Login/>}/>
           <Route path="/Dashboard" element={<Dashboard/>}/>
           <Route path="/CreateDelivery" element={<CreateDelivery/>}/>
-          <Route path="/UpdateDelivery" element={<UpdateDelivery/>}/>
-          <Route path="/ViewDelivery" element={<ViewDelivery/>}/>
+          <Route path="/UpdateDelivery/:id" element={<UpdateDelivery/>}/>
+          <Route path="/ViewDelivery/:id" element={<ViewDelivery/>}/>
           <Route path="/Orders" element={<Orders/>}/>
           <Route path="/RoutePlanning" element={<RoutePlanning/>}/>
           <Route path="/CustomerHome" element={<CustomerHome/>}/>
@@ -50,6 +54,9 @@ function App() {
           <Route path="/tickets" element={<Tickets />} />
           <Route path="/SingleOrder/:id" element={<SingleOrder/>}/>
            <Route path="PerformanceTrack" element={<PerformanceTrack/>}/>
+           <Route path="PerformanceTracker" element={<PerformanceTracker/>}/>
+           <Route path="CustomerCharn" element={<CustomerCharn/>}/>
+           <Route path="CustomerCharnTable" element={<CustomerCharnTable/>}/>
           <Route path="/SingleOrderUpdate/:id" element={<SingleOrderUpdate/>}/>
           <Route path="CreateOrder" element={<CreateOrder/>}/>
           <Route path="ChurnRank" element={<ChurnRank/>}/>

@@ -2,7 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
-import Sidepanel2 from "./sidepanel2";
+import Sidepanel from "../../components/sidepanel";
+import {MessageDialog} from "../../components/MessageDialog";
+
 
 
 
@@ -23,130 +25,118 @@ function MoreInfo() {
 
     return (
 
-        <div className="flex w-full h-screen main-body bg-slate-100">
-            <div className="flex h-screen main-body-container">
-                <Sidepanel2 />
+        <div className="main-body h-screen w-full bg-slate-100">
+            <div className="main-body-container w-full flex flex-row absolute">
+                <Sidepanel />
             </div>
-            <div className="flex items-center justify-center">
+            {/* <MessageDialog click={true}/> */}
+                {/* Card UI */}
+                <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
+                <div class=" w-full h-full grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2">
+                  
+                  <div className="border ">
+                    <div class="flex flex-col items-center justify-center px-8 py-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-tl-lg md:border-r   w-full h-full">
+                        
+                        <div className="max-w-sm p-6 w-full h-full bg-white border border-gray-200 rounded-lg shadow bg-[#E5E4E2] dark:border-gray-700">
 
+                            <br/>
 
-                <div className="flex items-center justify-center pt-20 pl-20">
-                    <div className="relative py-3 pl-16 sm:max-w-xl sm:mx-auto">
-                        <div className="relative px-4 w-[400px] py-10 mx-8 bg-white shadow md:mx-0 rounded-3xl sm:p-10">
-                            <div className="max-w-md mx-auto">
-                                <div className="flex items-center space-x-5">
-                                    <div className="self-start block pl-2 text-xl font-semibold text-gray-700">
-                                        <h2 className="leading-relaxed">Customer ID</h2>
-                                    </div>
-                                </div>
-                                <div className="divide-y divide-gray-200">
-                                    <div className="py-8 space-y-4 text-base leading-6 text-gray-700 sm:text-lg sm:leading-7">
-                                        <div className="flex justify-between">
-                                            <span className="font-semibold">Trafic Condition :</span>
-                                            <span>Test</span>
-                                        </div>
+                            <h1 class="text-lg font-semibold text-gray-900 first-line:text-black">Reciever Information</h1> <br/>
+                            <br/><br/>
 
-                                        <div className="flex justify-between">
-                                            <span className="font-semibold">Diliver Skill:</span>
-                                            <span>Test</span>
-                                        </div>
-                                        <div className="flex justify-between">
-                                            <span className="font-semibold">Reciever Name:</span>
-                                            <span>Test</span>
-                                        </div>
-                                        <div className="flex justify-between">
-                                            <span className="font-semibold">Email:</span>
-                                            <span>Test</span>
-                                        </div>
-                                        <div className="flex justify-between pb-2">
-                                            <span className="font-semibold">Mobile No:</span>
-                                            <span>Test</span>
-                                        </div>
-                                        {/* Add more invoice details as needed */}
-                                    </div>
-                                </div>
+                            <label htmlFor="recieverId" className="mb-2 font-semibold text-gray-600">
+                            Reciever ID 
+                            </label>
+                            &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; <input className=" rounded-sm border border-gray-300" type="text" placeholder=" Backend DATA" readonly="readonly"/> 
+                            <br/>  <br/> <br/>
+                            <label htmlFor="email" className="mb-2 font-semibold text-gray-600">
+                            Email
+                            </label>
+                            &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" className=" rounded-sm border border-gray-300" placeholder="Backend DATA" readonly="readonly"/> 
+                            <br/>  <br/> <br/>
+                            <label htmlFor="mobileNumber" className="mb-2 font-semibold text-gray-600">
+                            Mobile Number
+                            </label>
+                            &nbsp;  &nbsp;<input type="text" className=" rounded-sm border border-gray-300" placeholder="Backend DATA" readonly="readonly"/> 
                             </div>
-                        </div>
-                    </div>
-
-                    <div className="flex items-center justify-center ">
-                        <h1 className="absolute pl-16 text-xl font-bold top-20">More information</h1>
-                        <div className="relative py-3 pl-16 sm:max-w-xl sm:mx-auto">
-                            <div className="relative px-4 w-[400px] py-10 mx-8 bg-white shadow md:mx-0 rounded-3xl sm:p-10">
-
-                                <div className="max-w-md mx-auto">
-                                    <div className="flex items-center space-x-5">
-                                        <div className="self-start block pl-2 text-xl font-semibold text-gray-700">
-                                            <h2 className="leading-relaxed">Last Courier Info</h2>
-                                        </div>
-                                    </div>
-                                    <div className="divide-y divide-gray-200">
-                                        <div className="py-8 space-y-4 text-base leading-6 text-gray-700 sm:text-lg sm:leading-7">
-                                            <div className="flex justify-between">
-                                                <span className="font-semibold">Item Type:</span>
-                                                <span>Test</span>
-                                            </div>
-                                            <div className="flex justify-between">
-                                                <span className="font-semibold">Item Status:</span>
-                                                <span>Test</span>
-                                            </div>
-                                            <div className="flex justify-between">
-                                                <span className="font-semibold">Ontime Delivered:</span>
-                                                <span>Test</span>
-                                            </div>
-                                            <div className="flex justify-between pb-2">
-                                                <span className="font-semibold">Last Delivery Status:</span>
-                                                <span>Test</span>
-                                            </div>
-                                            <div className="flex justify-between pb-2">
-                                                <span className="font-semibold">Final Feedback:</span>
-                                                <span>Test</span>
-                                            </div>
-                                            {/* Add more invoice details as needed */}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            
+                            
+                        
+                        
+                        </div> 
 
                     </div>
 
+                    <div className="border ">
+                    <div class="flex flex-col items-center h-full justify-center p-8 text-center bg-white border-b border-gray-200 rounded-tr-lg">
+                    
+                    <div className="max-w-sm p-6 w-full h-full bg-white border border-gray-200 rounded-lg shadow bg-[#E5E4E2] dark:border-gray-700">
+                    <br/><br/>
+                            <h1 class="text-lg font-semibold text-gray-900 text-dark">Traffic Details</h1> <br/>
+                            <br/><br/>
 
-
-                    <div className="relative flex flex-col gap-5 py-3 pl-16 sm:max-w-xl sm:mx-auto">
-                        <div className="relative px-4 w-[400px] py-10 mx-8 bg-white shadow md:mx-0 rounded-3xl sm:p-10">
-
-                            <div className="max-w-md mx-auto">
-                                <div className="flex items-center space-x-5">
-                                    <div className="self-start block pl-2 text-xl font-semibold text-gray-700">
-                                        <h2 className="leading-relaxed">Prediction</h2>
-                                    </div>
-                                </div>
-                                <div className="divide-y divide-gray-200">
-                                    <div className="py-8 space-y-4 text-base leading-6 text-gray-700 sm:text-lg sm:leading-7">
-                                        <div className="flex justify-between">
-                                            <span className="font-semibold">Delivery Success :</span>
-                                            <span>Test</span>
-                                        </div>
-                                        <div className="flex justify-between">
-                                            <span className="font-semibold">Customer Churn:</span>
-                                            <span>Test</span>
-                                        </div>
-
-                                        {/* Add more invoice details as needed */}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="flex items-end justify-end pt-20 ">
-                            <a href="/PerformanceTrack" > <button type="submit" className="px-8 py-2 font-bold text-white bg-red-700 rounded-2xl hover:bg-red-500">
-                                Exit
-                            </button>
-                            </a>
-                        </div>
+                            <label htmlFor="trafficCondition" className="mb-2 font-semibold text-gray-600">
+                            Traffic Condition 
+                            </label>
+                            &nbsp; <input type="text" className=" rounded-sm border border-gray-300" placeholder=" Backend DATA" readonly="readonly"/> 
+                        <br/>  <br/> <br/>
+                            <label htmlFor="skill" className="mb-2 font-semibold text-gray-600">
+                            Driver Skill
+                            </label>
+                            &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" className=" rounded-sm border border-gray-300" placeholder=" Backend DATA" readonly="readonly"/> 
+                            <br/>  <br/>
+                        
+    
+                          </div> 
                     </div>
+
+                    </div>
+                    <div className="border ">
+                    <div class="flex flex-col items-center h-full justify-center p-8 text-center bg-white border-b border-gray-200 rounded-tr-lg ">
+                    
+                    <div className="max-w-sm p-6 w-full h-full bg-white border border-gray-200 rounded-lg shadow bg-[#E5E4E2] dark:border-gray-700">
+                    <br/><br/>
+                            <h1 class="text-lg font-semibold text-gray-900 text-dark">Prediction Details</h1> <br/>
+                            <br/><br/>
+
+                            <label htmlFor="deliverystat" className="mb-2 font-semibold text-gray-600">
+                           Delivery Success
+                            </label>
+                            &nbsp;  &nbsp; &nbsp;<input type="text"  className=" rounded-sm border border-gray-300" placeholder=" Backend DATA" readonly="readonly"/> 
+                        <br/>  <br/> <br/>
+                             
+                          </div> 
+                    </div>
+
+                    </div>
+
+                    <div className="border  ">
+                    <div class="flex flex-col items-center h-full justify-center p-8 text-center bg-white border-b border-gray-200 rounded-tr-lg ">
+                    
+                    <div className="max-w-sm p-6 w-full h-full bg-white border border-gray-200 rounded-lg shadow bg-[#E5E4E2] dark:border-gray-700">
+                    <br/><br/>
+                            <h1 class="text-lg font-semibold text-gray-900 text-dark">Sender Details</h1> <br/>
+                            <br/><br/>
+
+                            <label htmlFor="senderMobile" className="mb-2 font-semibold text-gray-600">
+                            Sender Mobile
+                            </label>
+                            &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" className=" rounded-sm border border-gray-300" placeholder=" Backend DATA" readonly="readonly"/> 
+                        <br/>  <br/> <br/>
+                            <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600">
+                            Number of Pieces                            </label>
+                            &nbsp; <input type="text" placeholder=" Backend DATA" className=" rounded-sm border border-gray-300" readonly="readonly"/> 
+                            <br/>  <br/>
+                        
+    
+                          </div> 
+                    </div>
+
+                    </div>
+
                 </div>
-            </div>
+                
+        </div>
         </div>
 
 
