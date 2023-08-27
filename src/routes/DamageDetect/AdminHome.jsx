@@ -26,7 +26,7 @@ function AdminHome() {
 
   return (
     <div className="main-body h-screen w-full bg-slate-100">
-      <div className="main-body-container h-screen w-full flex flex-row">
+      <div className="main-body-container w-full flex flex-row">
         <AdminSidepanel />
         <div className="w-5/6 side-panel bg-slate-100 p-5">
           <div className="common-body p-5 flex flex-col h-full items-center justify-center">
