@@ -21,7 +21,7 @@ export function MessageDialog(args) {
   return (
     <>
       <Button onClick={handleOpen}>Message Dialog</Button>
-      <Dialog open={open} handler={handleOpen}>
+      <Dialog open={open} handler={handleOpen} style={{ width: '30%', height: '50%', margin: 'auto' }}>
         <div className="flex items-center justify-between">
           <DialogHeader>Last courier Information</DialogHeader>
           <svg
@@ -40,9 +40,9 @@ export function MessageDialog(args) {
         </div>
         <DialogBody divider>
           <div className="grid gap-6">
-            <Input label="Item Type" />
-            <Input label="Item Status" />
-            <Input label="onTime" />
+          <div><strong>Item Type:</strong> Item 1</div>
+          <div><strong>Item Status:</strong> Status</div>
+          <div><strong>onTime:</strong> Time</div>
           </div>
         </DialogBody>
         <DialogFooter className="space-x-2">

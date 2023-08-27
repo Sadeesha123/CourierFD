@@ -1,8 +1,20 @@
 import { Link } from "react-router-dom";
 import Sidepanel from "../../components/sidepanel";
 import bg from '../../images/mainbg1.jpg';
+import { MessageDialog } from "../../components/MessageDialog";
+import { useState, useEffect } from 'react';
+
 
 export default function Tickets() {
+
+  const [popUpStatus, setpopUpStatus] = useState(false);
+
+  const popUp = () => {
+    setpopUpStatus(!popUpStatus)
+    console.log(popUpStatus)
+}
+
+
     return (
       <div className="main-body h-screen w-full bg-slate-100">
         <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
@@ -59,12 +71,12 @@ export default function Tickets() {
                           <td class="whitespace-nowrap px-6 py-4">Test</td>
                           <td class="whitespace-nowrap px-6 py-4">Test</td>
                             <td class="whitespace-nowrap px-6 py-4">
-                            <Link to={""}>
-                              <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-blue-500 text-sm font-bold text-white mr-4">
+
+                              <button onClick={popUp} class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-blue-500 text-sm font-bold text-white mr-4">
                                 View
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
-                            </Link>
+
                           </td>
                         </tr>
 
@@ -79,16 +91,20 @@ export default function Tickets() {
                           <td class="whitespace-nowrap px-6 py-4">Test</td>
                           <td class="whitespace-nowrap px-6 py-4">
                           
-                            <Link to={""}>
-                              <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-blue-500 text-sm font-bold text-white mr-4">
+                            {/* <Link to={""}> */}
+                              <button onClick={popUp} class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-blue-500 text-sm font-bold text-white mr-4">
                                 View
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
-                            </Link>
+                            {/* </Link> */}
                           </td>
                         </tr>
 
-                        
+                        {popUpStatus &&
+                          <div>
+                            <MessageDialog click={true} link={`/MoreInfo/1`}/>
+                          </div>
+                        }
 
 
                       </tbody>
