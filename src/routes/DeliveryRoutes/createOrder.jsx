@@ -39,9 +39,7 @@ function CreateOrder() {
 
                             <form onSubmit={handleSubmit} className="flex flex-col w-full">
 
-                            <h1 className="flex items-center justify-center font-bold pt-4 text-xl uppercase">
-                                Create order
-                            </h1>
+               
 
                                 <h1 className="flex items-center justify-center p-5 font-semibold uppercase text-md">Sender Details</h1>
 
