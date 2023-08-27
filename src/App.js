@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./routes/login";
+import 'flowbite';
 import Dashboard from "./routes/Admindash";
 import CreateDelivery from "./routes/DeliveryRoutes/createDelivery";
 import UpdateDelivery from "./routes/DeliveryRoutes/updateDelivery";
