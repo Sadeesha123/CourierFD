@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import Sidepanel from "../../components/sidepanel";
+import bg from '../../images/mainbg1.jpg';
 
 import {
     BrowserRouter as Router,
@@ -90,7 +91,8 @@ function SingleOrderUpdate()
     return(
 
             <div className="main-body h-screen w-full bg-slate-100">
-                    <div className="main-body-container w-full flex flex-row">
+                    <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
+                    <div className="main-body-container w-full flex flex-row absolute">
                         <Sidepanel/>
                         <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
                           <div className="common-body p-5 flex flex-col h-full items-center ">
