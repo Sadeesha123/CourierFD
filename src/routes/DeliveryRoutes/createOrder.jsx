@@ -31,7 +31,7 @@ function CreateOrder() {
              <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
              <div className="main-body-container w-full flex flex-row absolute">
                 <Sidepanel />
-                <div className="w-5/6 side-panel">
+                <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
                     
                     <div className="flex flex-col items-center justify-center gap-5 p-5 common-body">
 
