@@ -1,4 +1,4 @@
-import Sidepanel from "./sidepanel";
+import Sidepanel from "../../components/sidepanel";
 
 function SingleTicket() {
    
