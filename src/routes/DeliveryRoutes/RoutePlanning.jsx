@@ -34,7 +34,10 @@ function RoutePlanning()
                                 
                              <div className="map sm:w-[60%] w-full text-center p-2 h-full">
                               
-                                <span>G-MAP will appear here</span>
+                             <h1 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4">
+                                Google Map
+                            </h1>
+                                {/* <span>G-MAP will appear here</span> */}
                                 <div className="p-2 h-[200px] sm:h-[400px] bg-slate-400">
 
                                 </div>
@@ -59,7 +62,7 @@ function RoutePlanning()
                                 </label>
                                 <input type="text" id="delivery" name="delivery" className="mb-4 p-2 rounded-lg border border-gray-300" />
                                 <button type="submit" className="py-2 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white rounded-lg w-52 ml-auto mt-8">
-                                    Generate QR
+                                    Route
                                   </button>
                                 {/* <span>Order Id : #TJH097</span>
                                 <span>Pick Up</span>
