@@ -39,6 +39,7 @@ function PackageStatus() {
                   id="orderId"
                   name="orderId"
                   className="mb-4 p-2 rounded-lg border border-gray-300"
+                  required
                 />
 
                 <label
@@ -52,6 +53,7 @@ function PackageStatus() {
                   id="pickup"
                   name="pickup"
                   className="mb-4 p-2 rounded-lg border border-gray-300"
+                  required
                 />
 
                 <label
@@ -65,6 +67,7 @@ function PackageStatus() {
                   id="destination"
                   name="destination"
                   className="mb-4 p-2 rounded-lg border border-gray-300"
+                  required
                 />
 
                 <label
@@ -80,6 +83,7 @@ function PackageStatus() {
                   className="mb-4 p-2 rounded-lg border border-gray-300"
                   accept="image/*"
                   multiple
+                  required
                   onChange={handleImageUpload}
                 />
 
