@@ -28,8 +28,9 @@ export function MessageDialog(args) {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="mr-3 h-5 w-5"
+            className="mr-3 h-5 w-5 cursor-pointer"
             onClick={handleOpen}
+            
           >
             <path
               fillRule="evenodd"

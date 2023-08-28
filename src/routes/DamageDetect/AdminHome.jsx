@@ -44,6 +44,7 @@ function AdminHome() {
                   type="text"
                   id="sendername"
                   name="senderName"
+                  required
                   value={formData.senderName}
                   onChange={handleInputChange}
                   className="mb-4 p-2 rounded-lg border border-gray-300"
@@ -58,6 +59,7 @@ function AdminHome() {
                 <input
                   type="text"
                   id="recievername"
+                  required
                   name="receiverName"
                   value={formData.receiverName}
                   onChange={handleInputChange}
@@ -73,6 +75,7 @@ function AdminHome() {
                 <input
                   type="text"
                   id="pid"
+                  required
                   name="packageId"
                   value={formData.packageId}
                   onChange={handleInputChange}
@@ -88,6 +91,7 @@ function AdminHome() {
                 <input
                   type="text"
                   id="dd"
+                  required
                   name="driverDetails"
                   value={formData.driverDetails}
                   onChange={handleInputChange}
@@ -97,13 +101,13 @@ function AdminHome() {
                 <label htmlFor="date" className="mb-2 font-semibold text-gray-600">
                   Date
                 </label>
-                <input type="date" id="date" name="date" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                <input type="date" id="date" required name="date" className="mb-4 p-2 rounded-lg border border-gray-300" />
 
 
                 <label htmlFor="time" className="mb-2 font-semibold text-gray-600">
                   Time
                 </label>
-                <input type="time" id="time" name="time" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                <input type="time" id="time" required name="time" className="mb-4 p-2 rounded-lg border border-gray-300" />
 
                 <label
                   htmlFor="pd"
@@ -114,6 +118,7 @@ function AdminHome() {
                 <input
                   type="textarea"
                   id="pd"
+                  required
                   name="packageDescription"
                   value={formData.packageDescription}
                   onChange={handleInputChange}
