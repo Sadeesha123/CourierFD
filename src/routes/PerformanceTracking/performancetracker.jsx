@@ -59,24 +59,24 @@ export default function Tickets() {
                           <td class="whitespace-nowrap px-6 py-4">Test</td>
                           <td class="whitespace-nowrap px-6 py-4">Test</td>
                         <td class="whitespace-nowrap px-6 py-4">
-                            <Link to={"/UpdateOrder/01"}>
+                            <a href={"/UpdateOrder/01"}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-purple-900 text-sm font-bold text-white mr-4">
                                 Update
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
-                            </Link>
-                            <Link to={""}>
+                            </a>
+                            <a href={""}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-red-500 text-sm font-bold text-white mr-4">
                                 Remove
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
-                            </Link>
-                            <Link to={"/MoreInfo/01"}>
+                            </a>
+                            <a href={"/MoreInfo/01"}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-blue-500 text-sm font-bold text-white mr-4">
                                 View
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
-                            </Link>
+                            </a>
                           </td>
                         </tr>
 
@@ -90,24 +90,24 @@ export default function Tickets() {
                           <td class="whitespace-nowrap px-6 py-4">Test</td>
                           <td class="whitespace-nowrap px-6 py-4">Test</td>
                           <td class="whitespace-nowrap px-6 py-4">
-                          <Link to={"/UpdateOrder/11"}>
+                          <a href={"/UpdateOrder/11"}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-purple-900 text-sm font-bold text-white mr-4">
                                 Update
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
-                            </Link>
-                            <Link to={""}>
+                            </a>
+                            <a href={""}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-red-500 text-sm font-bold text-white mr-4">
                                 Remove
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
-                            </Link>
-                            <Link to={"/MoreInfo/11"}>
+                            </a>
+                            <a href={"/MoreInfo/11"}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-blue-500 text-sm font-bold text-white mr-4">
                                 View
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
-                            </Link>
+                            </a>
                           </td>
                         </tr>
 

@@ -43,12 +43,12 @@ export default function Tickets() {
                           <td class="whitespace-nowrap px-6 py-4">Ai</td>
                           <td class="whitespace-nowrap px-6 py-4">12-03-2001</td>
                           <td class="whitespace-nowrap px-6 py-4">
-                            <Link to={"/ticket/1"}>
+                            <a href={"/ticket/1"}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-blue-500 text-sm font-bold text-white">
                                 View Ticket
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
-                            </Link>
+                            </a>
                             
                           </td>
                         </tr>
@@ -62,12 +62,12 @@ export default function Tickets() {
                           <td class="whitespace-nowrap px-6 py-4">Human</td>
                           <td class="whitespace-nowrap px-6 py-4">12-03-2001</td>
                           <td class="whitespace-nowrap px-6 py-4">
-                            <Link to={"/ticket/1"}>
+                            <a href={"/ticket/1"}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-blue-500 text-sm font-bold text-white">
                                 View Ticket
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
-                            </Link>
+                            </a>
                           </td>
                         </tr>
 
@@ -80,12 +80,12 @@ export default function Tickets() {
                           <td class="whitespace-nowrap px-6 py-4">Human</td>
                           <td class="whitespace-nowrap px-6 py-4">12-03-2001</td>
                           <td class="whitespace-nowrap px-6 py-4">
-                            <Link to={"/ticket/1"}>
+                            <a href={"/ticket/1"}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-blue-500 text-sm font-bold text-white">
                                 View Ticket
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
-                            </Link>
+                            </a>
                           </td>
                         </tr>
 
