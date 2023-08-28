@@ -34,7 +34,7 @@ const DataTable2 = ({ data }) => {
                 accessor: "feedback",
             },
             {
-                Header: "Charn Status",
+                Header: "Churn Status",
                 accessor: "charnstatus",
             },
 
