@@ -57,12 +57,12 @@ export default function Tickets() {
                           <td class="whitespace-nowrap px-6 py-4">Test</td>
                           <td class="whitespace-nowrap px-6 py-4">Test</td>
                         <td class="whitespace-nowrap px-6 py-4">
-                            <Link to={"/UpdateDelivery/01"}>
+                            <a href={"/UpdateDelivery/01"}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-purple-900 text-sm font-bold text-white mr-4">
                                 Update
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
-                            </Link>
+                            </a>
                             <Link to={""}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-red-500 text-sm font-bold text-white mr-4">
                                 Remove
@@ -87,12 +87,12 @@ export default function Tickets() {
                           <td class="whitespace-nowrap px-6 py-4">Test</td>
                           <td class="whitespace-nowrap px-6 py-4">Test</td>
                           <td class="whitespace-nowrap px-6 py-4">
-                          <Link to={"/UpdateDelivery/11"}>
+                          <a href={"/UpdateDelivery/11"}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-purple-900 text-sm font-bold text-white mr-4">
                                 Update
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
-                            </Link>
+                            </a>
                             <Link to={""}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-red-500 text-sm font-bold text-white mr-4">
                                 Remove

@@ -85,14 +85,16 @@ function Login() {
 
 
 
-                            <Link to="/Dashboard"><div className="flex items-center justify-between z-10">
+                            <div className="flex items-center justify-between z-10">
                                 <button
                                     className="text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full bg-gradient-to-r from-red-500 to-red-700 z-10"
                                     type="submit"
                                 >
-                                    LOGIN
+                                    <a href="/dashboard">LOGIN</a>
                                 </button>
-                            </div></Link>
+                            </div>
+
+                            
 
                             <div className="text-center mt-5 z-10 ">
                                 <span className="text-white">Don't have an account ? <Link to="/signup" className="text-white cursor-pointer underline"> Sign Up </Link></span>
