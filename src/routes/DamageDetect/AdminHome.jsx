@@ -24,7 +24,16 @@ function AdminHome() {
     event.preventDefault();
     
   };
+  function handleImageUpload(event) {
+    const selectedFiles = event.target.files;
+    const fileCount = selectedFiles.length;
 
+    if (fileCount < 1 || fileCount > 5) {
+      // Display an error message or handle the validation error accordingly
+      console.log("Please select between 1 and 5 images.");
+      return;
+    }
+  }
   return (
     <div className="main-body h-screen w-full bg-slate-100">
       <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
@@ -124,7 +133,22 @@ function AdminHome() {
                   onChange={handleInputChange}
                   className="mb-4 p-2 rounded-lg border border-gray-300 h-24"
                 />
-
+                <label
+                  htmlFor="images"
+                  className="mb-2 font-semibold text-gray-600"
+                >
+                  Upload Image
+                </label>
+                <input
+                  type="file"
+                  id="images"
+                  name="images"
+                  className="mb-4 py-2 pl-5 file:rounded-lg rounded-lg border border-gray-300"
+                  accept="image/*"
+                  multiple
+                  onChange={handleImageUpload}
+                  required
+                />
                 <div className="flex flex-row space-x-3 w-full">
                   {/* <Link
                     to={{
