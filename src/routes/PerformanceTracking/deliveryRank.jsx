@@ -97,11 +97,9 @@ function DeliveryRank() {
                             </form>
                         </div>
 
-                        <div className="pt-10">
-                        <div className="form-body w-[1000px] flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg shadow-md shadow-slate-300">
+                        <div className="form-body w-[1000px] flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg shadow-md shadow-slate-300 mt-5">
                             <h1 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4"> Graph</h1>
                             <BarChart key={1000} />
-                        </div>
                         </div>
 
 
