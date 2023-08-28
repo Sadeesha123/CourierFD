@@ -55,8 +55,8 @@ function App() {
           <Route path="/SingleOrder/:id" element={<SingleOrder/>}/>
            <Route path="PerformanceTrack" element={<PerformanceTrack/>}/>
            <Route path="PerformanceTracker" element={<PerformanceTracker/>}/>
-           <Route path="CustomerCharn" element={<CustomerCharn/>}/>
-           <Route path="CustomerCharnTable" element={<CustomerCharnTable/>}/>
+           <Route path="CustomerChurn" element={<CustomerCharn/>}/>
+           <Route path="CustomerChurnTable" element={<CustomerCharnTable/>}/>
           <Route path="/SingleOrderUpdate/:id" element={<SingleOrderUpdate/>}/>
           <Route path="CreateOrder" element={<CreateOrder/>}/>
           <Route path="ChurnRank" element={<ChurnRank/>}/>

@@ -30,7 +30,7 @@ function Sidepanel2() {
                         <Link to="/CreateOrder"><li className="w-full p-2 mb-5 rounded-md bg-white">
                             <FontAwesomeIcon icon={faBox} className="mr-5" />Create Order</li></Link>
 
-                        <Link to="/CustomerCharn"><li className="w-full p-2 mb-5 rounded-md bg-white">
+                        <Link to="/CustomerChurn"><li className="w-full p-2 mb-5 rounded-md bg-white">
                             <FontAwesomeIcon icon={faBoxesPacking} className="mr-5" />Customer Charn</li></Link>
 
                         <Link to="/ChurnRank"><li className="w-full p-2 mb-5 rounded-md bg-white">
