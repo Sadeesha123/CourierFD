@@ -12,7 +12,7 @@ export default function Tickets() {
   const popUp = () => {
     setpopUpStatus(!popUpStatus)
     console.log(popUpStatus)
-}
+  }
 
 
     return (
@@ -80,6 +80,12 @@ export default function Tickets() {
                           </td>
                         </tr>
 
+                        {popUpStatus &&
+                          <div>
+                            <MessageDialog click={true} link={`/CustomerCharnTable`}/>
+                          </div>
+                        }
+
                         <tr
                           class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
                           <td class="whitespace-nowrap px-6 py-4 font-medium">2</td>
@@ -100,11 +106,7 @@ export default function Tickets() {
                           </td>
                         </tr>
 
-                        {popUpStatus &&
-                          <div>
-                            <MessageDialog click={true} link={`/CustomerCharnTable`}/>
-                          </div>
-                        }
+
 
 
                       </tbody>
