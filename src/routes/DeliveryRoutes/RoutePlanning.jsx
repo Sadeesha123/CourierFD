@@ -48,19 +48,19 @@ function RoutePlanning()
                                 <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600 ">
                                 Order ID
                                 </label>
-                                <input type="text" id="orderId" name="orderId" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                <input type="text" id="orderId" name="orderId" className="mb-4 p-2 rounded-lg border border-gray-300" required/>
                                 <label htmlFor="pickUp" className="mb-2 font-semibold text-gray-600">
                                 Pick Up
                                 </label>
-                                <input type="text" id="pickUp" name="pickUp" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                <input type="text" id="pickUp" name="pickUp" className="mb-4 p-2 rounded-lg border border-gray-300" required/>
                                 <label htmlFor="twoMoreSteps" className="mb-2 font-semibold text-gray-600">
                                 Two more Steps
                                 </label>
-                                <input type="text" id="twoMoreSteps" name="twoMoreSteps" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                <input type="text" id="twoMoreSteps" name="twoMoreSteps" className="mb-4 p-2 rounded-lg border border-gray-300" required />
                                 <label htmlFor="delivery" className="mb-2 font-semibold text-gray-600">
                                 Delivery
                                 </label>
-                                <input type="text" id="delivery" name="delivery" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                <input type="text" id="delivery" name="delivery" className="mb-4 p-2 rounded-lg border border-gray-300" required/>
                                 <button type="submit" className="py-2 px-4 bg-gradient-to-r from-red-500 to-red-700 text-white rounded-lg w-52 ml-auto mt-8 ml-4">
                                     Route
                                   </button>

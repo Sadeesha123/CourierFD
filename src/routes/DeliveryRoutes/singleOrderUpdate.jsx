@@ -107,26 +107,26 @@ function SingleOrderUpdate()
                                     <label htmlFor="customerId" className="mb-2 font-semibold text-gray-600">
                                     Customer ID
                                     </label>
-                                    <input value={customerid} onChange={(e)=>setcustomerid(e.target.value)} type="text" id="customerId" name="customerId" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                    <input value={customerid} onChange={(e)=>setcustomerid(e.target.value)} type="text" id="customerId" name="customerId" className="mb-4 p-2 rounded-lg border border-gray-300" required/>
                                     <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600">
                                     Order ID
                                     </label>
-                                    <input value={orderid} onChange={(e)=>setorderid(e.target.value)} type="text" id="orderId" name="orderId" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                    <input value={orderid} onChange={(e)=>setorderid(e.target.value)} type="text" id="orderId" name="orderId" className="mb-4 p-2 rounded-lg border border-gray-300" required/>
 
                                     <label htmlFor="pickup" className="mb-2 font-semibold text-gray-600">
                                     Pickup
                                     </label>
-                                    <input value={branchpickup} onChange={(e)=>setbranchpickup(e.target.value)} type="text" id="pickup" name="pickup" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                    <input value={branchpickup} onChange={(e)=>setbranchpickup(e.target.value)} type="text" id="pickup" name="pickup" className="mb-4 p-2 rounded-lg border border-gray-300" required/>
 
                                     <label htmlFor="destination" className="mb-2 font-semibold text-gray-600">
                                     Destination
                                     </label>
-                                    <input value={destination} onChange={(e)=>setdestination(e.target.value)} type="text" id="destination" name="destination" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                    <input value={destination} onChange={(e)=>setdestination(e.target.value)} type="text" id="destination" name="destination" className="mb-4 p-2 rounded-lg border border-gray-300" required/>
 
                                     <label htmlFor="date" className="mb-2 font-semibold text-gray-600">
                                     Date
                                     </label>
-                                    <input value={date} onChange={(e)=>setdate(e.target.value)} type="date" id="date" name="date" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                    <input value={date} onChange={(e)=>setdate(e.target.value)} type="date" id="date" name="date" className="mb-4 p-2 rounded-lg border border-gray-300" required/>
 
                                     <label htmlFor="vehicle" className="mb-2 font-semibold text-gray-600">
                                     Vehicle
