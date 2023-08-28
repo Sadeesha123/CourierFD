@@ -121,21 +121,30 @@ function AdminHome() {
                 />
 
                 <div className="flex flex-row space-x-3 w-full">
-                  <Link
+                  {/* <Link
                     to={{
                       pathname: "/PackageDispatch",
                       state: { formData }
                     }}
                     className="w-full"
-                  >
+                  > */}
+                  {/* <a href="/PackageDispatch">
                     <button
                       type="submit"
                       className="py-2 px-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg w-52 ml-auto mt-8"
                     >
                       Generate QR
                     </button>
-
-                  </Link>
+                    </a> */}
+                            <div className="flex items-center justify-between z-10">
+                                <button
+                                    className="text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full bg-gradient-to-r from-red-500 to-red-700 z-10"
+                                    type="submit"
+                                >
+                                    <a href="/PackageDispatch">Generate QR</a>
+                                </button>
+                            </div>
+                  {/* </Link> */}
                 </div>
               </form>
             </div>

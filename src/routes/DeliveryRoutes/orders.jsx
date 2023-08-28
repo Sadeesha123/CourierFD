@@ -99,7 +99,7 @@ export default function Tickets() {
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                               </button>
                             </a>
-                            <a href to={"/ViewDelivery/11"}>
+                            <a href={"/ViewDelivery/11"}>
                               <button class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-blue-500 text-sm font-bold text-white mr-4">
                                 View
                                 <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
