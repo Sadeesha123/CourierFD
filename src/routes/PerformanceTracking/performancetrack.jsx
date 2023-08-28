@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import DataTable from "../../components/DataTable";
 import Sidepanel from "../../components/sidepanel";
-import Modal from "./removePopup";
+import Modal from "../DeliveryRoutes/removePopup";
 
 
 
