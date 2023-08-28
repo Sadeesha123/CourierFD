@@ -79,6 +79,47 @@ function AdminHome() {
                   className="mb-4 p-2 rounded-lg border border-gray-300"
                 />
 
+                <label
+                  htmlFor="dd"
+                  className="mb-2 font-semibold text-gray-600"
+                >
+                  Driver Details
+                </label>
+                <input
+                  type="text"
+                  id="dd"
+                  name="driverDetails"
+                  value={formData.driverDetails}
+                  onChange={handleInputChange}
+                  className="mb-4 p-2 rounded-lg border border-gray-300"
+                />
+
+                <label htmlFor="date" className="mb-2 font-semibold text-gray-600">
+                  Date
+                </label>
+                <input type="date" id="date" name="date" className="mb-4 p-2 rounded-lg border border-gray-300" />
+
+
+                <label htmlFor="time" className="mb-2 font-semibold text-gray-600">
+                  Time
+                </label>
+                <input type="time" id="time" name="time" className="mb-4 p-2 rounded-lg border border-gray-300" />
+
+                <label
+                  htmlFor="pd"
+                  className="mb-2 font-semibold text-gray-600"
+                >
+                  Package Description
+                </label>
+                <input
+                  type="textarea"
+                  id="pd"
+                  name="packageDescription"
+                  value={formData.packageDescription}
+                  onChange={handleInputChange}
+                  className="mb-4 p-2 rounded-lg border border-gray-300 h-24"
+                />
+
                 <div className="flex flex-row space-x-3 w-full">
                   <Link
                     to={{
@@ -93,6 +134,7 @@ function AdminHome() {
                     >
                       Generate QR
                     </button>
+
                   </Link>
                 </div>
               </form>

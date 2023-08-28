@@ -47,7 +47,7 @@ function Inquiry() {
                   htmlFor="pickup"
                   className="mb-2 font-semibold text-gray-600"
                 >
-                  Send to
+                  Reciever 
                 </label>
                 <input
                   type="text"
