@@ -62,39 +62,39 @@ function CreateDelivery()
                                 <label htmlFor="customerId" className="mb-2 font-semibold text-gray-600">
                                     Customer ID
                                     </label>
-                                    <input type="text" id="customerId" name="customerId" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                    <input type="text" id="customerId" name="customerId" className="mb-4 p-2 rounded-lg border border-gray-300" required/>
 
 
                                     <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600">
                                     Order ID
                                     </label>
-                                    <input type="text" id="orderId" name="orderId" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                    <input type="text" id="orderId" name="orderId" className="mb-4 p-2 rounded-lg border border-gray-300" required />
 
                                     <label htmlFor="pickup" className="mb-2 font-semibold text-gray-600">
                                     Pickup
                                     </label>
-                                    <input type="text" id="pickup" name="pickup" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                    <input type="text" id="pickup" name="pickup" className="mb-4 p-2 rounded-lg border border-gray-300" required />
 
                                     <label htmlFor="destination" className="mb-2 font-semibold text-gray-600">
                                     Destination
                                     </label>
-                                    <input type="text" id="destination" name="destination" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                    <input type="text" id="destination" name="destination" className="mb-4 p-2 rounded-lg border border-gray-300" required/>
 
                                     <label htmlFor="date" className="mb-2 font-semibold text-gray-600">
                                     Estimated Date
                                     </label>
-                                    <input type="date" id="date" name="date" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                    <input type="date" id="date" name="date" className="mb-4 p-2 rounded-lg border border-gray-300" required/>
 
                                     <label htmlFor="departureDate" className="mb-2 font-semibold text-gray-600">
                                     Departure Date
                                     </label>
-                                    <input type="date" id="departureDate" name="departureDate" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                    <input type="date" id="departureDate" name="departureDate" className="mb-4 p-2 rounded-lg border border-gray-300" required/>
 
 
                                     <label htmlFor="tp" className="mb-2 font-semibold text-gray-600">
                                     Telephone number
                                     </label>
-                                    <input type="text" id="tp" name="tp" className="mb-4 p-2 rounded-lg border border-gray-300" />
+                                    <input type="text" id="tp" name="tp" className="mb-4 p-2 rounded-lg border border-gray-300" required/>
 
 
                                     <label htmlFor="vehicle" className="mb-2 font-semibold text-gray-600">

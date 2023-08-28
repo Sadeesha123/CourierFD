@@ -41,6 +41,7 @@ function Inquiry() {
                   id="orderId"
                   name="orderId"
                   className="mb-4 p-2 rounded-lg border border-gray-300"
+                  required
                 />
 
                 <label
@@ -54,6 +55,7 @@ function Inquiry() {
                   id="pickup"
                   name="pickup"
                   className="mb-4 p-2 rounded-lg border border-gray-300"
+                  required
                 />
 
                 <label
@@ -67,6 +69,7 @@ function Inquiry() {
                   id="destination"
                   name="destination"
                   className="mb-4 p-2 rounded-lg border border-gray-300"
+                  required
                 />
 
                 <label
@@ -83,6 +86,7 @@ function Inquiry() {
                   accept="image/*"
                   multiple
                   onChange={handleImageUpload}
+                  required
                 />
 
                 <button
