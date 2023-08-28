@@ -12,10 +12,8 @@ export default function ManualTickets() {
           <div className="common-body p-5 flex flex-col h-full bg-white rounded-lg">
             <h2 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4 mt-4">Manual Tickets</h2>
 
-            <div class="flex flex-col">
-              <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                  <div class="overflow-hidden">
+            
+                  <div class="overflow-x-auto">
                     <table class="min-w-full text-left text-sm font-light">
                       <thead class="border-b font-medium dark:border-neutral-500">
                         <tr>
@@ -93,8 +91,6 @@ export default function ManualTickets() {
               </div>
             </div>
             </div>
-          </div>
-        </div>
-      </div>
+          
     );
 }
