@@ -84,10 +84,10 @@ export default function SingleTicket() {
                     <div className=" col-span-3 p-3"><p className="text-gray-700 ">Update Date :<span className="font-semibold"> { convert_date(ticket.time.updated) }</span></p></div>
                     <div className=" col-span-3 p-3"><p className="text-gray-700 ">Current Time :<span className="font-semibold"> { convert_time(ticket.time.created) }</span></p></div>
                     <div className=" col-span-3 p-3"><p className="text-gray-700">Status :<span className="font-semibold"> { ticket.status }</span></p></div>
-                    <div className=" col-span-6 p-3"><p className="text-gray-700 ">Description : </p></div>
+                    <div className=" col-span-6 p-3"><p className="text-gray-700 ">Question : </p></div>
                   </div>
                   <div className="border shadow-md text-gray-700 border-gray-400 w-full h-auto bg-gray-100 p-2 rounded-lg">
-                    <p>Description comes here</p>              
+                    <p>{ ticket.call.transcript }</p>
                   </div>
                   {/* <div className="grid grid-cols-6 w-[100%] mt-2">
                     <div className="col-span-6 p-3">
