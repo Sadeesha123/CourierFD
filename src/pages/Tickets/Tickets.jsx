@@ -17,7 +17,7 @@ export default class Tickets extends React.Component {
     fetch("https://api.dcsrp.xyz/v1.0/tickets")
     .then(Response => Response.json())
     .then(Response => {
-      if (Response.status == "success") {
+      if (Response.status === "success") {
         this.setState({...this.state, tickets: Response.data.tickets})
       }
     })
