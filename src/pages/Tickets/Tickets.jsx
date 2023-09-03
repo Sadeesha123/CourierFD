@@ -25,7 +25,6 @@ export default class Tickets extends React.Component {
   }
 
   render() {
-    console.log(this.state.tickets)
     return (
       <div className="main-body h-screen w-full bg-slate-100">
         <img src={bg} alt="" className="object-cover w-[100%] h-[100%] fixed" />
