@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import Sidepanel from "../../components/sidepanel";
@@ -6,13 +6,62 @@ import Sidepanel from "../../components/sidepanel";
 // IMAGES
 import ai from '../../images/ai.gif';
 import propic from "../../images/propic.jpg";
+import { useParams } from "react-router-dom";
 
+// CLASS: SingleTicket
+export default function SingleTicket() {
 
-export default class SingleTicket extends React.Component {
+  let { id } = useParams()
 
-  render() {
+  const [ticket, setTicket] = useState({})
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+
+    fetch("https://api.dcsrp.xyz/v1.0/ticket/" + id)
+    .then(Response => Response.json())
+    .then(Response => {
+      console.log(Response)
+      if (Response.status === "success") {
+        setTicket(Response.data.ticket)
+        setLoading(false)
+      }
+    })
+
+  }, [])
+
+  // Handle assign to me
+  const handleAssignToMe = (event) => {
+    event.preventDefault();
+
+    fetch("https://api.dcsrp.xyz/v1.0/ticket/" + id + "/assign")
+    .then(Response => Response.json())
+    .then(Response => {
+      if (Response.status === "success") {
+        alert("Assigned to me")
+        window.location.reload()
+      } else {
+        alert("Failed to assign ticket")
+        window.location.reload()
+      }
+    })
+
+  };
+
+  // Convert unixtime to date
+  function convert_date(ts) { return new Date(ts * 1000).toLocaleDateString("en-US") }
+
+  function convert_time(ts) {
+    let date = new Date(ts * 1000)
+    return date.getHours() + ":" + date.getMinutes()
+  }
+
+  if (loading) {
+    return "Loading ..."
+  } else {
     return(
-      <div className="main-body h-screen w-full ">
+      <div className="main-body h-screen w-full">
+        {/* <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" /> */}
         <div className="main-body-container w-full flex flex-row absolute">
           <Sidepanel />
           <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
@@ -24,23 +73,23 @@ export default class SingleTicket extends React.Component {
                 <div className="w-[100%] p-8 shadow-lg border bg-white border-slate-100 rounded-lg">
                   <div className="justify-between sm:flex">
                     <div>
-                      <h5 className="text-xl font-bold text-slate-900">Ticket ID - #TC54</h5>
+                      <h5 className="text-xl font-bold text-slate-900">Ticket ID - #{ticket.id}</h5>
                     </div>
-                    <button className="group relative px-5 py-2 overflow-hidden rounded-2xl bg-green-500 text-sm font-bold text-white">Assign to me
+                    <button className="group relative px-5 py-2 overflow-hidden rounded-2xl bg-green-500 text-sm font-bold text-white" onClick={handleAssignToMe}>Assign to me
                         <div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
                     </button>
                   </div>
                   <div className="grid grid-cols-6 w-[80%] mt-2">
-                    <div className="col-span-3 p-3"><p className="text-gray-700 ">Current Date :<span className="font-semibold"> 2023/05/06</span></p></div>
-                    <div className=" col-span-3 p-3"><p className="text-gray-700 ">Update Date :<span className="font-semibold"> 2023/05/07</span></p></div>
-                    <div className=" col-span-3 p-3"><p className="text-gray-700 ">Current Time :<span className="font-semibold"> 8.15 am</span></p></div>
-                    <div className=" col-span-3 p-3"><p className="text-gray-700">Status :<span className="font-semibold"> Open</span></p></div>
+                    <div className="col-span-3 p-3"><p className="text-gray-700 ">Opened Date :<span className="font-semibold"> { convert_date(ticket.time.created) }</span></p></div>
+                    <div className=" col-span-3 p-3"><p className="text-gray-700 ">Update Date :<span className="font-semibold"> { convert_date(ticket.time.updated) }</span></p></div>
+                    <div className=" col-span-3 p-3"><p className="text-gray-700 ">Current Time :<span className="font-semibold"> { convert_time(ticket.time.created) }</span></p></div>
+                    <div className=" col-span-3 p-3"><p className="text-gray-700">Status :<span className="font-semibold"> { ticket.status }</span></p></div>
                     <div className=" col-span-6 p-3"><p className="text-gray-700 ">Description : </p></div>
                   </div>
                   <div className="border shadow-md text-gray-700 border-gray-400 w-full h-auto bg-gray-100 p-2 rounded-lg">
                     <p>Description comes here</p>              
                   </div>
-                  <div className="grid grid-cols-6 w-[100%] mt-2">
+                  {/* <div className="grid grid-cols-6 w-[100%] mt-2">
                     <div className="col-span-6 p-3">
                       <p className="text-gray-700 ">Progress</p>
                     </div>
@@ -49,7 +98,7 @@ export default class SingleTicket extends React.Component {
                         <div id="progress" className="bg-red-400 h-2" style={{width:'10%'}}></div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* TEXTAREA */}
@@ -73,26 +122,22 @@ export default class SingleTicket extends React.Component {
                   <div className="flex-1 bg-white rounded-lg shadow-xl mt-4 p-8 ">
                     <h4 className="text-xl text-gray-900 font-bold">Time Line</h4>
                     <div className="relative px-4">
-
-                      <div className="flex items-center w-full my-6 -ml-1.5">
-                        <div className="w-1/12 z-10">
-                          <div className="w-3.5 h-3.5 bg-blue-600 rounded-full"></div>
-                        </div>
-                        <div className="w-11/12">
-                          <p className="text-sm">Profile informations changed.</p>
-                          <p className="text-xs text-gray-500">3 min ago</p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center w-full my-6 -ml-1.5">
-                        <div className="w-1/12 z-10">
-                          <div className="w-3.5 h-3.5 bg-blue-600 rounded-full"></div>
-                        </div>
-                        <div className="w-11/12">
-                          <p className="text-sm">Message received from <strong>Jane Stillman</strong></p>
-                          <p className="text-xs text-gray-500">2 hours ago</p>
-                        </div>
-                      </div>
+                       { ticket.timeline.map(d => {
+                        return(
+                          <>                            
+                            <div className="flex items-center w-full my-6 -ml-1.5">
+                              <div className="w-1/12 z-10">
+                                <div className="w-3.5 h-3.5 bg-blue-600 rounded-full"></div>
+                              </div>
+                              <div className="w-11/12">
+                                <p className="text-sm">{d.description}</p>
+                                <p className="text-xs text-gray-500">{ convert_time(d.time.created)}</p>
+                              </div>
+                            </div>
+                          </>
+                        )
+                       }) }
+                      
                     </div>
                   </div>
                 </div>
@@ -114,7 +159,7 @@ export default class SingleTicket extends React.Component {
                   <div className="flex flex-row w-full h-auto border p-3 overflow-x-auto ">
                     <div className=""><img className="w-14 h-14 rounded-full border object-cover" src={propic} /></div>
                     <div className="w-3/5 p-5 md:text-xs lg:text-sm xl:text-sm flex flex-row">
-                      <p>dilakshilamahewa@gmail.com </p><FontAwesomeIcon icon={faPen} className="ml-1"/>
+                      <p>dilakshilamahewa@gmail.com</p><FontAwesomeIcon icon={faPen} className="ml-1"/>
                     </div>
                   </div>
                   <div className="p-5 md:text-xs lg:text-xs xl:text-sm grid grid-cols-3 overflow-x-auto text-gray-600">
@@ -124,6 +169,15 @@ export default class SingleTicket extends React.Component {
                     <div className="col-span-3 flex justify-end pr-5"><button className="bg-blue-600 px-4 py-1 rounded-lg text-gray-100 mt-5">Primary</button></div>
                   </div>
                 </div>
+
+                {/*<div class="card bg-red-100 border-2 mt-4" style={{ borderRadius: "10px" }}>
+                  <figure class="px-10 pt-10"><img src={propic} class="w-28 h-28 rounded-xl" /></figure>
+                  <div class="card-body items-center text-center">
+                    <h2 class="card-title">Dilakshi Lamahewa</h2>
+                    <p>Support Engineer</p>
+                    <p>0777123456 / dilakshi@gmail.com</p>
+                  </div>
+                </div>*/}
 
                 {/* AI */}
                 <div className="flex flex-col rounded-lg w-full h-80 mt-3 border">
