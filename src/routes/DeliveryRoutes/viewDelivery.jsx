@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import Sidepanel from "../../components/sidepanel";
@@ -7,8 +7,55 @@ import { post } from "../../Api";
 import bg from '../../images/mainbg1.jpg';
 
 
+import {
+  BrowserRouter as Router,
+  Route,
+  useParams
+} from "react-router-dom";
+
 function ViewDelivery()
 {
+  const navigate = useNavigate();
+  const [data, setData] = useState(
+    {
+        branch_pickup: "",
+        customer_id: 1,
+        date: "",
+        departure_date: "",
+        destination: "",
+        estimated_date: "",
+        id: 1,
+        order_id: "",
+        package_id: null,
+        status: "",
+        telephone_number: "",
+        vehicle: ""
+    }
+)
+const { id } = useParams();
+
+const getData = async () =>{
+    try {
+        const response = await post('/api/order/info', {id:id}, {});
+            if(response){
+                console.log(response)
+                setData(response.data)
+                
+            }
+        
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+const handleBackClick = () => {
+  // Navigate to the Orders page
+  navigate('/orders'); // Update the route path as needed
+};
+
+useEffect(() => {
+        getData();       
+  }, []);
 
 
     // const handleSubmit = async (event) =>  {
@@ -59,45 +106,46 @@ function ViewDelivery()
                                 <label htmlFor="customerId" className="mb-2 font-semibold text-gray-600">
                                     Customer ID
                                     </label>
-                                    <input type="text" id="customerId" name="customerId" className="mb-4 p-2 rounded-lg border border-gray-300" disabled/>
-
+                                    <input value= {data.customer_id} type="text" id="customerId" name="customerId" className="mb-4 p-2 rounded-lg border border-gray-300" disabled/>
+                                    
+                              
 
                                     <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600">
                                     Order ID
                                     </label>
-                                    <input type="text" id="orderId" name="orderId" className="mb-4 p-2 rounded-lg border border-gray-300" disabled/>
+                                    <input value= {data.order_id} type="text" id="orderId" name="orderId" className="mb-4 p-2 rounded-lg border border-gray-300" disabled/>
 
                                     <label htmlFor="pickup" className="mb-2 font-semibold text-gray-600">
                                     Pickup
                                     </label>
-                                    <input type="text" id="pickup" name="pickup" className="mb-4 p-2 rounded-lg border border-gray-300" disabled/>
+                                    <input value={data.branch_pickup} type="text" id="pickup" name="pickup" className="mb-4 p-2 rounded-lg border border-gray-300" disabled/>
 
                                     <label htmlFor="destination" className="mb-2 font-semibold text-gray-600">
                                     Destination
                                     </label>
-                                    <input type="text" id="destination" name="destination" className="mb-4 p-2 rounded-lg border border-gray-300" disabled/>
+                                    <input value={data.destination} type="text" id="destination" name="destination" className="mb-4 p-2 rounded-lg border border-gray-300" disabled/>
 
                                     <label htmlFor="date" className="mb-2 font-semibold text-gray-600">
                                     Estimated Date
                                     </label>
-                                    <input type="date" id="date" name="date" className="mb-4 p-2 rounded-lg border border-gray-300" disabled/>
+                                    <input value={data.estimated_date} type="date" id="date" name="date" className="mb-4 p-2 rounded-lg border border-gray-300" disabled/>
 
                                     <label htmlFor="departureDate" className="mb-2 font-semibold text-gray-600">
                                     Departure Date
                                     </label>
-                                    <input type="date" id="departureDate" name="departureDate" className="mb-4 p-2 rounded-lg border border-gray-300" disabled/>
+                                    <input value={data.departure_date} type="date" id="departureDate" name="departureDate" className="mb-4 p-2 rounded-lg border border-gray-300" disabled/>
 
 
                                     <label htmlFor="tp" className="mb-2 font-semibold text-gray-600">
                                     Telephone number
                                     </label>
-                                    <input type="text" id="tp" name="tp" className="mb-4 p-2 rounded-lg border border-gray-300" disabled/>
+                                    <input value={data.telephone_number} type="text" id="tp" name="tp" className="mb-4 p-2 rounded-lg border border-gray-300" disabled/>
 
 
                                     <label htmlFor="vehicle" className="mb-2 font-semibold text-gray-600">
                                     Vehicle
                                     </label>
-                                    <input type="text" id="vehicle" name="vehicle" className="mb-4 p-2 rounded-lg border border-gray-300" disabled/>
+                                    <input value={data.vehicle} type="text" id="vehicle" name="vehicle" className="mb-4 p-2 rounded-lg border border-gray-300" disabled/>
 
                                     {/* <select id="vehicle" name="vehicle" className="mb-4 p-2 rounded-lg border border-gray-300">
                                     <option value="Please Select">Please Select</option>
@@ -105,6 +153,9 @@ function ViewDelivery()
                                       <option value="bike">Bike</option>
                                       <option value="truck">Truck</option>
                                     </select> */}
+                                    <button onClick={handleBackClick} className="py-2 px-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg w-52 ml-auto mt-8">
+                                    Back
+                                    </button>
                                 </form>
 
 
