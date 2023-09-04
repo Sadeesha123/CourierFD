@@ -34,7 +34,9 @@ export default function SingleTicket() {
   const handleAssignToMe = (event) => {
     event.preventDefault();
 
-    fetch("https://api.dcsrp.xyz/v1.0/ticket/" + id + "/assign")
+    fetch("https://api.dcsrp.xyz/v1.0/ticket/" + id + "/assign", {
+      method: "POST"
+    })
     .then(Response => Response.json())
     .then(Response => {
       if (Response.status === "success") {
