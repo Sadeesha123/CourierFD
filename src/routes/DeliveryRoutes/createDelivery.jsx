@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import Sidepanel from "../../components/sidepanel";
@@ -13,7 +13,7 @@ function CreateDelivery()
 
 
 
-
+    const navigate = useNavigate();
     const handleSubmit = async (event) =>  {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -34,7 +34,9 @@ function CreateDelivery()
         try {
             const response = await post('/api/order/create', postData, {});
                 if(response){
-                    console.log(response)
+                    console.log(response);
+
+                    navigate('/Orders');
                 }
             
         } catch (error) {

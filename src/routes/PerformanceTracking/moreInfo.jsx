@@ -1,10 +1,11 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import Sidepanel from "../../components/sidepanel";
 import {MessageDialog} from "../../components/MessageDialog";
-
+import axios from 'axios'
+import { BaseUrl } from "../../utils/base_url";
 
 
 
@@ -12,7 +13,21 @@ import {MessageDialog} from "../../components/MessageDialog";
 
 function MoreInfo() {
 
+    const {slug} = useParams()
+    const [data,setData] = useState([])
 
+    const fetchData = async(data, i)=>{
+      const res =  await axios.get(`${BaseUrl}/delivery/${slug}`)
+      if(Array.isArray(res.data.data)){
+        setData(res.data.data)
+      }else{
+        setData([])
+      }
+    }
+
+    useEffect(()=>{
+        fetchData()
+    },[slug])
 
 
     const handleSubmit = (event) => {
@@ -47,17 +62,17 @@ function MoreInfo() {
                             <label htmlFor="recieverId" className="mb-2 font-semibold text-gray-600">
                             Reciever ID 
                             </label>
-                            &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; <input className=" rounded-sm border border-gray-300" type="text" placeholder=" Backend DATA" readonly="readonly"/> 
+                            &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; <input className=" rounded-sm border border-gray-300" type="text" placeholder=" Backend DATA" readonly="readonly" value={data[0]?.id}/> 
                             <br/>  <br/> <br/>
                             <label htmlFor="email" className="mb-2 font-semibold text-gray-600">
                             Email
                             </label>
-                            &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" className=" rounded-sm border border-gray-300" placeholder="Backend DATA" readonly="readonly"/> 
+                            &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" className=" rounded-sm border border-gray-300" placeholder="Backend DATA" value={data[0]?.receiver_email} readonly="readonly"/> 
                             <br/>  <br/> <br/>
                             <label htmlFor="mobileNumber" className="mb-2 font-semibold text-gray-600">
                             Mobile Number
                             </label>
-                            &nbsp;  &nbsp;<input type="text" className=" rounded-sm border border-gray-300" placeholder="Backend DATA" readonly="readonly"/> 
+                            &nbsp;  &nbsp;<input type="text" className=" rounded-sm border border-gray-300" placeholder="Backend DATA" value={data[0]?.receiver_mobile} readonly="readonly"/> 
                             </div>
                             
                             
@@ -78,12 +93,17 @@ function MoreInfo() {
                             <label htmlFor="trafficCondition" className="mb-2 font-semibold text-gray-600">
                             Traffic Condition 
                             </label>
-                            &nbsp; <input type="text" className=" rounded-sm border border-gray-300" placeholder=" Backend DATA" readonly="readonly"/> 
+                            &nbsp; <input type="text" className=" rounded-sm border border-gray-300" placeholder=" Backend DATA" value={`${data[0]?.traffic_condition}%`} readonly="readonly"/> 
                         <br/>  <br/> <br/>
                             <label htmlFor="skill" className="mb-2 font-semibold text-gray-600">
                             Driver Skill
                             </label>
-                            &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" className=" rounded-sm border border-gray-300" placeholder=" Backend DATA" readonly="readonly"/> 
+                            &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" className=" rounded-sm border border-gray-300" value={`${data[0]?.driver_skill}%`} placeholder=" Backend DATA" readonly="readonly"/> 
+                            <br/>  <br/>
+                            <label htmlFor="skill" className="mb-2 font-semibold text-gray-600">
+                            Predetermined Days
+                            </label>
+                            &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" className=" rounded-sm border border-gray-300" value={`${data[0]?.pre_days}`} placeholder=" Backend DATA" readonly="readonly"/> 
                             <br/>  <br/>
                         
     
@@ -102,7 +122,7 @@ function MoreInfo() {
                             <label htmlFor="deliverystat" className="mb-2 font-semibold text-gray-600">
                            Delivery Success
                             </label>
-                            &nbsp;  &nbsp; &nbsp;<input type="text"  className=" rounded-sm border border-gray-300" placeholder=" Backend DATA" readonly="readonly"/> 
+                            &nbsp;  &nbsp; &nbsp;<input type="text"  className=" rounded-sm border border-gray-300" placeholder=" Backend DATA" value={`${data[0]?.success}%`} readonly="readonly"/> 
                         <br/>  <br/> <br/>
                              
                           </div> 
@@ -121,14 +141,12 @@ function MoreInfo() {
                             <label htmlFor="senderMobile" className="mb-2 font-semibold text-gray-600">
                             Sender Mobile
                             </label>
-                            &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" className=" rounded-sm border border-gray-300" placeholder=" Backend DATA" readonly="readonly"/> 
+                            &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" className=" rounded-sm border border-gray-300" value={data[0]?.receiver_mobile} placeholder=" Backend DATA" readonly="readonly"/> 
                         <br/>  <br/> <br/>
                             <label htmlFor="orderId" className="mb-2 font-semibold text-gray-600">
                             Number of Pieces                            </label>
-                            &nbsp; <input type="text" placeholder=" Backend DATA" className=" rounded-sm border border-gray-300" readonly="readonly"/> 
+                            &nbsp; <input type="text" placeholder=" Backend DATA" className=" rounded-sm border border-gray-300" value={data[0]?.num_pics} readonly="readonly"/> 
                             <br/>  <br/>
-                        
-    
                           </div> 
                     </div>
 

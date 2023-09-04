@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = "http://localhost:8000"
+const url = "http://178.128.24.144"
 
 const url_ml = ""
 
@@ -11,9 +11,10 @@ const api = axios.create({
 export const post = async (urlx, data, params = {}, files = []) => {
     try {
                 const formData = new FormData();
-                files.forEach(file => {
-                    formData.append('files', file);
+                files.forEach((file,i) => {
+                    formData.append(`files[${i}]`, file);
                 });
+                console.log(files)
 
                 Object.entries(data).forEach(([key, value]) => {
                     formData.append(key, value);
