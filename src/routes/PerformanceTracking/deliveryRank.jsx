@@ -18,8 +18,8 @@ function DeliveryRank() {
         event.preventDefault();
 
     };
-
-
+    const [m, setM] = useState(null)
+    const [month, setMonth] = useState(null)
 
 
     return (
@@ -44,26 +44,26 @@ function DeliveryRank() {
                                 <label htmlFor="province" className="mb-2 font-semibold text-gray-600">
                                     Province
                                 </label>
-                                <select id="province" name="province" className="p-2 mb-4 border border-gray-300 rounded-lg">
-                                    <option value="car">Central</option>
-                                    <option value="bike">Eastern</option>
-                                    <option value="truck">North Central</option>
-                                    <option value="car">Northern</option>
-                                    <option value="bike">North Western</option>
-                                    <option value="truck">Sabaragamuwa</option>
-                                    <option value="car">Southern</option>
-                                    <option value="bike">Uva</option>
-                                    <option value="truck">Western</option>
+                                <select id="province" name="province" className="p-2 mb-4 border border-gray-300 rounded-lg" >
+                                    <option value="Central">Central</option>
+                                    <option value="Eastern">Eastern</option>
+                                    <option value="North Central">North Central</option>
+                                    <option value="Northern">Northern</option>
+                                    <option value="North Western">North Western</option>
+                                    <option value="Sabaragamuwa">Sabaragamuwa</option>
+                                    <option value="Southern">Southern</option>
+                                    <option value="Uva">Uva</option>
+                                    <option value="Western">Western</option>
                                 </select>
 
                                 <label htmlFor="customertype" className="mb-2 font-semibold text-gray-600">
                                     Item type
                                 </label>
                                 <select id="customertype" name="customertype" className="p-2 mb-4 border border-gray-300 rounded-lg">
-                                    <option value="">Food</option>
-                                    <option value="">Electronic Item</option>
-                                    <option value="">Apparel </option>
-                                    <option value="">Documents</option>
+                                    <option value="Food">Food</option>
+                                    <option value="Electronic Item">Electronic Item</option>
+                                    <option value="Apparel">Apparel </option>
+                                    <option value="Documents">Documents</option>
                                 </select>
 
                                 <label htmlFor="year" className="mb-2 font-semibold text-gray-600">
@@ -74,32 +74,37 @@ function DeliveryRank() {
                                 <label htmlFor="province" className="mb-2 font-semibold text-gray-600">
                                     Month
                                 </label>
-                                <select id="month" name="month" className="p-2 mb-4 border border-gray-300 rounded-lg">
-                                    <option value="january">January</option>
-                                    <option value="february">February</option>
-                                    <option value="march">March</option>
-                                    <option value="april">April</option>
-                                    <option value="may">May</option>
-                                    <option value="june">June</option>
-                                    <option value="july">July</option>
-                                    <option value="august">August</option>
-                                    <option value="september">September</option>
-                                    <option value="october">October</option>
-                                    <option value="november">November</option>
-                                    <option value="december">December</option>
+                                <select id="month" name="month" className="p-2 mb-4 border border-gray-300 rounded-lg" onChange={(e)=> setM(e.target.value)}>
+                                <option value="Jan">January</option>
+<option value="Feb">February</option>
+<option value="Mar">March</option>
+<option value="Apr">April</option>
+<option value="May">May</option>
+<option value="Jun">June</option>
+<option value="Jul">July</option>
+<option value="Aug">August</option>
+<option value="Sep">September</option>
+<option value="Oct">October</option>
+<option value="Nov">November</option>
+<option value="Dec">December</option>
                                 </select>
 
                                 <div className="flex items-end justify-end ">
-                                    <button type="submit" className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-400 mt-8">
+                                    <button type="button" onClick={(e)=>{
+                                        e.preventDefault();
+                                        setMonth(m);
+                                    }} className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-400 mt-8">
                                         Search
                                     </button>
                                 </div>
                             </form>
                         </div>
 
-                        <div className="form-body w-[1000px] flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg shadow-md shadow-slate-300 mt-5">
+                        <div className="pt-10">
+                        <div className="form-body w-[1000px] flex flex-col p-5 mx-auto items-center justify-center bg-white rounded-lg shadow-md shadow-slate-300">
                             <h1 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4"> Graph</h1>
-                            <BarChart key={1000} />
+                            <BarChart key={1000} month={month} />
+                        </div>
                         </div>
 
 
