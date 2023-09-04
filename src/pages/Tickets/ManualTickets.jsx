@@ -34,7 +34,7 @@ export default class ManualTickets extends React.Component {
 					<div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
 
 							<div className="common-body p-5 flex flex-col h-full bg-white rounded-lg">
-								<h2 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4 mt-4">All Tickets</h2>
+								<h2 className="flex items-center justify-center pt-4 text-xl uppercase font-bold pb-4 mt-4">Manual Tickets</h2>
 								<div class="overflow-x-auto">
 									<table class="min-w-full text-left text-sm font-light">
 										<thead class="border-b font-medium dark:border-neutral-500">
