@@ -15,6 +15,7 @@ export default function SingleTicket() {
 
   const [ticket, setTicket] = useState({})
   const [loading, setLoading] = useState(true)
+  const [ticketMessage, setTicketMessage] = useState("")
 
   useEffect(() => {
 
@@ -34,9 +35,7 @@ export default function SingleTicket() {
   const handleAssignToMe = (event) => {
     event.preventDefault();
 
-    fetch("https://api.dcsrp.xyz/v1.0/ticket/" + id + "/assign", {
-      method: "POST"
-    })
+    fetch("https://api.dcsrp.xyz/v1.0/ticket/" + id + "/assign", { method: "POST" })
     .then(Response => Response.json())
     .then(Response => {
       if (Response.status === "success") {
@@ -49,6 +48,31 @@ export default function SingleTicket() {
     })
 
   };
+
+
+  const OnClick_Message = (event) => {
+    event.preventDefault();
+
+    fetch("https://api.dcsrp.xyz/v1.0/ticket/" + id + "/message", {
+      method: "POST",
+      body: JSON.stringify({
+        message: ticketMessage
+      })
+    })
+    .then(Response => Response.json())
+    .then(Response => {
+      console.log(Response)
+      if ( Response.status === "success" ) {
+        alert("Message sent to customer")
+        window.location.reload()
+      } else {
+        alert("Failed to sent message to customer")
+        window.location.reload()
+      }
+    })
+
+  }
+
 
   // Convert unixtime to date
   function convert_date(ts) { return new Date(ts * 1000).toLocaleDateString("en-US") }
@@ -129,10 +153,10 @@ export default function SingleTicket() {
                     <div className="mx-auto w-full">
                       <form action="" method="POST">
                         <div className="mb-5">
-                          <textarea rows="4" name="message" id="message" placeholder="Type your message" className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"></textarea>
+                          <textarea rows="4" name="message" id="message" placeholder="Type your message" className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" onChange={(e)=>setTicketMessage(e.target.value)}>{ ticketMessage }</textarea>
                         </div>
                         <div>
-                          <button className="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none">Submit</button>
+                          <button className="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none" onClick={OnClick_Message}>Submit</button>
                         </div>
                       </form>
                     </div>
