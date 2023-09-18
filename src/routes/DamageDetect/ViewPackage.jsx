@@ -12,7 +12,9 @@ function ViewPack() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/api/getData");
+        const response = await axios.get(
+          "https://lime-plain-bullfrog.cyclic.app/api/getData"
+        );
 
         const responseData = response.data;
         setData(responseData);
