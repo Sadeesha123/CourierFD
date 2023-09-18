@@ -42,14 +42,42 @@ function MoreInfo() {
       if (response.data && response.data.probability) {
         const probability = response.data.probability;
         const successInput = document.getElementById("successInput");
-        successInput.value = probability;
+        successInput.value = probability + "%";
       } else {
-        // Handle the case when the response doesn't contain the expected data
         console.error("Invalid response format");
       }
     } catch (error) {
-      // Handle errors such as network issues or API errors
       console.error("Error making the request:", error);
+    }
+  };
+  const savePredicts = async () => {
+    const trafficConditionSelect = document.getElementById("trafficCondition");
+    const driverSkillSelect = document.getElementById("driverSkill");
+    const successInput = document.getElementById("successInput");
+
+    const trafficCondition = trafficConditionSelect.value;
+    const driverSkill = driverSkillSelect.value;
+    const predictionResult = successInput.value.split("%")[0];
+
+    try {
+      if (!trafficCondition || !driverSkill || !predictionResult) {
+        alert("Please fill in all fields before saving.");
+      } else {
+        const response = await axios.put("http://127.0.0.1:5000/savePred", {
+          id: data[0].id,
+          driver_skill: driverSkill,
+          traffic_condition: trafficCondition,
+          success: predictionResult,
+        });
+
+        if (response.data && response.data.message) {
+          console.log(response.data.message);
+        } else {
+          console.error("Invalid response format");
+        }
+      }
+    } catch (error) {
+      console.error("Error updating data:", error);
     }
   };
 
@@ -209,8 +237,24 @@ function MoreInfo() {
                   Prediction Details
                 </h1>{" "}
                 <br />
+                <br></br>
+                <label
+                  htmlFor="deliverystat"
+                  className="mb-2 font-semibold text-gray-600"
+                >
+                  Delivery success prediction according to the order created
+                  date :
+                </label>
+                &nbsp; &nbsp; &nbsp;
+                <input
+                  type="text"
+                  className=" rounded-sm border border-gray-300"
+                  placeholder=" Backend DATA"
+                  value={`${data[0]?.success}%`}
+                  readonly="readonly"
+                />
                 <br />
-                <br />
+                <br></br>
                 {/* <label
                   htmlFor="deliverystat"
                   className="mb-2 font-semibold text-gray-600"
@@ -229,7 +273,7 @@ function MoreInfo() {
                   htmlFor="successInput"
                   className="mb-2 font-semibold text-gray-600"
                 >
-                  Prediction Result &nbsp; &nbsp; &nbsp;
+                  New Prediction Result &nbsp; &nbsp; &nbsp;
                 </label>
                 <input
                   id="successInput"
@@ -237,10 +281,20 @@ function MoreInfo() {
                   type="text"
                   className="rounded-sm border border-gray-300"
                   placeholder=" Backend DATA"
+                  setPredictionResult
                   readOnly
                 />
-                <br /> <br /> <br />
+                <br />
+                <button
+                  type="submit"
+                  className="py-2 px-4 bg-gradient-to-r from-red-500 to-blue-700 text-white rounded-lg w-52 ml-auto mt-8"
+                  onClick={savePredicts}
+                >
+                  Save Predicted data
+                </button>
+                <br /> <br />
               </div>
+              <br />
             </div>
           </div>
 
