@@ -8,20 +8,25 @@ import {
   Input,
   Textarea,
 } from "@material-tailwind/react";
- 
+
 export function MessageDialog(args) {
   const [open, setOpen] = React.useState(args.click);
-  
+
   const handleOpen = () => setOpen(!open);
 
   const handleExit = () => {
-    setOpen(false)
-  }
- 
+    setOpen(false);
+  };
+
   return (
     <>
       <Button onClick={handleOpen}>Message Dialog</Button>
-      <Dialog open={open} handler={handleOpen} className="border border-blue-800" style={{ width: '30%', height: '40%', margin: 'auto' }}>
+      <Dialog
+        open={open}
+        handler={handleOpen}
+        className="border border-blue-800"
+        style={{ width: "30%", height: "45%", margin: "auto" }}
+      >
         <div className="flex items-center justify-between ">
           <DialogHeader>Last courier Information</DialogHeader>
           <svg
@@ -30,7 +35,6 @@ export function MessageDialog(args) {
             fill="currentColor"
             className="mr-3 h-5 w-5 cursor-pointer"
             onClick={handleOpen}
-            
           >
             <path
               fillRule="evenodd"
@@ -41,9 +45,22 @@ export function MessageDialog(args) {
         </div>
         <DialogBody divider className="ml-5">
           <div className="grid gap-6">
-          <div className="text-gray-900"><strong>Item Type:</strong> {args.type}</div>
-          <div><strong>Item Status:</strong> {args.status}</div>
-          <div><strong>onTime:</strong> {args.time?"On Time Delivered":"Not Delivered On Time"}</div>
+            <div className="text-gray-900">
+              <strong>Item Type:</strong> {args.type}
+            </div>
+            <div>
+              <strong>Item Status:</strong> {args.status}
+            </div>
+            <div>
+              <strong>onTime:</strong>{" "}
+              {args.time ? "On Time Delivered" : "Not Delivered On Time"}
+            </div>
+            <div>
+              <strong>Charn Probability: </strong>
+              <strong style={{ fontSize: "20px", color: "crimson" }}>
+                {args.prob}
+              </strong>
+            </div>
           </div>
         </DialogBody>
         <DialogFooter className="space-x-2">

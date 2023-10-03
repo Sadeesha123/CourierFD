@@ -15,6 +15,7 @@ function MoreInfo() {
     const res = await axios.get(`${BaseUrl}/delivery/${slug}`);
     if (Array.isArray(res.data.data)) {
       setData(res.data.data);
+      console.log(res.data.data, "data");
     } else {
       setData([]);
     }
@@ -34,10 +35,13 @@ function MoreInfo() {
     const driverSkill = driverSkillSelect.value;
 
     try {
-      const response = await axios.post("http://127.0.0.1:5000/predict", {
-        driver_skill: driverSkill,
-        traffic_condition: trafficCondition,
-      });
+      const response = await axios.post(
+        "http://CorierAdmin.pythonanywhere.com/predict",
+        {
+          driver_skill: driverSkill,
+          traffic_condition: trafficCondition,
+        }
+      );
 
       if (response.data && response.data.probability) {
         const probability = response.data.probability;
@@ -63,7 +67,7 @@ function MoreInfo() {
       if (!trafficCondition || !driverSkill || !predictionResult) {
         alert("Please fill in all fields before saving.");
       } else {
-        const response = await axios.put("http://127.0.0.1:5000/savePred", {
+        const response = await axios.post(`${BaseUrl}/delivery/savePred`, {
           id: data[0].id,
           driver_skill: driverSkill,
           traffic_condition: trafficCondition,
@@ -72,6 +76,8 @@ function MoreInfo() {
 
         if (response.data && response.data.message) {
           console.log(response.data.message);
+          alert(response.data.message);
+          window.location.href = "/performancetracker";
         } else {
           console.error("Invalid response format");
         }
@@ -273,7 +279,7 @@ function MoreInfo() {
                   htmlFor="successInput"
                   className="mb-2 font-semibold text-gray-600"
                 >
-                  New Prediction Result &nbsp; &nbsp; &nbsp;
+                  New Prediction Result On Time &nbsp; &nbsp; &nbsp;
                 </label>
                 <input
                   id="successInput"

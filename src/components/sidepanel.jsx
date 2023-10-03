@@ -1,15 +1,3 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPlus,
-  faStarHalfStroke,
-  faUser,
-  faMapLocation,
-  faChartLine,
-  faHeadset,
-  faChainBroken,
-} from "@fortawesome/free-solid-svg-icons";
 import "flowbite";
 import logo from "../images/logo.png";
 
