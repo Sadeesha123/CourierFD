@@ -33,8 +33,9 @@ function UpdateOrder() {
     const isEmailValid = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/.test(
       data.receiver_email
     );
-
-    if (isPhoneNumberValid && isEmailValid) {
+    const isReceiverNumberValid =
+      data.receiver_mobile && data.receiver_mobile.length === 10;
+    if (isPhoneNumberValid && isEmailValid && isReceiverNumberValid) {
       const dataWithoutId = { ...data };
       delete dataWithoutId.id;
       delete dataWithoutId.order_date;
@@ -42,7 +43,7 @@ function UpdateOrder() {
       await axios.put(`${BaseUrl}/delivery/${slug}`, dataWithoutId);
       window.location.href = `/performancetracker`;
     } else {
-      if (!isPhoneNumberValid) {
+      if (!isPhoneNumberValid || !isReceiverNumberValid) {
         alert("Please enter a 10-digit phone number");
       }
       if (!isEmailValid) {
