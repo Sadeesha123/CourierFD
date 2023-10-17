@@ -48,6 +48,14 @@ function UpdateDelivery() {
     console.log(postData);
 
     try {
+      const isValidPhoneNumber = /^\d{10}$/.test(postData.telephone_number);
+
+      if (!isValidPhoneNumber) {
+        alert(
+          "Invalid phone number. Please enter a valid 10-digit telephone number."
+        );
+        return;
+      }
       const response = await axios.put(`${BaseUrl}/order/${id}`, postData);
 
       if (response.status === 200) {
@@ -217,15 +225,17 @@ function UpdateDelivery() {
                 <input
                   value={data?.telephone_number}
                   onChange={(e) => {
-                    const newtelephonenumber = e.target.value;
+                    const newTelephoneNumber = e.target.value;
                     setData((prevData) => ({
                       ...prevData,
-                      telephone_number: newtelephonenumber,
+                      telephone_number: newTelephoneNumber,
                     }));
                   }}
                   type="text"
                   id="tp"
                   name="tp"
+                  pattern="^\d{10}$"
+                  title="Please enter a valid 10-digit telephone number"
                   className="mb-4 p-2 rounded-lg border border-gray-300"
                   required
                 />

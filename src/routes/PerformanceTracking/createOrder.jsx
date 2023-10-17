@@ -284,6 +284,7 @@ function CreateOrder() {
                     required
                     onChange={handleChange}
                     value={formData.order_date}
+                    min={new Date().toISOString().split("T")[0]}
                   />
                   {errors.order_date && (
                     <span className="text-red-500">{errors.order_date}</span>
@@ -426,7 +427,7 @@ function CreateOrder() {
                   </label>
                   <input
                     style={{ width: "100%" }}
-                    type="text"
+                    type="email"
                     id="email"
                     name="receiver_email"
                     className={`mb-2 border border-gray-300 rounded-lg w-[60%] h-[35px] ${

@@ -27,13 +27,28 @@ function UpdateOrder() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const dataWithoutId = { ...data };
-    delete dataWithoutId.id;
-    delete dataWithoutId.order_date;
-    delete dataWithoutId.preferred_date;
-    await axios.put(`${BaseUrl}/delivery/${slug}`, dataWithoutId);
-    window.location.href = `/performancetracker`;
-    console.log(data);
+
+    const isPhoneNumberValid =
+      data.mobile_number && data.mobile_number.length === 10;
+    const isEmailValid = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/.test(
+      data.receiver_email
+    );
+
+    if (isPhoneNumberValid && isEmailValid) {
+      const dataWithoutId = { ...data };
+      delete dataWithoutId.id;
+      delete dataWithoutId.order_date;
+      delete dataWithoutId.preferred_date;
+      await axios.put(`${BaseUrl}/delivery/${slug}`, dataWithoutId);
+      window.location.href = `/performancetracker`;
+    } else {
+      if (!isPhoneNumberValid) {
+        alert("Please enter a 10-digit phone number");
+      }
+      if (!isEmailValid) {
+        alert("Please enter a valid email address");
+      }
+    }
   };
 
   const [isAlertVisible, setIsAlertVisible] = useState(false);
