@@ -1,42 +1,95 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import Sidepanel from "../../components/sidepanel";
-import bg from '../../images/mainbg1.jpg';
+import bg from "../../images/mainbg1.jpg";
+import axios from "axios";
+import QRCode from "qrcode.react";
 
 function AdminHome() {
   const [formData, setFormData] = useState({
     senderName: "",
-    receiverName: "",
-    packageId: ""
+    senderContact: "",
+    img1: null,
+    img2: null,
+    img1Base64: "",
+    img2Base64: "",
   });
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [showQRCode, setShowQRCode] = useState(false);
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value
-    }));
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    
-  };
-  function handleImageUpload(event) {
-    const selectedFiles = event.target.files;
-    const fileCount = selectedFiles.length;
+  const handleFileChange = async (event) => {
+    const { name, files } = event.target;
+    const selectedFile = files[0];
 
-    if (fileCount < 1 || fileCount > 5) {
-      // Display an error message or handle the validation error accordingly
-      console.log("Please select between 1 and 5 images.");
-      return;
+    if (selectedFile) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const base64Data = e.target.result;
+        setFormData({
+          ...formData,
+          [name]: selectedFile,
+          [`${name}Base64`]: base64Data,
+        });
+      };
+
+      reader.readAsDataURL(selectedFile);
     }
-  }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      setIsLoading(true);
+      const requestData = {
+        senderName: formData.senderName,
+        senderContact: formData.senderContact,
+        img1: formData.img1Base64,
+        img2: formData.img2Base64,
+      };
+
+      console.log("Final Dataset:", requestData);
+      await axios.post(
+        "https://lime-plain-bullfrog.cyclic.app/api/saveFormData",
+        requestData
+      );
+
+      // setFormData({
+      //   senderName: "",
+      //   senderContact: "",
+      //   img1: "",
+      //   img2: "",
+      //   img1Base64: "",
+      //   img2Base64: "",
+      // });
+      setIsLoading(false);
+      setShowQRCode(true);
+      alert("Data saved successfully");
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred while saving data");
+      setIsLoading(false);
+    }
+  };
+
+  const handlePrint = () => {
+    console.log("Print QR");
+  };
+
   return (
     <div className="main-body h-screen w-full bg-slate-100">
-      <img src={bg} alt="" srcset="" className="object-cover w-[100%] h-[100%] fixed" />
+      <img
+        src={bg}
+        alt=""
+        srcset=""
+        className="object-cover w-[100%] h-[100%] fixed"
+      />
       <div className="main-body-container w-full flex flex-row absolute">
         <Sidepanel />
         <div className="w-5/6 side-panel p-5 md:ml-[300px] ml-16">
@@ -60,123 +113,97 @@ function AdminHome() {
                 />
 
                 <label
-                  htmlFor="recievername"
+                  htmlFor="senderContact"
                   className="mb-2 font-semibold text-gray-600"
                 >
-                  Receiver Name
+                  Sender Contact
                 </label>
                 <input
-                  type="text"
-                  id="recievername"
+                  type="number"
+                  maxLength="10"
+                  id="senderContact"
+                  name="senderContact"
                   required
-                  name="receiverName"
-                  value={formData.receiverName}
+                  value={formData.senderContact}
                   onChange={handleInputChange}
                   className="mb-4 p-2 rounded-lg border border-gray-300"
                 />
 
                 <label
-                  htmlFor="pid"
+                  htmlFor="image01"
                   className="mb-2 font-semibold text-gray-600"
                 >
-                  Package ID
-                </label>
-                <input
-                  type="text"
-                  id="pid"
-                  required
-                  name="packageId"
-                  value={formData.packageId}
-                  onChange={handleInputChange}
-                  className="mb-4 p-2 rounded-lg border border-gray-300"
-                />
-
-                <label
-                  htmlFor="dd"
-                  className="mb-2 font-semibold text-gray-600"
-                >
-                  Driver Details
-                </label>
-                <input
-                  type="text"
-                  id="dd"
-                  required
-                  name="driverDetails"
-                  value={formData.driverDetails}
-                  onChange={handleInputChange}
-                  className="mb-4 p-2 rounded-lg border border-gray-300"
-                />
-
-                <label htmlFor="date" className="mb-2 font-semibold text-gray-600">
-                  Date
-                </label>
-                <input type="date" id="date" required name="date" className="mb-4 p-2 rounded-lg border border-gray-300" />
-
-
-                <label htmlFor="time" className="mb-2 font-semibold text-gray-600">
-                  Time
-                </label>
-                <input type="time" id="time" required name="time" className="mb-4 p-2 rounded-lg border border-gray-300" />
-
-                <label
-                  htmlFor="pd"
-                  className="mb-2 font-semibold text-gray-600"
-                >
-                  Package Description
-                </label>
-                <input
-                  type="textarea"
-                  id="pd"
-                  required
-                  name="packageDescription"
-                  value={formData.packageDescription}
-                  onChange={handleInputChange}
-                  className="mb-4 p-2 rounded-lg border border-gray-300 h-24"
-                />
-                <label
-                  htmlFor="images"
-                  className="mb-2 font-semibold text-gray-600"
-                >
-                  Upload Image
+                  Upload Image 01
                 </label>
                 <input
                   type="file"
-                  id="images"
-                  name="images"
+                  id="image01"
+                  name="img1"
                   className="mb-4 py-2 pl-5 file:rounded-lg rounded-lg border border-gray-300"
                   accept="image/*"
-                  multiple
-                  onChange={handleImageUpload}
                   required
+                  onChange={handleFileChange}
                 />
+                {formData.img1Base64 && (
+                  <img
+                    width={200}
+                    style={{ height: "250px" }}
+                    src={formData.img1Base64}
+                    alt="Image 01"
+                    className="mb-4 max-w-[300px]"
+                  />
+                )}
+
+                <label
+                  htmlFor="image02"
+                  className="mb-2 font-semibold text-gray-600"
+                >
+                  Upload Image 02
+                </label>
+                <input
+                  type="file"
+                  id="image02"
+                  name="img2"
+                  className="mb-4 py-2 pl-5 file:rounded-lg rounded-lg border border-gray-300"
+                  accept="image/*"
+                  required
+                  onChange={handleFileChange}
+                />
+                {formData.img2Base64 && (
+                  <img
+                    width={200}
+                    style={{ height: "250px" }}
+                    src={formData.img2Base64}
+                    alt="Image 02"
+                    className="mb-4 max-w-[300px]"
+                  />
+                )}
+
                 <div className="flex flex-row space-x-3 w-full">
-                  {/* <Link
-                    to={{
-                      pathname: "/PackageDispatch",
-                      state: { formData }
-                    }}
-                    className="w-full"
-                  > */}
-                  {/* <a href="/PackageDispatch">
+                  <div className="flex items-center justify-between z-10">
                     <button
+                      className="text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full bg-gradient-to-r from-red-500 to-red-700 z-10"
                       type="submit"
-                      className="py-2 px-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg w-52 ml-auto mt-8"
+                      disabled={isLoading}
                     >
-                      Generate QR
+                      {isLoading ? "Saving..." : "Save"}{" "}
                     </button>
-                    </a> */}
-                            <div className="flex items-center justify-between z-10">
-                                <button
-                                    className="text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full bg-gradient-to-r from-red-500 to-red-700 z-10"
-                                    type="submit"
-                                >
-                                    <a href="/PackageDispatch">Generate QR</a>
-                                </button>
-                            </div>
-                  {/* </Link> */}
+                  </div>
                 </div>
               </form>
             </div>
+
+            {showQRCode && (
+              <div className="bg-white p-4 mt-4 rounded-lg shadow-md">
+                <QRCode value={formData.senderContact} />
+                <button
+                  onClick={handlePrint}
+                  className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+                >
+                  Print QR Code
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

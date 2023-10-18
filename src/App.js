@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./routes/login";
-import 'flowbite';
+import "flowbite";
 import Dashboard from "./routes/Admindash";
 import CreateDelivery from "./routes/DeliveryRoutes/createDelivery";
 import UpdateDelivery from "./routes/DeliveryRoutes/updateDelivery";
@@ -31,39 +31,44 @@ import SingleOrderUpdate from "./routes/DeliveryRoutes/singleOrderUpdate";
 import Tickets from "./pages/Tickets/Tickets";
 import SingleTicket from "./pages/Tickets/SingleTicket";
 import ManualTickets from "./pages/Tickets/ManualTickets";
+import ViewPack from "./routes/DamageDetect/ViewPackage";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route index path="/" element={<Login/>}/>
-          <Route path="/Dashboard" element={<Dashboard/>}/>
-          <Route path="/CreateDelivery" element={<CreateDelivery/>}/>
-          <Route path="/UpdateDelivery/:id" element={<UpdateDelivery/>}/>
-          <Route path="/ViewDelivery/:id" element={<ViewDelivery/>}/>
-          <Route path="/Orders" element={<Orders/>}/>
-          <Route path="/RoutePlanning" element={<RoutePlanning/>}/>
-          <Route path="/CustomerHome" element={<CustomerHome/>}/>
-          <Route path="/Inquiry" element={<Inquiry/>}/>
-          <Route path="/ScanQR" element={<ScanQR/>}/>
-          <Route path="/PackageStatus" element={<PackageStatus/>}/>
-          <Route path="/InquiryStatus" element={<InquiryStatus/>}/>
-          <Route path="/AdminHome" element={<AdminHome/>}/>
-          <Route path="/PackageDispatch" element={<PackageDispatch/>}/>
+          <Route index path="/" element={<Login />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/CreateDelivery" element={<CreateDelivery />} />
+          <Route path="/UpdateDelivery/:id" element={<UpdateDelivery />} />
+          <Route path="/ViewDelivery/:id" element={<ViewDelivery />} />
+          <Route path="/Orders" element={<Orders />} />
+          <Route path="/RoutePlanning" element={<RoutePlanning />} />
+          <Route path="/CustomerHome" element={<CustomerHome />} />
+          <Route path="/Inquiry" element={<Inquiry />} />
+          <Route path="/ScanQR" element={<ScanQR />} />
+          <Route path="/PackageStatus" element={<PackageStatus />} />
+          <Route path="/InquiryStatus" element={<InquiryStatus />} />
+          <Route path="/AdminHome" element={<AdminHome />} />
+          <Route path="/ViewPack" element={<ViewPack />} />
+          <Route path="/PackageDispatch" element={<PackageDispatch />} />
           <Route path="/tickets" element={<Tickets />} />
-          <Route path="/SingleOrder/:id" element={<SingleOrder/>}/>
-           <Route path="PerformanceTrack" element={<PerformanceTrack/>}/>
-           <Route path="PerformanceTracker" element={<PerformanceTracker/>}/>
-           <Route path="CustomerChurn" element={<CustomerCharn/>}/>
-           <Route path="CustomerChurnTable" element={<CustomerCharnTable/>}/>
-          <Route path="/SingleOrderUpdate/:id" element={<SingleOrderUpdate/>}/>
-          <Route path="CreateOrder" element={<CreateOrder/>}/>
-          <Route path="ChurnRank" element={<ChurnRank/>}/>
-          <Route path="UpdateOrder/:slug" element={<UpdateOrder/>}/>
-          <Route path="MoreInfo/:slug" element={<MoreInfo/>}/>
-          <Route path="Modal" element={<Modal/>}/>
-          <Route path="DeliveryRank" element={<DeliveryRank/>}/>
+          <Route path="/SingleOrder/:id" element={<SingleOrder />} />
+          <Route path="PerformanceTrack" element={<PerformanceTrack />} />
+          <Route path="PerformanceTracker" element={<PerformanceTracker />} />
+          <Route path="CustomerChurn" element={<CustomerCharn />} />
+          <Route path="CustomerChurnTable" element={<CustomerCharnTable />} />
+          <Route
+            path="/SingleOrderUpdate/:id"
+            element={<SingleOrderUpdate />}
+          />
+          <Route path="CreateOrder" element={<CreateOrder />} />
+          <Route path="ChurnRank" element={<ChurnRank />} />
+          <Route path="UpdateOrder/:slug" element={<UpdateOrder />} />
+          <Route path="MoreInfo/:slug" element={<MoreInfo />} />
+          <Route path="Modal" element={<Modal />} />
+          <Route path="DeliveryRank" element={<DeliveryRank />} />
 
           {/* Routes: Dilakshi */}
           <Route path="/tickets" element={<Tickets />} />
@@ -71,7 +76,6 @@ function App() {
           <Route path="/ticket/:id" element={<SingleTicket />} />
         </Routes>
       </BrowserRouter>
-
     </div>
   );
 }
