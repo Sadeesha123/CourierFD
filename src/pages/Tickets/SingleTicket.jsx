@@ -19,6 +19,10 @@ export default function SingleTicket() {
 
   useEffect(() => {
 
+    /**
+     * Fetch ticket information and update the local
+     * state to reflect the information
+     */
     fetch("https://api.dcsrp.xyz/v1.0/ticket/" + id)
     .then(Response => Response.json())
     .then(Response => {
@@ -87,7 +91,7 @@ export default function SingleTicket() {
     if ( ticket.timeline != null ) {
       return ticket.timeline.map((item) => {
         return (
-          <div className="flex items-center w-full my-6 -ml-1.5">
+          <div className="flex items-center w-full my-6 -ml-1.5" key={ item.id }>
             <div className="w-1/12 z-10">
               <div className="w-3.5 h-3.5 bg-blue-600 rounded-full"></div>
             </div>
@@ -135,16 +139,6 @@ export default function SingleTicket() {
                   <div className="border shadow-md text-gray-700 border-gray-400 w-full h-auto bg-gray-100 p-2 rounded-lg">
                     <p>{ ticket.call.transcript }</p>
                   </div>
-                  {/* <div className="grid grid-cols-6 w-[100%] mt-2">
-                    <div className="col-span-6 p-3">
-                      <p className="text-gray-700 ">Progress</p>
-                    </div>
-                    <div className="col-span-6">
-                      <div className="relative w-full bg-gray-300 rounded overflow-hidden">
-                        <div id="progress" className="bg-red-400 h-2" style={{width:'10%'}}></div>
-                      </div>
-                    </div>
-                  </div> */}
                 </div>
 
                 {/* TEXTAREA */}
@@ -153,7 +147,7 @@ export default function SingleTicket() {
                     <div className="mx-auto w-full">
                       <form action="" method="POST">
                         <div className="mb-5">
-                          <textarea rows="4" name="message" id="message" placeholder="Type your message" className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" onChange={(e)=>setTicketMessage(e.target.value)}>{ ticketMessage }</textarea>
+                          <textarea rows="4" name="message" id="message" placeholder="Type your message" className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" onChange={(e)=>setTicketMessage(e.target.value)} value={ ticketMessage } />
                         </div>
                         <div>
                           <button className="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none" onClick={OnClick_Message}>Submit</button>
@@ -164,12 +158,10 @@ export default function SingleTicket() {
                 </div>
 
                 {/* TIMELINE */}
-                <div classNameName="p-6 grid grid-cols-1 border border-blue-500">
-                  <div className="flex-1 bg-white rounded-lg shadow-xl mt-4 p-8 ">
-                    <h4 className="text-xl text-gray-900 font-bold">Time Line</h4>
-                    <div className="relative px-4">
-                      <TimelineItems />
-                    </div>
+                <div className="flex-1 bg-white rounded-lg shadow-xl mt-4 p-8 ">
+                  <h4 className="text-xl text-gray-900 font-bold">Time Line</h4>
+                  <div className="relative px-4">
+                    <TimelineItems />
                   </div>
                 </div>
 
@@ -178,14 +170,14 @@ export default function SingleTicket() {
               <div className="flex flex-col main-body-container w-[30%] h-full p-4">
 
                 {/* IMPORTANT */}
-                <div className="flex w-full h-50 justify-center items-center mt-1">
+                <div className="w-full h-50 justify-center items-center mt-1 hidden">
                   <div className="flex flex-row w-[100%] h-40 border border-red-400 bg-red-100 rounded-lg">
                     <div className="w-[90%] p-5 md:text-xs lg:text-sm xl:text-base"><p>Important Information</p></div>
                   </div>
-                </div> 
+                </div>
 
                 {/* STAFF */}
-                <div className="flex flex-col rounded-lg w-full h-80 mt-3 border ">
+                <div className={"flex-col rounded-lg w-full h-80 mt-3 border " + (ticket.agent == "manual" ? "flex" : "hidden")}>
                   <div className="w-full overflow-x-hidden sm:text-xs md:text-xs lg:text-xs xl:text-base rounded-t-lg bg-gray-700 text-white h-10 text-center pt-1 border border-gray-900">Asigned Staff Member</div>
                   <div className="flex flex-row w-full h-auto border p-3 overflow-x-auto ">
                     <div className=""><img className="w-14 h-14 rounded-full border object-cover" src={propic} /></div>
@@ -201,17 +193,8 @@ export default function SingleTicket() {
                   </div>
                 </div>
 
-                {/*<div class="card bg-red-100 border-2 mt-4" style={{ borderRadius: "10px" }}>
-                  <figure class="px-10 pt-10"><img src={propic} class="w-28 h-28 rounded-xl" /></figure>
-                  <div class="card-body items-center text-center">
-                    <h2 class="card-title">Dilakshi Lamahewa</h2>
-                    <p>Support Engineer</p>
-                    <p>0777123456 / dilakshi@gmail.com</p>
-                  </div>
-                </div>*/}
-
                 {/* AI */}
-                <div className="flex flex-col rounded-lg w-full h-80 mt-3 border">
+                <div className={"flex-col rounded-lg w-full h-80 mt-3 border " + (ticket.agent == "auto" ? "flex" : "hidden")}>
                   <div className="w-[100%] md:text-xs lg:text-sm xl:text-base rounded-t-lg bg-gray-700 text-white h-10 text-center pt-1 border border-gray-900">Auto (AI)</div>
                   <div className=""><h1 className="text-xl font-bold text-center pt-3">Hello!</h1></div>
                   <div className=" flex  justify-center items-center mt-2"><img src={ai} className="w-1/2 h-auto "/></div>
