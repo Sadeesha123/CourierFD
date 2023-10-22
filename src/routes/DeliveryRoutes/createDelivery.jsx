@@ -13,17 +13,20 @@ function CreateDelivery() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     var postData = {
+      customerId: data.get("customerId"),
+      packageId: data.get("packageId"),
+      orderId: data.get("orderId"),
       branch_pickup: data.get("pickup"),
       vehicle: data.get("vehicle"),
       date: data.get("date"),
       destination: data.get("destination"),
-      order_id: data.get("orderId"),
       status: "Processing",
       estimated_date: data.get("date"),
-      customer_id: data.get("customerId"),
       telephone_number: data.get("tp"),
       departure_date: data.get("departureDate"),
     };
+
+   
 
     try {
       const isValidPhoneNumber = /^\d{10}$/.test(postData.telephone_number);
@@ -84,6 +87,20 @@ function CreateDelivery() {
                   type="text"
                   id="customerId"
                   name="customerId"
+                  className="mb-4 p-2 rounded-lg border border-gray-300"
+                  required
+                />
+
+                <label
+                  htmlFor="packageId"
+                  className="mb-2 font-semibold text-gray-600"
+                >
+                  Package ID
+                </label>
+                <input
+                  type="text"
+                  id="packageId"
+                  name="packageId"
                   className="mb-4 p-2 rounded-lg border border-gray-300"
                   required
                 />
