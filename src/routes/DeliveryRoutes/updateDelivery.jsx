@@ -107,6 +107,22 @@ function UpdateDelivery() {
                 />
 
                 <label
+                  htmlFor="customerId"
+                  className="mb-2 font-semibold text-gray-600"
+                >
+                  package ID
+                </label>
+                <input
+                  value={data?.package_id}
+                  type="text"
+                  id="customerId"
+                  name="customerId"
+                  className="mb-4 p-2 rounded-lg border border-gray-300"
+                  required
+                  readOnly
+                />
+
+                <label
                   htmlFor="orderId"
                   className="mb-2 font-semibold text-gray-600"
                 >

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +9,21 @@ import { BaseUrl } from "../../utils/base_url";
 
 function CreateDelivery() {
   const navigate = useNavigate();
+  const [customerIds, setCustomerIds] = useState([]);
+  const [packageIds, setPackageIds] = useState([]);
+
+  useEffect(() => {
+    fetch(`${BaseUrl}/order/customers`)
+      .then((response) => response.json())
+      .then((data) => setCustomerIds(data.data))
+      .catch((error) => console.error(error));
+
+    fetch(`${BaseUrl}/order/pakages`)
+      .then((response) => response.json())
+      .then((data) => setPackageIds(data.data))
+      .catch((error) => console.error(error));
+  }, []);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -25,8 +40,6 @@ function CreateDelivery() {
       telephone_number: data.get("tp"),
       departure_date: data.get("departureDate"),
     };
-
-   
 
     try {
       const isValidPhoneNumber = /^\d{10}$/.test(postData.telephone_number);
@@ -77,33 +90,31 @@ function CreateDelivery() {
                 Create Delivery
               </h1>
               <form onSubmit={handleSubmit} className="flex flex-col w-full">
-                <label
-                  htmlFor="customerId"
-                  className="mb-2 font-semibold text-gray-600"
-                >
-                  Customer ID
-                </label>
-                <input
-                  type="text"
-                  id="customerId"
-                  name="customerId"
-                  className="mb-4 p-2 rounded-lg border border-gray-300"
-                  required
-                />
+                <label htmlFor="customerId">Customer ID</label>
+                <select id="customerId" name="customerId">
+                  {Array.isArray(customerIds) ? (
+                    customerIds.map((customer) => (
+                      <option key={customer.id} value={customer.id}>
+                        {customer.id}
+                      </option>
+                    ))
+                  ) : (
+                    <option value="">Loading...</option>
+                  )}
+                </select>
 
-                <label
-                  htmlFor="packageId"
-                  className="mb-2 font-semibold text-gray-600"
-                >
-                  Package ID
-                </label>
-                <input
-                  type="text"
-                  id="packageId"
-                  name="packageId"
-                  className="mb-4 p-2 rounded-lg border border-gray-300"
-                  required
-                />
+                <label htmlFor="packageId">Package ID</label>
+                <select id="packageId" name="packageId">
+                  {Array.isArray(packageIds) ? (
+                    packageIds.map((data) => (
+                      <option key={data.id} value={data.id}>
+                        {data.id}
+                      </option>
+                    ))
+                  ) : (
+                    <option value="">Loading...</option>
+                  )}
+                </select>
 
                 <label
                   htmlFor="orderId"
