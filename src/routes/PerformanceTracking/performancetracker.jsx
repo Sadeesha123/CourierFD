@@ -32,9 +32,9 @@ export default function Tickets() {
     }
   };
 
-  const deleteData = async (e, id) => {
+  const deleteData = async (e, mobile_number) => {
     e.preventDefault();
-    await axios.delete(`${BaseUrl}/delivery/${id}`);
+    await axios.delete(`${BaseUrl}/delivery/${mobile_number}`);
     alert("Data deleted");
     fetchData();
   };
@@ -168,7 +168,9 @@ export default function Tickets() {
                               <a href={""}>
                                 <button
                                   class="group relative h-8 w-24 overflow-hidden rounded-2xl bg-red-500 text-sm font-bold text-white mr-4"
-                                  onClick={(e) => deleteData(e, x?.id)}
+                                  onClick={(e) =>
+                                    deleteData(e, x?.mobile_number)
+                                  }
                                 >
                                   Remove
                                   <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>

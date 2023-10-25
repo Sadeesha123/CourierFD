@@ -10,7 +10,7 @@ function CreateOrder() {
   const [showAlert, setShowAlert] = useState(false);
   const [formData, setFormData] = useState({
     sender_name: "",
-    sender_type: "Normal",
+    sender_type: "Personal",
     mobile_number: "",
     item_type: "Food",
     num_pics: "",
@@ -21,6 +21,8 @@ function CreateOrder() {
     province: "Central",
     receiver_email: "",
     receiver_mobile: "",
+    sender_email: "",
+    sender_province: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -99,9 +101,14 @@ function CreateOrder() {
 
     if (isValid) {
       try {
-        await axios.post(`${BaseUrl}/delivery`, formData);
+        const response = await axios.post(`${BaseUrl}/delivery`, formData);
 
-        window.location.href = "/performancetracker";
+        alert(response.data.message);
+        if (response.data.message === "Mobile number already exists") {
+          alert("Mobile number already exists");
+        } else {
+          window.location.href = "/performancetracker";
+        }
       } catch (error) {
         console.error("Error creating order:", error);
       }
@@ -166,6 +173,34 @@ function CreateOrder() {
                   style={{ display: "contents" }}
                 >
                   <label
+                    htmlFor="email"
+                    className="p-1 mb-2 font-semibold text-gray-600"
+                  >
+                    Sender Email :
+                  </label>
+                  <input
+                    style={{ width: "100%" }}
+                    type="email"
+                    id="senderemail"
+                    name="sender_email"
+                    className={`mb-2 border border-gray-300 rounded-lg w-[60%] h-[35px] ${
+                      errors.receiver_email ? "border-red-500" : ""
+                    }`}
+                    onChange={handleChange}
+                    value={formData.senderemail}
+                    required
+                  />
+                  {errors.receiver_email && (
+                    <span className="text-red-500">
+                      {errors.receiver_email}
+                    </span>
+                  )}
+                </div>
+                <div
+                  className="flex justify-between"
+                  style={{ display: "contents" }}
+                >
+                  <label
                     htmlFor="sendertype"
                     className="p-1 mb-2 font-semibold text-gray-600"
                   >
@@ -179,7 +214,7 @@ function CreateOrder() {
                     onChange={handleChange}
                     value={formData.sender_type}
                   >
-                    <option value="Normal">Normal</option>
+                    <option value="Personal">Personal</option>
                     <option value="Business">Business</option>
                   </select>
                 </div>
@@ -208,6 +243,41 @@ function CreateOrder() {
                   />
                   {errors.mobile_number && (
                     <span className="text-red-500">{errors.mobile_number}</span>
+                  )}
+                </div>
+
+                <div
+                  className="flex justify-between"
+                  style={{ display: "contents" }}
+                >
+                  <label
+                    htmlFor="province"
+                    className="mb-2 font-semibold text-gray-600"
+                  >
+                    Province :
+                  </label>
+                  <select
+                    style={{ width: "100%" }}
+                    id="sender_province"
+                    name="sender_province"
+                    className={`p-1 mb-2 border border-gray-300 rounded-lg w-[60%] h-[35px] ${
+                      errors.province ? "border-red-500" : ""
+                    }`}
+                    onChange={handleChange}
+                    value={formData.sender_province}
+                  >
+                    <option value="Central">Central</option>
+                    <option value="Eastern">Eastern</option>
+                    <option value="North Central">North Central</option>
+                    <option value="Northern">Northern</option>
+                    <option value="North Western">North Western</option>
+                    <option value="Sabaragamuwa">Sabaragamuwa</option>
+                    <option value="Southern">Southern</option>
+                    <option value="Uva">Uva</option>
+                    <option value="Western">Western</option>
+                  </select>
+                  {errors.province && (
+                    <span className="text-red-500">{errors.province}</span>
                   )}
                 </div>
 
