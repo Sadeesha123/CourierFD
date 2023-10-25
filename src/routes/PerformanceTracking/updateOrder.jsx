@@ -14,6 +14,7 @@ function UpdateOrder() {
     const res = await axios.get(`${BaseUrl}/delivery/${slug}`);
     if (Array.isArray(res.data.data)) {
       setData(res.data.data[0]);
+      console.log(res.data, "Incomming data");
     } else {
       setData([]);
     }
@@ -40,7 +41,10 @@ function UpdateOrder() {
       delete dataWithoutId.id;
       delete dataWithoutId.order_date;
       delete dataWithoutId.preferred_date;
-      await axios.put(`${BaseUrl}/delivery/${slug}`, dataWithoutId);
+      await axios.put(
+        `${BaseUrl}/delivery/${data.mobile_number}`,
+        dataWithoutId
+      );
       window.location.href = `/performancetracker`;
     } else {
       if (!isPhoneNumberValid || !isReceiverNumberValid) {
@@ -114,6 +118,29 @@ function UpdateOrder() {
                     required
                   />
                 </div>
+                <div className="flex justify-between">
+                  <label
+                    htmlFor="email"
+                    className="p-1 mb-2 font-semibold text-gray-600"
+                  >
+                    Sender Email :
+                  </label>
+                  <input
+                    type="email"
+                    id="senderemail"
+                    name="sender_email"
+                    className="mb-2 border border-gray-300 rounded-lg w-[60%] "
+                    onChange={(e) => {
+                      const newSenderEmail = e.target.value;
+                      setData((prevData) => ({
+                        ...prevData,
+                        sender_email: newSenderEmail,
+                      }));
+                    }}
+                    value={data?.sender_email}
+                    required
+                  />
+                </div>
 
                 <div className="flex justify-between">
                   <label
@@ -135,8 +162,40 @@ function UpdateOrder() {
                     }}
                     value={data?.sender_type}
                   >
-                    <option value="Normal">Normal</option>
+                    <option value="Personal">Personal</option>
                     <option value="Business">Business</option>
+                  </select>
+                </div>
+
+                <div className="flex justify-between">
+                  <label
+                    htmlFor="sendermobile"
+                    className="p-1 mb-2 font-semibold text-gray-600"
+                  >
+                    Province :
+                  </label>
+                  <select
+                    id="sender_province"
+                    name="sender_province"
+                    className="p-1 mb-2 border border-gray-300 rounded-lg w-[60%] h-[35px]"
+                    onChange={(e) => {
+                      const newSender_province = e.target.value;
+                      setData((prevData) => ({
+                        ...prevData,
+                        sender_province: newSender_province,
+                      }));
+                    }}
+                    value={data?.sender_province}
+                  >
+                    <option value="Central">Central</option>
+                    <option value="Eastern">Eastern</option>
+                    <option value="North Central">North Central</option>
+                    <option value="Northern">Northern</option>
+                    <option value="North Western">North Western</option>
+                    <option value="Sabaragamuwa">Sabaragamuwa</option>
+                    <option value="Southern">Southern</option>
+                    <option value="Uva">Uva</option>
+                    <option value="Western">Western</option>
                   </select>
                 </div>
 
@@ -161,6 +220,7 @@ function UpdateOrder() {
                     }}
                     value={data?.mobile_number}
                     required
+                    readOnly
                   />
                 </div>
 
